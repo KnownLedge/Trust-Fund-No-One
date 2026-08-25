@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://oih2ai0btj1v"]
 
+[ext_resource type="PackedScene" uid="uid://vmqxnv0c720m" path="res://Scenes/Objects/translation_paper.tscn" id="1_n4juv"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4bhe"]
 albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rj47j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkhwe"]
 albedo_color = Color(0.8921876, 0.85675514, 0.25807846, 1)
@@ -56,10 +56,8 @@ size = Vector3(9.492676, 0.5400162, 8.776367)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8082886, 3.2392564, -2.3095703)
 size = Vector3(2.607544, 0.5400162, 11.933594)
 
-[node name="CSGBox3D20" type="CSGBox3D" parent="." unique_id=1005379497]
+[node name="TranslationPaper" parent="." unique_id=1622646215 instance=ExtResource("1_n4juv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9718862, 3.5273557, -1.4730866)
-size = Vector3(1.0898209, 0.014171875, 1.9385681)
-material = SubResource("StandardMaterial3D_rj47j")
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="." unique_id=1718886392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.374086, 3.5273557, 2.062827)
@@ -118,3 +116,7 @@ size = Vector3(4.758911, 2.8566256, 3.2548752)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.354726, 7.013305, -3.7339258)
 size = Vector3(4.48497, 2.6309044, 0.04223442)
 material = SubResource("StandardMaterial3D_b560c")
+
+[node name="TestParser" type="Node3D" parent="CSGBox3D9" unique_id=270333485]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1613390298]

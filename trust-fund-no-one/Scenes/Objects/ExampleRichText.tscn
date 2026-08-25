@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b7khhi60fcbc1"]
+
+[node name="Control" type="Control" unique_id=1974860021]
+layout_mode = 3
+anchor_right = 0.18200001
+anchor_bottom = 0.45800003
+offset_right = 0.33598328
+offset_bottom = 0.2159729
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1367442747]
+layout_mode = 0
+offset_right = 213.0
+offset_bottom = 301.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 13
+text = "Hello i am alien from space and I am here to get some of that *sick* moneyzzzzz
+that weird fleshy man said my id number was like 6769420 or something human like that.
+I would like the trust fund money to pay for transportation of my puny cultist sacrifices.
+It is vital I secure them for the occult Tuesday tea time.
+this is now filler text to fill up the whole page, to see what that would look like,
+turns out it looks like this
+woop de doo"
