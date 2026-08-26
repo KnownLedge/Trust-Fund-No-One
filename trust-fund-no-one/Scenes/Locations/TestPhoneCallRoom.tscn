@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://38jbksli0322"]
+
+[ext_resource type="PackedScene" uid="uid://vmqxnv0c720m" path="res://Scenes/Objects/translation_paper.tscn" id="1_5osie"]
+[ext_resource type="Script" uid="uid://cqt52lb6eqgr1" path="res://Scripts/NodeScripts/call_manager.gd" id="2_v1l8c"]
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="3_nseqs"]
+[ext_resource type="Script" uid="uid://bvvggirfooi1l" path="res://Scripts/NodeScripts/TranslationPrinter.gd" id="3_v1l8c"]
+[ext_resource type="Resource" uid="uid://bpoeu13yq4lex" path="res://Resources/PhoneCalls/TestCallResource.tres" id="4_m8b3x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b560c"]
+albedo_color = Color(0.07123137, 0.07123139, 0.07123137, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rj47j"]
+
+[node name="Node3D" type="Node3D" unique_id=669103898]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1064881583]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=720787460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1673584, -0.7338171, -1.3806152)
+size = Vector3(14.204834, 1, 12.450684)
+material = SubResource("StandardMaterial3D_b560c")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=1139639609]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.5504675, 0.61030287, -1.9061551)
+
+[node name="TranslationPaper" parent="." unique_id=1622646215 instance=ExtResource("1_5osie")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6031175, 0.10230702, -1.6503663)
+material = SubResource("StandardMaterial3D_rj47j")
+
+[node name="CallManager" type="CSGBox3D" parent="." unique_id=352411944 node_paths=PackedStringArray("audio_player", "printer_obj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5390913, 0.25792444, 0)
+script = ExtResource("2_v1l8c")
+audio_player = NodePath("AudioStreamPlayer3D")
+printer_obj = NodePath("../Printer")
+call_resources = Array[ExtResource("3_nseqs")]([ExtResource("4_m8b3x")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CallManager" unique_id=897908222]
+
+[node name="Printer" type="CSGBox3D" parent="." unique_id=466695275 node_paths=PackedStringArray("call_manager", "paper_obj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7856383, 0.038092285, -1.2677567)
+size = Vector3(1, 0.6040039, 1)
+script = ExtResource("3_v1l8c")
+call_manager = NodePath("../CallManager")
+paper_obj = NodePath("../TranslationPaper")
+paper_spawn_pos = Vector3(0.53111136, 0.10230702, -1.3248796)
+
+[node name="Camera3D" type="Camera3D" parent="Printer" unique_id=176963063]
+transform = Transform3D(0.09609776, 0.70218366, -0.70548093, -0.09477341, 0.71199584, 0.6957586, 0.99084973, 0, 0.13496956, -0.78297746, 1.677135, -0.7789581)

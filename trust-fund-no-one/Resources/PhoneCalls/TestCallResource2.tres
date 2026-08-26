@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://b4fipirvhai1q"]
+
+[ext_resource type="AudioStream" uid="uid://bcykdtsvtdps7" path="res://Sounds/bogos-binted_9KWgAqA.mp3" id="1_thldt"]
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="2_w50q0"]
+
+[sub_resource type="Curve" id="Curve_qkhwe"]
+_data = [Vector2(0.011952192, 0), 0.0, 0.9953678, 0, 1, Vector2(1, 0.98347104), 0.9953678, 0.0, 1, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("2_w50q0")
+audio_track = ExtResource("1_thldt")
+call_translation = "Hello i am alien from space and I am here to get some of that *sick* moneyzzzzz
+that weird fleshy man said my id number was like 6769420 or something human like that.
+I would like the trust fund money to pay for transportation of my puny cultist sacrifices.
+It is vital I secure them for the occult Tuesday tea time."
+translation_speed = SubResource("Curve_qkhwe")
+metadata/_custom_type_script = "uid://iisnyx451jvh"

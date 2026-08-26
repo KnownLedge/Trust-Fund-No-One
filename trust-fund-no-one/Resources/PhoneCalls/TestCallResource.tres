@@ -10,7 +10,9 @@ point_count = 2
 [resource]
 script = ExtResource("2_tx6t7")
 audio_track = ExtResource("1_321w5")
-call_translation = "Hello i am alien from space and I am here to get some of that *sick* moneyzzzzz
-that weird fleshy man said my id number was like 6769420 or something human like that."
+call_translation = "Heyyyy just wondering if you got your photos printed?
+Bogos binted?
+what?
+wooooowh"
 translation_speed = SubResource("Curve_qkhwe")
 metadata/_custom_type_script = "uid://iisnyx451jvh"
