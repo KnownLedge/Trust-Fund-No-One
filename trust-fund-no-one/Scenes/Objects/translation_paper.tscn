@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://vmqxnv0c720m"]
 
+[ext_resource type="Script" uid="uid://b0ckddokxadiv" path="res://Scripts/NodeScripts/object_paper.gd" id="1_1yuby"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_itf3o"]
+size = Vector3(1.0415039, 0.02810669, 1.5135498)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_losvw"]
 
 [sub_resource type="FontFile" id="FontFile_b560c"]
@@ -116,12 +121,22 @@ cache/0/13/0/underline_position = 0.0
 cache/0/13/0/underline_thickness = 0.0
 cache/0/13/0/scale = 1.0
 
-[node name="TranslationPaper" type="CSGBox3D" unique_id=642048053]
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1369670520]
+gravity_scale = 0.4
+freeze = true
+script = ExtResource("1_1yuby")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1771292032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017089844, 0.0007171631, -0.0049438477)
+shape = SubResource("BoxShape3D_itf3o")
+disabled = true
+
+[node name="TranslationPaper" type="CSGBox3D" parent="." unique_id=642048053]
 size = Vector3(1.05, 0.014, 1.5)
 material = SubResource("StandardMaterial3D_losvw")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1538694114]
-transform = Transform3D(1, 0, 0, 0, 0.0031642425, 0.999995, 0, -0.999995, 0.0031642425, -0.52720475, 0.017532349, -0.75205326)
+transform = Transform3D(1, 0, 0, 0, 0.0031642425, 0.999995, 0, -0.999995, 0.0031642425, -0.52720475, 0.014319956, -0.75205326)
 modulate = Color(0, 0, 0, 1)
 text = "Hello i am alien from space and I am here to get some of that *sick* moneyzzzzz
 that weird fleshy man said my id number was like 6769420 or something human like that.

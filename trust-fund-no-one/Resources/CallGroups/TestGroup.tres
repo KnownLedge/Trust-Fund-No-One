@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Call_Set" format=3 uid="uid://fat5c0hlbc3w"]
+
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_tl3lh"]
+[ext_resource type="Script" uid="uid://dpx7lexdvim2m" path="res://Scripts/ResourceScripts/call_set_script.gd" id="2_557qd"]
+[ext_resource type="Resource" uid="uid://bpoeu13yq4lex" path="res://Resources/PhoneCalls/TestCallResource.tres" id="2_v62wx"]
+[ext_resource type="Resource" uid="uid://b4fipirvhai1q" path="res://Resources/PhoneCalls/TestCallResource2.tres" id="3_e6a55"]
+[ext_resource type="Texture2D" uid="uid://bu7hx0mths72s" path="res://icon.svg" id="4_01vns"]
+
+[resource]
+script = ExtResource("2_557qd")
+info_page_texture = ExtResource("4_01vns")
+calls = Array[ExtResource("1_tl3lh")]([ExtResource("2_v62wx"), ExtResource("3_e6a55"), ExtResource("3_e6a55")])
+metadata/_custom_type_script = "uid://dpx7lexdvim2m"

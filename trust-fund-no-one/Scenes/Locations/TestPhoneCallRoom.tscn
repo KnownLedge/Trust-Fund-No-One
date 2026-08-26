@@ -5,11 +5,17 @@
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="3_nseqs"]
 [ext_resource type="Script" uid="uid://bvvggirfooi1l" path="res://Scripts/NodeScripts/TranslationPrinter.gd" id="3_v1l8c"]
 [ext_resource type="Resource" uid="uid://bpoeu13yq4lex" path="res://Resources/PhoneCalls/TestCallResource.tres" id="4_m8b3x"]
+[ext_resource type="Resource" uid="uid://b4fipirvhai1q" path="res://Resources/PhoneCalls/TestCallResource2.tres" id="5_m8b3x"]
+[ext_resource type="PackedScene" uid="uid://yj4baxphh5o1" path="res://Scenes/Objects/player_character.tscn" id="7_5avas"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b560c"]
 albedo_color = Color(0.07123137, 0.07123139, 0.07123137, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rj47j"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5avas"]
+albedo_color = Color(0.19506672, 0.19506672, 0.19506669, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6c2xg"]
+albedo_color = Color(0.19506672, 0.19506672, 0.19506669, 1)
 
 [node name="Node3D" type="Node3D" unique_id=669103898]
 
@@ -18,7 +24,8 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=720787460]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1673584, -0.7338171, -1.3806152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15047169, -0.75028145, -1.2734789)
+use_collision = true
 size = Vector3(14.204834, 1, 12.450684)
 material = SubResource("StandardMaterial3D_b560c")
 
@@ -26,15 +33,14 @@ material = SubResource("StandardMaterial3D_b560c")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.5504675, 0.61030287, -1.9061551)
 
 [node name="TranslationPaper" parent="." unique_id=1622646215 instance=ExtResource("1_5osie")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6031175, 0.10230702, -1.6503663)
-material = SubResource("StandardMaterial3D_rj47j")
+transform = Transform3D(-3.6796315e-08, -0.5397871, -0.8418016, -2.3594843e-08, 0.8418016, -0.5397871, 1, 0, -4.371139e-08, 3.6031175, 0.3339519, -1.6503663)
 
 [node name="CallManager" type="CSGBox3D" parent="." unique_id=352411944 node_paths=PackedStringArray("audio_player", "printer_obj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5390913, 0.25792444, 0)
 script = ExtResource("2_v1l8c")
 audio_player = NodePath("AudioStreamPlayer3D")
 printer_obj = NodePath("../Printer")
-call_resources = Array[ExtResource("3_nseqs")]([ExtResource("4_m8b3x")])
+call_resources = Array[ExtResource("3_nseqs")]([ExtResource("4_m8b3x"), ExtResource("5_m8b3x"), ExtResource("5_m8b3x")])
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CallManager" unique_id=897908222]
 
@@ -44,7 +50,26 @@ size = Vector3(1, 0.6040039, 1)
 script = ExtResource("3_v1l8c")
 call_manager = NodePath("../CallManager")
 paper_obj = NodePath("../TranslationPaper")
-paper_spawn_pos = Vector3(0.53111136, 0.10230702, -1.3248796)
+paper_spawn_pos = Vector3(3.0547693, 1.3066576, -2.492978)
+paper_print_pos = Vector3(1.966, 0.585, -2.493)
+paper_eject_force = Vector3(-400, -250, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Printer" unique_id=176963063]
-transform = Transform3D(0.09609776, 0.70218366, -0.70548093, -0.09477341, 0.71199584, 0.6957586, 0.99084973, 0, 0.13496956, -0.78297746, 1.677135, -0.7789581)
+[node name="Player" parent="." unique_id=207456662 instance=ExtResource("7_5avas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0433145, 1.0855389, -1.9028977)
+
+[node name="PageHolder" type="CSGBox3D" parent="." unique_id=360629707]
+transform = Transform3D(-3.7855173e-08, -0.5, -0.8660254, -2.1855694e-08, 0.8660254, -0.5, 1, 0, -4.371139e-08, 1.9661989, 0.4728812, -2.492978)
+use_collision = true
+size = Vector3(1.05, 0.014, 1.5)
+material = SubResource("StandardMaterial3D_5avas")
+
+[node name="PageHolder2" type="CSGBox3D" parent="." unique_id=2090768538]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5588558, 0.093706965, -2.492978)
+use_collision = true
+size = Vector3(1.05, 0.014, 1.5)
+material = SubResource("StandardMaterial3D_5avas")
+
+[node name="PageHolder3" type="CSGBox3D" parent="." unique_id=887360372]
+transform = Transform3D(1.7763568e-15, -1, 5.9604645e-08, -4.371139e-08, -5.9604645e-08, -1, 1, 0, -4.371139e-08, 2.6563246, 0.9306128, -2.492978)
+size = Vector3(1.05, 0.1283164, 0.1609497)
+material = SubResource("StandardMaterial3D_6c2xg")

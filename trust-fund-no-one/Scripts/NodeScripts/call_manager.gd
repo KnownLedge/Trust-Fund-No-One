@@ -14,7 +14,11 @@ func start_call(CallInfo: CallerResource):
 	printer_obj.start_translation(CallInfo.call_translation)
 
 func _process(delta: float) -> void:
-	if(Input.is_action_just_pressed("ui_accept")):
+	if(Input.is_action_just_pressed("NumpadOne")):
 		start_call(call_resources[0])
+	if(Input.is_action_just_pressed("NumpadTwo")):
+		start_call(call_resources[1])
+	if(Input.is_action_just_pressed("NumpadThree")):
+		start_call(call_resources[2])
 	if(audio_player.stream != null):
 		call_progress = audio_player.get_playback_position() / audio_player.stream.get_length()
