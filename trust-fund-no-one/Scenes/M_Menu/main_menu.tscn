@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4vao7gh0ifpe"]
+[gd_scene load_steps=12 format=3 uid="uid://c4vao7gh0ifpe"]
 
+[ext_resource type="Script" uid="uid://bdrto5da1oivj" path="res://Scenes/M_Menu/main_menu.gd" id="1_8203n"]
 [ext_resource type="Texture2D" uid="uid://m0vvvw8abc1t" path="res://Scenes/M_Menu/mmenu_bg.png" id="1_a45hi"]
 [ext_resource type="Shader" uid="uid://db8jtepcg81fk" path="res://Scenes/M_Menu/scrollshader.gdshader" id="1_t8x3i"]
 [ext_resource type="Texture2D" uid="uid://bh3iypvipk3ys" path="res://Scenes/M_Menu/scrollbg.png" id="2_a45hi"]
@@ -13,6 +14,44 @@ shader_parameter/speed = 0.01
 [sub_resource type="SystemFont" id="SystemFont_fjg2o"]
 font_names = PackedStringArray("Dogica Pixel")
 
+[sub_resource type="Animation" id="Animation_8203n"]
+resource_name = "new_animation"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.87, 6),
+"transitions": PackedFloat32Array(1, 1, 2.297397),
+"update": 0,
+"values": [Vector2(323, 321), Vector2(326, 290), Vector2(323, 321)]
+}
+
+[sub_resource type="Animation" id="Animation_pgn72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(323, 321)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ap7lu"]
+_data = {
+&"RESET": SubResource("Animation_pgn72"),
+&"new_animation": SubResource("Animation_8203n")
+}
+
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -20,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8203n")
 
 [node name="MenuBG" type="TextureRect" parent="."]
 layout_mode = 1
@@ -64,15 +104,7 @@ grow_vertical = 2
 texture = ExtResource("4_c1sml")
 expand_mode = 1
 
-[node name="Menu_Logo" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 84.0
-offset_top = 72.0
-offset_right = 546.0
-offset_bottom = 576.0
-texture = ExtResource("5_fjg2o")
-
-[node name="Button" type="Button" parent="."]
+[node name="Start_Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 606.0
 offset_top = 197.0
@@ -82,7 +114,7 @@ theme_override_fonts/font = SubResource("SystemFont_fjg2o")
 theme_override_font_sizes/font_size = 32
 text = "START"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Opt_Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 597.0
 offset_top = 329.0
@@ -91,3 +123,16 @@ offset_bottom = 432.0
 theme_override_fonts/font = SubResource("SystemFont_fjg2o")
 theme_override_font_sizes/font_size = 32
 text = "OPTIONS"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ap7lu")
+}
+autoplay = "new_animation"
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(323, 321)
+texture = ExtResource("5_fjg2o")
