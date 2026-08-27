@@ -125,6 +125,7 @@ cache/0/13/0/scale = 1.0
 gravity_scale = 0.4
 freeze = true
 script = ExtResource("1_1yuby")
+metadata/hold_rotation = Vector3(66.4, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1771292032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017089844, 0.0007171631, -0.0049438477)

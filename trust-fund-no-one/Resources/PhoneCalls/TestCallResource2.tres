@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CallerResource" load_steps=4 format=3 uid="uid://b4fipirvhai1q"]
+[gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://b4fipirvhai1q"]
 
 [ext_resource type="AudioStream" uid="uid://bcykdtsvtdps7" path="res://Sounds/bogos-binted_9KWgAqA.mp3" id="1_thldt"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="2_w50q0"]

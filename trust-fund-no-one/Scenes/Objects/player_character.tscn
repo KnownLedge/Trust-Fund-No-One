@@ -2,11 +2,24 @@
 
 [ext_resource type="Script" uid="uid://diqmqb74kp5t" path="res://Scripts/NodeScripts/player_controller.gd" id="1_3ejmg"]
 
-[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera")]
+[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "left_hand", "ray")]
 script = ExtResource("1_3ejmg")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
+left_hand = NodePath("Head/Camera3D/Left Hand")
+ray = NodePath("Head/Camera3D/RayCast3D")
+default_left_hold = Vector3(-0.064, -0.04, -1.273)
 
 [node name="Head" type="Node3D" parent="." unique_id=95127230]
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1244759920]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=599415049]
+target_position = Vector3(0, 0, -3)
+collide_with_areas = true
+
+[node name="Left Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=1866637286]
+transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, -0.78822774, -0.4494828, -0.68184173)
+
+[node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=404128739]
+transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, 0.788, -0.449, -0.682)
