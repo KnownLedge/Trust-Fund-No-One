@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4vao7gh0ifpe"]
+
+[ext_resource type="Texture2D" uid="uid://m0vvvw8abc1t" path="res://Scenes/M_Menu/mmenu_bg.png" id="1_a45hi"]
+[ext_resource type="Shader" uid="uid://db8jtepcg81fk" path="res://Scenes/M_Menu/scrollshader.gdshader" id="1_t8x3i"]
+[ext_resource type="Texture2D" uid="uid://bh3iypvipk3ys" path="res://Scenes/M_Menu/scrollbg.png" id="2_a45hi"]
+[ext_resource type="Texture2D" uid="uid://bkr7nuimhy5ls" path="res://Scenes/M_Menu/mmenu_border.png" id="4_c1sml"]
+[ext_resource type="Texture2D" uid="uid://dygi6rejf2x20" path="res://Scenes/M_Menu/lgo.png" id="5_fjg2o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1sml"]
+shader = ExtResource("1_t8x3i")
+shader_parameter/speed = 0.01
+
+[sub_resource type="SystemFont" id="SystemFont_fjg2o"]
+font_names = PackedStringArray("Dogica Pixel")
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -36.0
+offset_right = 64.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a45hi")
+
+[node name="ScrollText" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c1sml")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -36.0
+offset_right = 90.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a45hi")
+
+[node name="Menu_Border" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 65.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_c1sml")
+expand_mode = 1
+
+[node name="Menu_Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 72.0
+offset_right = 546.0
+offset_bottom = 576.0
+texture = ExtResource("5_fjg2o")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 197.0
+offset_right = 888.0
+offset_bottom = 300.0
+theme_override_fonts/font = SubResource("SystemFont_fjg2o")
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 329.0
+offset_right = 879.0
+offset_bottom = 432.0
+theme_override_fonts/font = SubResource("SystemFont_fjg2o")
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
