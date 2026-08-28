@@ -2,10 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://vmqxnv0c720m" path="res://Scenes/Objects/translation_paper.tscn" id="1_5osie"]
 [ext_resource type="Script" uid="uid://cqt52lb6eqgr1" path="res://Scripts/NodeScripts/call_manager.gd" id="2_v1l8c"]
+[ext_resource type="Script" uid="uid://dpx7lexdvim2m" path="res://Scripts/ResourceScripts/call_set_script.gd" id="3_dmcam"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="3_nseqs"]
 [ext_resource type="Script" uid="uid://bvvggirfooi1l" path="res://Scripts/NodeScripts/TranslationPrinter.gd" id="3_v1l8c"]
+[ext_resource type="Resource" uid="uid://cefl6t6mhdiix" path="res://Resources/CallGroups/Call Group 2.tres" id="4_1qg3p"]
 [ext_resource type="Resource" uid="uid://dvqjm31fhrnc2" path="res://Resources/PhoneCalls/Set 4/Smart Client 1.tres" id="4_w84f8"]
+[ext_resource type="Resource" uid="uid://c1p7misq72888" path="res://Resources/CallGroups/Call Group 4.tres" id="5_3bjr3"]
 [ext_resource type="Resource" uid="uid://cgw7h83cta73r" path="res://Resources/PhoneCalls/Set 4/Smart Client 2.tres" id="5_r08wy"]
+[ext_resource type="Resource" uid="uid://bvg1is3nv7tk6" path="res://Resources/CallGroups/Call Group 5.tres" id="6_mbynv"]
 [ext_resource type="Resource" uid="uid://dxm1b1te57rdm" path="res://Resources/PhoneCalls/Set 4/Smart Client 3.tres" id="6_r36ul"]
 [ext_resource type="PackedScene" uid="uid://yj4baxphh5o1" path="res://Scenes/Objects/player_character.tscn" id="7_5avas"]
 [ext_resource type="PackedScene" uid="uid://g3rdvfosjp4u" path="res://Scenes/Objects/client_envelope.tscn" id="8_6c2xg"]
@@ -70,6 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6054313, 0.25792444, -1.258
 script = ExtResource("2_v1l8c")
 audio_player = NodePath("AudioStreamPlayer3D")
 printer_obj = NodePath("../Printer")
+call_sets = Array[ExtResource("3_dmcam")]([ExtResource("4_1qg3p"), ExtResource("5_3bjr3"), ExtResource("6_mbynv")])
 call_resources = Array[ExtResource("3_nseqs")]([ExtResource("4_w84f8"), ExtResource("5_r08wy"), ExtResource("6_r36ul")])
 client_envelope = NodePath("../Client Envelope")
 eject_pos = Vector3(1.7015734, 0.25792444, -1.2588937)

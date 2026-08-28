@@ -12,6 +12,8 @@ extends Node3D
 
 @export var eject_pos: Vector3
 
+@export var starting_call_set: int = 1
+
 const EJECT_SPEED = 6
 
 var printing = false
@@ -29,6 +31,7 @@ var call_failed = false
 var envelopes_received = 0
 
 func _ready() -> void:
+	apply_call_set(call_sets[starting_call_set - 1])
 	receive_call_group()
 
 
@@ -45,6 +48,11 @@ func print_envelope(delta: float):
 	new_envelope.get_node("CollisionShape3D").disabled = false
 	printed_envelopes += 1
 	
+
+func apply_call_set(call_set: Call_Set):
+	call_resources[0] = call_set.calls[0]
+	call_resources[1] = call_set.calls[1]
+	call_resources[2] = call_set.calls[2]
 
 func receive_answer(answer_id: int, answer_result: bool):
 	if(call_resources[answer_id - 1].is_scam != answer_result):
