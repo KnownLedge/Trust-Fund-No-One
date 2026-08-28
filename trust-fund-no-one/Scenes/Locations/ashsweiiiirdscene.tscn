@@ -269,11 +269,11 @@ transform = Transform3D(1.3439052, 0.2796424, -1.4130179, -0.035796948, 1.938405
 [node name="Sketchfab_Scene4" parent="Level" unique_id=1373750886 instance=ExtResource("19_2bgj3")]
 transform = Transform3D(-6.064676, 0, 1.4256961, 0, 6.230001, 0, -1.4256961, 0, -6.064676, 10.470922, 3.9316287, -0.53595877)
 
-[node name="Player" parent="." unique_id=207456662 node_paths=PackedStringArray("pc_top_Left_node", "pc_bottom_right_node", "subViewPort") instance=ExtResource("20_vrsvn")]
+[node name="Player" parent="." unique_id=207456662 node_paths=PackedStringArray("pc_top_Left_node", "pc_bottom_right_node", "subViewport") instance=ExtResource("20_vrsvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.394006, 6.4911475, 2.5091133)
 pc_top_Left_node = NodePath("../MeshInstance3D/TopLeft")
 pc_bottom_right_node = NodePath("../MeshInstance3D/BottomRight")
-subViewPort = NodePath("../MeshInstance3D/SubViewport")
+subViewport = NodePath("../MeshInstance3D/SubViewport")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=694351461]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2185125, 6.797744, -3.659033)
@@ -286,6 +286,8 @@ size = Vector2i(1920, 1080)
 [node name="ComputerInterface" parent="MeshInstance3D/SubViewport" unique_id=1245486518 instance=ExtResource("18_enh7k")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=699584550]
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=67411386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22532225, 0)

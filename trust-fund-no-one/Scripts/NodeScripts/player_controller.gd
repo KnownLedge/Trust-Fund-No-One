@@ -19,6 +19,8 @@ const RIGHT_TURN = -12.5
 
 @export var ray: RayCast3D
 
+@export var UI_ray: RayCast3D
+
 @export var left_ray: RayCast3D
 
 @export var right_ray: RayCast3D
@@ -46,7 +48,7 @@ var right_hold_type: holdType
 
 @export var pc_top_Left_node:Node3D
 @export var pc_bottom_right_node:Node3D
-@export var subViewPort:SubViewport
+@export var subViewport:SubViewport
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -113,8 +115,19 @@ func _physics_process(delta: float) -> void:
 				left_item.rotation_degrees = left_item.get_meta("hold_rotation")
 			
 			left_item.rotate_y(deg_to_rad(LEFT_TURN))
-		if(left_item == null && right_item == null && ray.is_colliding()):
 			
+		if (left_item == null && right_item == null && UI_ray.is_colliding()):
+			print("trying to click")
+			var hitPoint = UI_ray.get_collision_point()
+			var uiX = inverse_lerp(pc_top_Left_node.global_position.x, pc_bottom_right_node.global_position.x, hitPoint.x)
+			var uiY = inverse_lerp(pc_top_Left_node.global_position.y, pc_bottom_right_node.global_position.y, hitPoint.y)
+			var simMousePos = Vector2(uiX * subViewport.size.x, uiY * subViewport.size.y)
+			var mouse_event = InputEventMouseButton.new()
+			mouse_event.position = simMousePos
+			mouse_event.pressed = Input.is_action_just_pressed("LeftClick")
+			mouse_event.button_index = MOUSE_BUTTON_LEFT
+			mouse_event.button_mask - MOUSE_BUTTON_MASK_LEFT
+			subViewport.push_input(mouse_event)
 		
 			
 		#else:
