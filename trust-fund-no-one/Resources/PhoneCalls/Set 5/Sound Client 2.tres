@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://coqckogmvj67a"]
 
+[ext_resource type="AudioStream" uid="uid://udolajtxtddk" path="res://Sounds/Call Set 5/sound client2.mp3" id="1_0dgpd"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_ybtdc"]
 
 [resource]
 script = ExtResource("1_ybtdc")
+is_scam = true
+audio_track = ExtResource("1_0dgpd")
+call_translation = "Oh gash, hey there chum. Now ah, I was. I was. Looking for a phone call back from you all. See now I had ear about this fund of yore, and see now, im in a bit of a pickle myself here hockey puck. Think it was somewhere along the lines of urn. Let me see. 246420. I was ment to say? Im sure yall will figure it out. See Rah soon, puck."
 metadata/_custom_type_script = "uid://iisnyx451jvh"

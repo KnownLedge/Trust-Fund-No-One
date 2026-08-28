@@ -1,8 +1,12 @@
 [gd_resource type="Resource" script_class="Call_Set" format=3 uid="uid://c1p7misq72888"]
 
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_j1rog"]
+[ext_resource type="Resource" uid="uid://dvqjm31fhrnc2" path="res://Resources/PhoneCalls/Set 4/Smart Client 1.tres" id="2_efrjl"]
 [ext_resource type="Script" uid="uid://dpx7lexdvim2m" path="res://Scripts/ResourceScripts/call_set_script.gd" id="2_q1hry"]
+[ext_resource type="Resource" uid="uid://cgw7h83cta73r" path="res://Resources/PhoneCalls/Set 4/Smart Client 2.tres" id="3_tkmpm"]
+[ext_resource type="Resource" uid="uid://dxm1b1te57rdm" path="res://Resources/PhoneCalls/Set 4/Smart Client 3.tres" id="4_v8grn"]
 
 [resource]
 script = ExtResource("2_q1hry")
+calls = Array[ExtResource("1_j1rog")]([ExtResource("2_efrjl"), ExtResource("3_tkmpm"), ExtResource("4_v8grn")])
 metadata/_custom_type_script = "uid://dpx7lexdvim2m"

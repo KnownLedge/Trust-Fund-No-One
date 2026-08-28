@@ -1,7 +1,12 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://df7sowk1d3wxt"]
 
+[ext_resource type="AudioStream" uid="uid://c8av6hpqbn11i" path="res://Sounds/Call Set 5/sound client1.mp3" id="1_6xirc"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_uqr2c"]
 
 [resource]
 script = ExtResource("1_uqr2c")
+audio_track = ExtResource("1_6xirc")
+call_translation = "Alright. Your now listening to. The coolest and smoothest radio in the milky way [Farm sounds] With all the latest bombs and hit singles. [War sounds] Now with our new sponsor, our current caller. With their funding cashing, and support, we’ll make sure to keep the beets hot and fresh of the asteroid express shipping. Give it up for
+[Error Code: 76584354706387834526]
+[Call aborted abruptly due to potentially copyrighted material that could get the fund sued.]"
 metadata/_custom_type_script = "uid://iisnyx451jvh"

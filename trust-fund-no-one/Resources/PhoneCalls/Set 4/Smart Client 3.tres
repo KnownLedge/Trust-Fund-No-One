@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://dxm1b1te57rdm"]
 
+[ext_resource type="AudioStream" uid="uid://cavmco6c2brt3" path="res://Sounds/Call Set 4/smart client3.mp3" id="1_fi5t1"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_qe3hb"]
 
 [resource]
 script = ExtResource("1_qe3hb")
+is_scam = true
+audio_track = ExtResource("1_fi5t1")
+call_translation = "Is this Connect. Ah yes, welcome there chum! I was quite enjoying your little hold tune. Disregarding that remark, I was looking onwards in the aim that my request to be connected into your lovely lovely scheme and that mwa may be considered under the number 4380911. I do assume confidently that it will be an easy enough request to ask of someone of YOUR caliber. [pig sound] Have a merry day fine chap or chappette. Cheerio!"
 metadata/_custom_type_script = "uid://iisnyx451jvh"

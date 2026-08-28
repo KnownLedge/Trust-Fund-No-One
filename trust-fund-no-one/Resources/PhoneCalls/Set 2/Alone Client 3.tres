@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://b788ymn30gfjg"]
 
+[ext_resource type="AudioStream" uid="uid://cdj7xw6427d1v" path="res://Sounds/Call Set 2/alone client 3.mp3" id="1_obdhv"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_uhyiy"]
 
 [resource]
 script = ExtResource("1_uhyiy")
+is_scam = true
+audio_track = ExtResource("1_obdhv")
+call_translation = "Hello. I- am calling on behalf of… Say I, they’re gonna catch on if you say us you absolute squelch! Me- ..That works too. -request to be assimilated into the trust fund. ASSIMILATED??? Why on zeeble would you even say such a thing? Humans do not communicate this wa- SILENCE joonaliano, we must stay harmonious. Many of u- …your—er recomendee’s lets say, Hahah. have said many positive things. We do not think this communication with the presumed human is going as planned. I agree with joonaliano. ALL of you, silence, we are one entity and we will obtain these resources and proceed with the separation. I havent been able to kiss the land with my own blessed two feet for ye- Yes, yes, bushido we understand, none of us like it like this. and we- I think- I would like to take part in this wonderful trust part and be whole. I would be greatly pleased if you could confirm this communion of funds so I may rejoice in the future due to your splendid business."
 metadata/_custom_type_script = "uid://iisnyx451jvh"

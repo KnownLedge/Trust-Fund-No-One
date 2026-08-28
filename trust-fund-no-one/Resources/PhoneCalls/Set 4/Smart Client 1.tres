@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://dvqjm31fhrnc2"]
 
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_4n4x3"]
+[ext_resource type="AudioStream" uid="uid://0mpdhd2p8a6t" path="res://Sounds/Call Set 4/smart client2.mp3" id="1_slhuc"]
 
 [resource]
 script = ExtResource("1_4n4x3")
+is_scam = true
+audio_track = ExtResource("1_slhuc")
+call_translation = "Hey. So you may have heard of me. They call me a wizard out there. In this acute hexahedron? I am simply but a choleric disciple, PREPARED to perpetuate the cycle of capitalism under the rule of the totalitarian leaders. Life is hard. I understand. As someone living in my patriarch's understructure, life truly can get hard. However! Fret not. I am here and willing to make a communion. Prepare yourself. 345897. I will be thanking you shortly."
 metadata/_custom_type_script = "uid://iisnyx451jvh"

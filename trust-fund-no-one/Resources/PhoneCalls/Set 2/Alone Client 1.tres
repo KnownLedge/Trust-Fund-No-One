@@ -1,7 +1,16 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://rveymidubsbx"]
 
+[ext_resource type="AudioStream" uid="uid://dejh4x8uprifk" path="res://Sounds/Call Set 2/alone client 1 .mp3" id="1_3uq1q"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_hoav6"]
 
 [resource]
 script = ExtResource("1_hoav6")
+audio_track = ExtResource("1_3uq1q")
+call_translation = "Hello. My hearts have appointment today with “make money for me”. For eh, for me when i come give you money so i can thanking. No need to do- no need to do jet score, its uh, it is halve door. Understand as a parent, yes! Yes…
+
+If uh- if money comes tow and not me and is you hirophant and not me back? [sigh] understand that thing not ghoul, understand!
+
+Ooh. I am  thinking i am [unintelligable sounds] oh no! Oh- my little jet score… please leave. I am- [sigh] I am ment to be alone, yes. Yes. oh no. sorry. Sorry. [unintelligable sounds] oh eh… apologies. Ough. yes. I half give. I half give you id. [clears throat]
+
+1 Tree, 7924 haha yes that is Id for… for is very alphabet yes? I am not working anymore. goodbye."
 metadata/_custom_type_script = "uid://iisnyx451jvh"

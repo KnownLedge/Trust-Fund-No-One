@@ -1,7 +1,13 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://b68y6e1olb6gs"]
 
+[ext_resource type="AudioStream" uid="uid://cqkoenrun3ywp" path="res://Sounds/Call Set 2/alone client 2.mp3" id="1_4aemb"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_iwg2l"]
 
 [resource]
 script = ExtResource("1_iwg2l")
+is_scam = true
+audio_track = ExtResource("1_4aemb")
+call_translation = "Hey man. I uh, uh, Yo. I heard. Im calling about the fund, I wanted to get some in early, while im still young. Y’know? 
+
+Cause like, um, y'know. damn. These fries are really good by the way. But yeah. uh, what was i gonna say. Yeah. cause i was looking through. yeah so call here, And uh yeah! Im just meant to let y’all handle the rest! Pretty easy. you should have my id in an email i sent, just click the link there it'll take you to my account and you'll get my debts in shiv. y'know. Y'know. Aight. peace."
 metadata/_custom_type_script = "uid://iisnyx451jvh"

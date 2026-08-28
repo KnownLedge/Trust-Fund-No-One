@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_1r6gf"]
 [ext_resource type="Script" uid="uid://dpx7lexdvim2m" path="res://Scripts/ResourceScripts/call_set_script.gd" id="2_aoq3o"]
+[ext_resource type="Resource" uid="uid://df7sowk1d3wxt" path="res://Resources/PhoneCalls/Set 5/Sound Client 1.tres" id="2_flcsg"]
+[ext_resource type="Resource" uid="uid://coqckogmvj67a" path="res://Resources/PhoneCalls/Set 5/Sound Client 2.tres" id="3_0nhy3"]
+[ext_resource type="Resource" uid="uid://b4d8ev3ofidoq" path="res://Resources/PhoneCalls/Set 5/Sound Client 3.tres" id="4_1n31j"]
 
 [resource]
 script = ExtResource("2_aoq3o")
+calls = Array[ExtResource("1_1r6gf")]([ExtResource("2_flcsg"), ExtResource("3_0nhy3"), ExtResource("4_1n31j")])
 metadata/_custom_type_script = "uid://dpx7lexdvim2m"
