@@ -11,26 +11,40 @@ const HAND_EXTEND = 2
 
 const LEFT_TURN = 7.5
 
+const RIGHT_TURN = -7.5
+
 @export var left_hand: Node3D
+
+@export var right_hand: Node3D
 
 @export var ray: RayCast3D
 
 @export var default_left_hold: Vector3
 
+@export var default_right_hold: Vector3
+
 var left_item: Node3D
+
+var right_item: Node3D
 
 var left_hold_pos: Vector3
 
+var right_hold_pos: Vector3
+
 var left_hover_pos: Vector3
 
+var right_hover_pos: Vector3
 
 
 enum holdType {PAPER, STAPLER}
 var left_hold_type: holdType
+var right_hold_type: holdType
+#This enum may go unused
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	left_hover_pos = left_hand.position
+	right_hover_pos = right_hand.position
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -47,14 +61,21 @@ func _process(delta: float) -> void:
 		
 	
 	if(Input.is_action_just_pressed("LeftDrop")):
-		left_item.reparent(get_parent())
-		if(left_item is RigidBody3D):
-			left_item.freeze = false
-			
+		drop_item(left_hand, left_item,left_hover_pos)
 		left_item = null
-		left_hand.position = left_hover_pos
+	if(Input.is_action_just_pressed("RightDrop")):
+		drop_item(right_hand, right_item, right_hover_pos)
+		right_item = null
 
 
+func drop_item(hand, hand_item, hover_pos):
+	if(hand_item != null):
+		hand_item.reparent(get_parent())
+		if(hand_item is RigidBody3D):
+			hand_item.freeze = false
+	
+		hand_item = null
+		hand.position = hover_pos
 
 func _physics_process(delta: float) -> void:
 	if(Input.is_action_just_pressed("LeftClick")):
@@ -71,9 +92,6 @@ func _physics_process(delta: float) -> void:
 			if(left_item is RigidBody3D):
 				left_item.freeze = true
 			
-
-			
-			
 			left_item.reparent(left_hand)
 			
 			if(left_item.get_meta("hold_rotation")):
@@ -86,7 +104,41 @@ func _physics_process(delta: float) -> void:
 			print("not picking thing up")
 	elif(Input.is_action_pressed("LeftClick")):#checking for held input
 		left_hand.position = lerp(left_hand.position, left_hold_pos, delta * HAND_EXTEND)
-	elif(left_item != null): 
+	else: 
 		left_hand.position = lerp(left_hand.position, left_hover_pos, delta * HAND_RETURN)
 		if(left_hand.position.distance_to(left_hover_pos) < 2):
 			left_hold_pos = default_left_hold
+	
+	#Ideally left and right hand would share code through functions to speed up bug fixing, but i wanna risk avoiding the headache of doing that to save time
+	#so this should be the same code as above, but for the right hand
+	
+	if(Input.is_action_just_pressed("RightClick")):
+		if(right_item == null and ray.is_colliding()):
+			print("picking up thing")
+			right_hand.global_position = ray.get_collision_point()
+			right_hold_pos = right_hand.position
+			if(true):#ray.get_collider() is CSGBox3D):
+				print(ray.get_collider().name)
+				right_item = ray.get_collider()
+			else:
+				print(ray.get_collider().get_parent_node().name)
+				right_item = ray.get_collider().get_parent_node()
+			if(right_item is RigidBody3D):
+				right_item.freeze = true
+			
+			right_item.reparent(right_hand)
+			
+			if(right_item.get_meta("hold_rotation")):
+				right_item.rotation_degrees = right_item.get_meta("hold_rotation")
+			
+			right_item.rotate_y(deg_to_rad(RIGHT_TURN))
+			
+			
+		else:
+			print("not picking thing up")
+	elif(Input.is_action_pressed("RightClick")):#checking for held input
+		right_hand.position = lerp(right_hand.position, right_hold_pos, delta * HAND_EXTEND)
+	else: 
+		right_hand.position = lerp(right_hand.position, right_hover_pos, delta * HAND_RETURN)
+		if(right_hand.position.distance_to(right_hover_pos) < 2):
+			right_hold_pos = default_right_hold

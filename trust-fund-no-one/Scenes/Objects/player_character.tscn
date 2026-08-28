@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://yj4baxphh5o1"]
 
 [ext_resource type="Script" uid="uid://diqmqb74kp5t" path="res://Scripts/NodeScripts/player_controller.gd" id="1_3ejmg"]
+[ext_resource type="Texture2D" uid="uid://e51fhf5noi5g" path="res://Textures/pixelartDot.png" id="2_i3yby"]
 
-[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "left_hand", "ray")]
+[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "left_hand", "right_hand", "ray")]
 script = ExtResource("1_3ejmg")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 left_hand = NodePath("Head/Camera3D/Left Hand")
+right_hand = NodePath("Head/Camera3D/Right Hand")
 ray = NodePath("Head/Camera3D/RayCast3D")
-default_left_hold = Vector3(-0.064, -0.04, -1.273)
+default_left_hold = Vector3(-0.14, -0.04, -2.3)
+default_right_hold = Vector3(0.14, -0.04, -2.3)
 
 [node name="Head" type="Node3D" parent="." unique_id=95127230]
 
@@ -16,6 +19,7 @@ default_left_hold = Vector3(-0.064, -0.04, -1.273)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=599415049]
 target_position = Vector3(0, 0, -3)
+collision_mask = 16
 collide_with_areas = true
 
 [node name="Left Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=1866637286]
@@ -23,3 +27,17 @@ transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, -0
 
 [node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=404128739]
 transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, 0.788, -0.449, -0.682)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1114242113]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i3yby")
