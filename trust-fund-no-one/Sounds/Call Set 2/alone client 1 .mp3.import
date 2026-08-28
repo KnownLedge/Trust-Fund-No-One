@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dejh4x8uprifk"
+path="res://.godot/imported/alone client 1 .mp3-24f710feb5c18af0898b379b0fe825a5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Call Set 2/alone client 1 .mp3"
+dest_files=["res://.godot/imported/alone client 1 .mp3-24f710feb5c18af0898b379b0fe825a5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

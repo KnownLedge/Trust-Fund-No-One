@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8av6hpqbn11i"
+path="res://.godot/imported/sound client1.mp3-efc13afac3d7c03232e7a4c103f9ced1.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Call Set 5/sound client1.mp3"
+dest_files=["res://.godot/imported/sound client1.mp3-efc13afac3d7c03232e7a4c103f9ced1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
