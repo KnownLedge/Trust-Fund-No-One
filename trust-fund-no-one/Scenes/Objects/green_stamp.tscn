@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://n6ad6myn7i2c"]
+[gd_scene format=3 uid="uid://xeooppawhgem"]
 
-[ext_resource type="Texture2D" uid="uid://bu7hx0mths72s" path="res://icon.svg" id="1_lp0mb"]
-[ext_resource type="Script" uid="uid://tow0yasfjmel" path="res://Scripts/NodeScripts/StampScript.gd" id="1_x3k5c"]
-[ext_resource type="Script" uid="uid://cj5m4lchhu4dt" path="res://Scripts/NodeScripts/InkScript.gd" id="3_rrviq"]
+[ext_resource type="Script" uid="uid://tow0yasfjmel" path="res://Scripts/NodeScripts/StampScript.gd" id="1_efmt3"]
+[ext_resource type="Texture2D" uid="uid://bu7hx0mths72s" path="res://icon.svg" id="2_6d41e"]
+[ext_resource type="Script" uid="uid://cj5m4lchhu4dt" path="res://Scripts/NodeScripts/InkScript.gd" id="3_y7msv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itf3o"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b560c"]
-albedo_color = Color(0.4392157, 0, 0, 1)
+albedo_color = Color(0.09411765, 0.6313726, 0.13333334, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b560c"]
 size = Vector3(2.6662445, 1.9694061, 1.9135551)
@@ -22,10 +22,10 @@ collision_layer = 17
 collision_mask = 17
 contact_monitor = true
 max_contacts_reported = 5
-script = ExtResource("1_x3k5c")
+script = ExtResource("1_efmt3")
 stamp_sprite = NodePath("StampInk")
 stamp_hitbox = NodePath("Area3D/CollisionShape3D")
-stamp_value = 2
+stamp_value = 1
 metadata/hold_rotation = Vector3(25, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=792100950]
@@ -46,9 +46,9 @@ shape = SubResource("BoxShape3D_b560c")
 [node name="StampInk" type="Sprite3D" parent="." unique_id=829817941]
 transform = Transform3D(0.22212559, 0, 0, 0, -9.709418e-09, -0.22212559, 0, 0.22212559, -9.709418e-09, 0, 0, 0)
 visible = false
-modulate = Color(1, 0, 0.047058824, 1)
-texture = ExtResource("1_lp0mb")
-script = ExtResource("3_rrviq")
+modulate = Color(0.27241865, 0.6197915, 0.36019382, 1)
+texture = ExtResource("2_6d41e")
+script = ExtResource("3_y7msv")
 metadata/is_stamp = true
 
 [node name="Area3D" type="Area3D" parent="." unique_id=894300064]

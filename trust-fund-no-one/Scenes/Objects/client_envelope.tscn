@@ -14,6 +14,7 @@ contact_monitor = true
 max_contacts_reported = 5
 metadata/hold_rotation = Vector3(25, 0, 0)
 metadata/stamp_value = 0
+metadata/envelope_id = 0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=157123599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024108887, 0.019348145, -0.006652832)

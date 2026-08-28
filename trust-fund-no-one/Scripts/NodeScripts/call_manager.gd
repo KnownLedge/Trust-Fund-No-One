@@ -20,6 +20,12 @@ var printed_envelopes = 0
 
 var call_progress = 0
 
+var answers: Array[bool] = [false,false,false]
+
+var call_failed = false
+
+var envelopes_received = 0
+
 func _ready() -> void:
 	receive_call_group()
 
@@ -28,6 +34,7 @@ func print_envelope(delta: float):
 	var new_envelope =  client_envelope.duplicate()
 	get_parent().add_child(new_envelope)
 	new_envelope.get_node("Label3D").text = "Client " + str(printed_envelopes + 1)
+	new_envelope.set_meta("envelope_id", printed_envelopes + 1)
 	new_envelope.global_position = global_position
 	while(new_envelope.position.distance_to(eject_pos) > 0.1):
 		new_envelope.global_position = lerp(new_envelope.global_position, eject_pos, EJECT_SPEED * delta)
@@ -36,6 +43,19 @@ func print_envelope(delta: float):
 	new_envelope.get_node("CollisionShape3D").disabled = false
 	printed_envelopes += 1
 	
+
+func receive_answer(answer_id: int, answer_result: bool):
+	if(call_resources[answer_id - 1].is_scam != answer_result):
+		call_failed = true
+		print("CALL FAILED")
+	envelopes_received += 1
+	if(envelopes_received == 3):
+		print("CALL DONE")
+		if(call_failed):
+			print("BOO YOU SUCK")
+		else:
+			print("god gamer")
+
 
 func receive_call_group():
 	tracked_envelopes = -1

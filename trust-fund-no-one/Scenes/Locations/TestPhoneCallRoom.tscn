@@ -4,11 +4,14 @@
 [ext_resource type="Script" uid="uid://cqt52lb6eqgr1" path="res://Scripts/NodeScripts/call_manager.gd" id="2_v1l8c"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="3_nseqs"]
 [ext_resource type="Script" uid="uid://bvvggirfooi1l" path="res://Scripts/NodeScripts/TranslationPrinter.gd" id="3_v1l8c"]
-[ext_resource type="Resource" uid="uid://bpoeu13yq4lex" path="res://Resources/PhoneCalls/TestCallResource.tres" id="4_m8b3x"]
-[ext_resource type="Resource" uid="uid://b4fipirvhai1q" path="res://Resources/PhoneCalls/TestCallResource2.tres" id="5_m8b3x"]
+[ext_resource type="Resource" uid="uid://dvqjm31fhrnc2" path="res://Resources/PhoneCalls/Set 4/Smart Client 1.tres" id="4_w84f8"]
+[ext_resource type="Resource" uid="uid://cgw7h83cta73r" path="res://Resources/PhoneCalls/Set 4/Smart Client 2.tres" id="5_r08wy"]
+[ext_resource type="Resource" uid="uid://dxm1b1te57rdm" path="res://Resources/PhoneCalls/Set 4/Smart Client 3.tres" id="6_r36ul"]
 [ext_resource type="PackedScene" uid="uid://yj4baxphh5o1" path="res://Scenes/Objects/player_character.tscn" id="7_5avas"]
 [ext_resource type="PackedScene" uid="uid://g3rdvfosjp4u" path="res://Scenes/Objects/client_envelope.tscn" id="8_6c2xg"]
+[ext_resource type="PackedScene" uid="uid://xeooppawhgem" path="res://Scenes/Objects/green_stamp.tscn" id="9_8rcqf"]
 [ext_resource type="PackedScene" uid="uid://n6ad6myn7i2c" path="res://Scenes/Objects/red_stamp.tscn" id="9_tp2d6"]
+[ext_resource type="Script" uid="uid://cf2w8nkbp64xa" path="res://Scripts/NodeScripts/MailBoxScript.gd" id="11_7rdaf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b560c"]
 albedo_color = Color(0.07123137, 0.07123139, 0.07123137, 1)
@@ -22,6 +25,15 @@ albedo_color = Color(0.19506672, 0.19506672, 0.19506669, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_b560c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b560c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg4tg"]
+albedo_color = Color(1, 0.7294118, 0.18039216, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itf3o"]
+albedo_color = Color(1, 0.29803923, 0.30980393, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_itf3o"]
+size = Vector3(1, 0.7036133, 1)
 
 [node name="Node3D" type="Node3D" unique_id=669103898]
 
@@ -58,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6054313, 0.25792444, -1.258
 script = ExtResource("2_v1l8c")
 audio_player = NodePath("AudioStreamPlayer3D")
 printer_obj = NodePath("../Printer")
-call_resources = Array[ExtResource("3_nseqs")]([ExtResource("4_m8b3x"), ExtResource("5_m8b3x"), ExtResource("5_m8b3x")])
+call_resources = Array[ExtResource("3_nseqs")]([ExtResource("4_w84f8"), ExtResource("5_r08wy"), ExtResource("6_r36ul")])
 client_envelope = NodePath("../Client Envelope")
 eject_pos = Vector3(1.7015734, 0.25792444, -1.2588937)
 
@@ -106,5 +118,33 @@ mesh = SubResource("BoxMesh_b560c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorMesh" unique_id=620270344]
 shape = SubResource("BoxShape3D_b560c")
 
-[node name="RedStamp" parent="." unique_id=248886494 instance=ExtResource("9_tp2d6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2209169, 0.093519926, -1.3922838)
+[node name="RedStamp2" parent="." unique_id=248886494 instance=ExtResource("9_8rcqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2246075, -0.25028145, -3.600119)
+
+[node name="RedStamp" parent="." unique_id=1747538835 instance=ExtResource("9_tp2d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8915887, -0.25028133, -3.6844687)
+
+[node name="MailBox" type="CSGBox3D" parent="." unique_id=929812541 node_paths=PackedStringArray("call_manager")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31019092, -0.19999993, -3.9827528)
+use_collision = true
+size = Vector3(1, 0.039276123, 1)
+material = SubResource("StandardMaterial3D_bg4tg")
+script = ExtResource("11_7rdaf")
+start_pos = Vector3(0.31019092, -0.19999993, -3.9827528)
+end_pos = Vector3(0.31019092, 0.2691239, -5.0727253)
+call_manager = NodePath("../CallManager")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="MailBox" unique_id=1437047249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.88254976)
+size = Vector3(1, 0.9775238, 1)
+material = SubResource("StandardMaterial3D_itf3o")
+
+[node name="Area3D" type="Area3D" parent="MailBox" unique_id=1064887102]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MailBox/Area3D" unique_id=101660530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14819336, 0)
+shape = SubResource("BoxShape3D_itf3o")
+
+[connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
