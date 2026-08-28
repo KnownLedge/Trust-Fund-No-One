@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://b788ymn30gfjg"]
+
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_uhyiy"]
+
+[resource]
+script = ExtResource("1_uhyiy")
+metadata/_custom_type_script = "uid://iisnyx451jvh"

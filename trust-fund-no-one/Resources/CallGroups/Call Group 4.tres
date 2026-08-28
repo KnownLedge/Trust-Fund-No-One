@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Call_Set" format=3 uid="uid://c1p7misq72888"]
+
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_j1rog"]
+[ext_resource type="Script" uid="uid://dpx7lexdvim2m" path="res://Scripts/ResourceScripts/call_set_script.gd" id="2_q1hry"]
+
+[resource]
+script = ExtResource("2_q1hry")
+metadata/_custom_type_script = "uid://dpx7lexdvim2m"
