@@ -95,6 +95,20 @@ func drop_item(hand, hand_item:Node3D, hover_pos, hand_ray:RayCast3D):
 		hand.position = hover_pos
 
 func _physics_process(delta: float) -> void:
+	
+	if (left_item == null && right_item == null && UI_ray.is_colliding()):
+		#print("trying to click")
+		var hitPoint = UI_ray.get_collision_point()
+		var uiX = inverse_lerp(pc_top_Left_node.global_position.x, pc_bottom_right_node.global_position.x, hitPoint.x)
+		var uiY = inverse_lerp(pc_top_Left_node.global_position.y, pc_bottom_right_node.global_position.y, hitPoint.y)
+		var simMousePos = Vector2(uiX * subViewport.size.x, uiY * subViewport.size.y)
+		var mouse_event = InputEventMouseButton.new()
+		mouse_event.position = simMousePos
+		mouse_event.pressed = Input.is_action_just_pressed("LeftClick")
+		mouse_event.button_index = MOUSE_BUTTON_LEFT
+		mouse_event.button_mask - MOUSE_BUTTON_MASK_LEFT
+		subViewport.push_input(mouse_event)
+	
 	if(Input.is_action_just_pressed("LeftClick")):
 		if(left_item == null and ray.is_colliding() and right_item != ray.get_collider()):
 			#print("picking up thing")
@@ -116,18 +130,6 @@ func _physics_process(delta: float) -> void:
 			
 			left_item.rotate_y(deg_to_rad(LEFT_TURN))
 			
-		if (left_item == null && right_item == null && UI_ray.is_colliding()):
-			print("trying to click")
-			var hitPoint = UI_ray.get_collision_point()
-			var uiX = inverse_lerp(pc_top_Left_node.global_position.x, pc_bottom_right_node.global_position.x, hitPoint.x)
-			var uiY = inverse_lerp(pc_top_Left_node.global_position.y, pc_bottom_right_node.global_position.y, hitPoint.y)
-			var simMousePos = Vector2(uiX * subViewport.size.x, uiY * subViewport.size.y)
-			var mouse_event = InputEventMouseButton.new()
-			mouse_event.position = simMousePos
-			mouse_event.pressed = Input.is_action_just_pressed("LeftClick")
-			mouse_event.button_index = MOUSE_BUTTON_LEFT
-			mouse_event.button_mask - MOUSE_BUTTON_MASK_LEFT
-			subViewport.push_input(mouse_event)
 		
 			
 		#else:

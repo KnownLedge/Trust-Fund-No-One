@@ -86,7 +86,6 @@ viewport_path = NodePath("MeshInstance3D/SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75onw"]
 resource_local_to_scene = true
 transparency = 1
-no_depth_test = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_guw8h")
 
@@ -276,7 +275,7 @@ pc_bottom_right_node = NodePath("../MeshInstance3D/BottomRight")
 subViewport = NodePath("../MeshInstance3D/SubViewport")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=694351461]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2185125, 6.797744, -3.659033)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2185125, 6.797744, -3.5899923)
 mesh = SubResource("PlaneMesh_5r2mg")
 surface_material_override/0 = SubResource("StandardMaterial3D_75onw")
 

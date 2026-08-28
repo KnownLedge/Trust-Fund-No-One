@@ -4,6 +4,8 @@ extends Node3D
 
 @export var printer_obj: Node3D
 
+@export var call_sets: Array[Call_Set]
+
 @export var call_resources: Array[CallerResource]
 
 @export var client_envelope: Node3D

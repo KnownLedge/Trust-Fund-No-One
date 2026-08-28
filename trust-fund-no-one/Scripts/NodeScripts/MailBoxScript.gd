@@ -10,7 +10,7 @@ var active_envelope: Node3D
 const lerp_speed = 4
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if(body.get_meta("envelope_id") != null and body.get_meta("stamp_value") != 0 and active_envelope == null):
+	if(body.get_meta("envelope_id") != null and body.get_meta("stamp_value") != 0 and active_envelope == null and body.freeze == false):
 		body.set_collision_layer_value(1,false)
 		body.set_collision_layer_value(5,false)
 		body.set_collision_mask_value(1,false)
