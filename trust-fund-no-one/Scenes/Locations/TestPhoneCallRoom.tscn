@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://b4fipirvhai1q" path="res://Resources/PhoneCalls/TestCallResource2.tres" id="5_m8b3x"]
 [ext_resource type="PackedScene" uid="uid://yj4baxphh5o1" path="res://Scenes/Objects/player_character.tscn" id="7_5avas"]
 [ext_resource type="PackedScene" uid="uid://g3rdvfosjp4u" path="res://Scenes/Objects/client_envelope.tscn" id="8_6c2xg"]
+[ext_resource type="PackedScene" uid="uid://n6ad6myn7i2c" path="res://Scenes/Objects/red_stamp.tscn" id="9_tp2d6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b560c"]
 albedo_color = Color(0.07123137, 0.07123139, 0.07123137, 1)
@@ -104,3 +105,6 @@ mesh = SubResource("BoxMesh_b560c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorMesh" unique_id=620270344]
 shape = SubResource("BoxShape3D_b560c")
+
+[node name="RedStamp" parent="." unique_id=248886494 instance=ExtResource("9_tp2d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2209169, 0.093519926, -1.3922838)

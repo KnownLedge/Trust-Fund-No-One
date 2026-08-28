@@ -10,6 +10,8 @@ size = Vector3(1.0585938, 0.058044434, 0.6309204)
 collision_layer = 17
 collision_mask = 17
 freeze = true
+contact_monitor = true
+max_contacts_reported = 5
 metadata/hold_rotation = Vector3(25, 0, 0)
 metadata/stamp_value = 0
 

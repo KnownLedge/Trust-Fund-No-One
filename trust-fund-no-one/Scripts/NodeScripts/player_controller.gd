@@ -9,9 +9,9 @@ const HAND_RETURN = 3
 
 const HAND_EXTEND = 2
 
-const LEFT_TURN = 7.5
+const LEFT_TURN = 12.5
 
-const RIGHT_TURN = -7.5
+const RIGHT_TURN = -12.5
 
 @export var left_hand: Node3D
 
@@ -79,8 +79,8 @@ func _process(delta: float) -> void:
 func drop_item(hand, hand_item:Node3D, hover_pos, hand_ray:RayCast3D):
 	if(hand_item != null):
 		hand_item.reparent(get_parent())
-		if(hand_item is RigidBody3D):
-			hand_item.freeze = false
+		#if(hand_item is RigidBody3D):
+		hand_item.freeze = false
 		if(hand_ray.is_colliding()):
 			hand_item.global_position = hand_ray.get_collision_point()
 		hand_item.translate(Vector3(0,0.3,0))
@@ -91,8 +91,8 @@ func drop_item(hand, hand_item:Node3D, hover_pos, hand_ray:RayCast3D):
 
 func _physics_process(delta: float) -> void:
 	if(Input.is_action_just_pressed("LeftClick")):
-		if(left_item == null and ray.is_colliding()):
-			print("picking up thing")
+		if(left_item == null and ray.is_colliding() and right_item != ray.get_collider()):
+			#print("picking up thing")
 			left_hand.global_position = ray.get_collision_point()
 			left_hold_pos = left_hand.position
 			if(true):#ray.get_collider() is CSGBox3D):
@@ -112,8 +112,8 @@ func _physics_process(delta: float) -> void:
 			left_item.rotate_y(deg_to_rad(LEFT_TURN))
 			
 			
-		else:
-			print("not picking thing up")
+		#else:
+			#print("not picking thing up")
 	elif(Input.is_action_pressed("LeftClick")):#checking for held input
 		left_hand.position = lerp(left_hand.position, left_hold_pos, delta * HAND_EXTEND)
 	else: 
@@ -131,8 +131,8 @@ func _physics_process(delta: float) -> void:
 	#so this should be the same code as above, but for the right hand
 	
 	if(Input.is_action_just_pressed("RightClick")):
-		if(right_item == null and ray.is_colliding()):
-			print("picking up thing")
+		if(right_item == null and ray.is_colliding()and left_item != ray.get_collider()):
+			#print("picking up thing")
 			right_hand.global_position = ray.get_collision_point()
 			right_hold_pos = right_hand.position
 			if(true):#ray.get_collider() is CSGBox3D):
@@ -152,8 +152,8 @@ func _physics_process(delta: float) -> void:
 			right_item.rotate_y(deg_to_rad(RIGHT_TURN))
 			
 			
-		else:
-			print("not picking thing up")
+		#else:
+			#print("not picking thing up")
 	elif(Input.is_action_pressed("RightClick")):#checking for held input
 		right_hand.position = lerp(right_hand.position, right_hold_pos, delta * HAND_EXTEND)
 	else: 
