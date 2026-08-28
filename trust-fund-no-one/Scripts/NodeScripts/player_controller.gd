@@ -39,11 +39,14 @@ var left_hover_pos: Vector3
 
 var right_hover_pos: Vector3
 
-
 enum holdType {PAPER, STAPLER}
 var left_hold_type: holdType
 var right_hold_type: holdType
 #This enum may go unused
+
+@export var pc_top_Left_node:Node3D
+@export var pc_bottom_right_node:Node3D
+@export var subViewPort:SubViewport
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -110,7 +113,9 @@ func _physics_process(delta: float) -> void:
 				left_item.rotation_degrees = left_item.get_meta("hold_rotation")
 			
 			left_item.rotate_y(deg_to_rad(LEFT_TURN))
+		if(left_item == null && right_item == null && ray.is_colliding()):
 			
+		
 			
 		#else:
 			#print("not picking thing up")
