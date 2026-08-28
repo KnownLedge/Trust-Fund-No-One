@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://g3rdvfosjp4u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itf3o"]
+albedo_color = Color(0.5389053, 0.46411687, 0.112951525, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b560c"]
+size = Vector3(1.0585938, 0.058044434, 0.6309204)
+
+[node name="Client Envelope" type="RigidBody3D" unique_id=1782779634]
+collision_layer = 17
+collision_mask = 17
+freeze = true
+metadata/hold_rotation = Vector3(25, 0, 0)
+metadata/stamp_value = 0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=157123599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024108887, 0.019348145, -0.006652832)
+use_collision = true
+size = Vector3(1.0482178, 0.040161133, 0.64294434)
+material = SubResource("StandardMaterial3D_itf3o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1872785895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029296875, 0.026763916, 0.01473999)
+shape = SubResource("BoxShape3D_b560c")
+disabled = true
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1053752900]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.09941304, 0)
+text = "CLIENT 1"

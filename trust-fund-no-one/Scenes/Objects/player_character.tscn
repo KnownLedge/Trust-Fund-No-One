@@ -3,13 +3,15 @@
 [ext_resource type="Script" uid="uid://diqmqb74kp5t" path="res://Scripts/NodeScripts/player_controller.gd" id="1_3ejmg"]
 [ext_resource type="Texture2D" uid="uid://e51fhf5noi5g" path="res://Textures/pixelartDot.png" id="2_i3yby"]
 
-[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "left_hand", "right_hand", "ray")]
+[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "left_hand", "right_hand", "ray", "left_ray", "right_ray")]
 script = ExtResource("1_3ejmg")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 left_hand = NodePath("Head/Camera3D/Left Hand")
 right_hand = NodePath("Head/Camera3D/Right Hand")
 ray = NodePath("Head/Camera3D/RayCast3D")
+left_ray = NodePath("Head/Camera3D/LeftCast3D")
+right_ray = NodePath("Head/Camera3D/RightCast3D")
 default_left_hold = Vector3(-0.14, -0.04, -2.3)
 default_right_hold = Vector3(0.14, -0.04, -2.3)
 
@@ -20,6 +22,16 @@ default_right_hold = Vector3(0.14, -0.04, -2.3)
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=599415049]
 target_position = Vector3(0, 0, -3)
 collision_mask = 16
+collide_with_areas = true
+
+[node name="LeftCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=802782192]
+target_position = Vector3(0, 0, -3)
+collision_mask = 239
+collide_with_areas = true
+
+[node name="RightCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1473955017]
+target_position = Vector3(0, 0, -3)
+collision_mask = 239
 collide_with_areas = true
 
 [node name="Left Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=1866637286]

@@ -19,6 +19,10 @@ const RIGHT_TURN = -7.5
 
 @export var ray: RayCast3D
 
+@export var left_ray: RayCast3D
+
+@export var right_ray: RayCast3D
+
 @export var default_left_hold: Vector3
 
 @export var default_right_hold: Vector3
@@ -50,7 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(60))
 
 
 func _process(delta: float) -> void:
@@ -61,19 +65,27 @@ func _process(delta: float) -> void:
 		
 	
 	if(Input.is_action_just_pressed("LeftDrop")):
-		drop_item(left_hand, left_item,left_hover_pos)
+		drop_item(left_hand, left_item,left_hover_pos,left_ray)
 		left_item = null
 	if(Input.is_action_just_pressed("RightDrop")):
-		drop_item(right_hand, right_item, right_hover_pos)
+		drop_item(right_hand, right_item, right_hover_pos,right_ray)
 		right_item = null
+		
+	left_ray.target_position = left_hand.position
+	
+	right_ray.target_position = right_hand.position
 
 
-func drop_item(hand, hand_item, hover_pos):
+func drop_item(hand, hand_item:Node3D, hover_pos, hand_ray:RayCast3D):
 	if(hand_item != null):
 		hand_item.reparent(get_parent())
 		if(hand_item is RigidBody3D):
 			hand_item.freeze = false
-	
+		if(hand_ray.is_colliding()):
+			hand_item.global_position = hand_ray.get_collision_point()
+		hand_item.translate(Vector3(0,0.3,0))
+		
+		
 		hand_item = null
 		hand.position = hover_pos
 
@@ -109,6 +121,12 @@ func _physics_process(delta: float) -> void:
 		if(left_hand.position.distance_to(left_hover_pos) < 2):
 			left_hold_pos = default_left_hold
 	
+	if(left_ray.is_colliding() and left_ray.get_collider() != left_item):
+		left_hand.global_position = left_ray.get_collision_point()
+		left_hand.position = lerp(left_hand.position, left_hover_pos, delta * HAND_RETURN)
+	
+	
+	
 	#Ideally left and right hand would share code through functions to speed up bug fixing, but i wanna risk avoiding the headache of doing that to save time
 	#so this should be the same code as above, but for the right hand
 	
@@ -142,3 +160,7 @@ func _physics_process(delta: float) -> void:
 		right_hand.position = lerp(right_hand.position, right_hover_pos, delta * HAND_RETURN)
 		if(right_hand.position.distance_to(right_hover_pos) < 2):
 			right_hold_pos = default_right_hold
+	
+	if(right_ray.is_colliding() and right_ray.get_collider() != right_item):
+		right_hand.global_position = right_ray.get_collision_point()
+		right_hand.position = lerp(right_hand.position, right_hover_pos, delta * HAND_RETURN)

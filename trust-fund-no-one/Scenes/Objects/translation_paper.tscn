@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b0ckddokxadiv" path="res://Scripts/NodeScripts/object_paper.gd" id="1_1yuby"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_itf3o"]
-size = Vector3(1.0415039, 0.02810669, 1.5135498)
+size = Vector3(1.0415039, 0.19614029, 1.5135498)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_losvw"]
 
@@ -130,7 +130,7 @@ script = ExtResource("1_1yuby")
 metadata/hold_rotation = Vector3(66.4, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1771292032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017089844, 0.0007171631, -0.0049438477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017089844, -0.054681778, -0.0049438477)
 shape = SubResource("BoxShape3D_itf3o")
 disabled = true
 
