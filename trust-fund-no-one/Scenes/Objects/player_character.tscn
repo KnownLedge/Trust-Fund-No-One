@@ -96,11 +96,11 @@ collide_with_areas = true
 transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, -0.78822774, -0.4494828, -0.68184173)
 
 [node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=404128739]
-transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, 0.788, -0.449, -0.682)
+transform = Transform3D(0.13028428, 0, 0.116099685, 0, 0.17382765, 0, -0.11691911, 0, 0.12937121, 0.788, -0.449, -0.682)
 material = SubResource("StandardMaterial3D_1077r")
 
 [node name="armtest" parent="Head/Camera3D/Right Hand" unique_id=635671225 instance=ExtResource("2_lphv5")]
-transform = Transform3D(23.827593, -174.70798, 464.61423, 8.885723, 468.49017, 173.26262, -499.35287, 8.325462e-06, 25.253101, -1.6792018, 0.80051494, 1.2551439)
+transform = Transform3D(23.827621, -174.70798, 464.61407, 8.885723, 468.49017, 173.26262, -499.35284, 1.5258789e-05, 25.253098, 0.5171566, -0.011641026, -0.5714884)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=573658338]
 
