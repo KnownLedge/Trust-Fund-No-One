@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://begt3670m2s86"
-path="res://.godot/imported/armtest.fbx-1f5ef5535d8328c609fed4441ff2ac2c.scn"
+path="res://.godot/imported/right_arm.fbx-903946a5641ef5aaf7f9b81522f45725.scn"
 
 [deps]
 
-source_file="res://Scenes/Objects/Arms/armtest.fbx"
-dest_files=["res://.godot/imported/armtest.fbx-1f5ef5535d8328c609fed4441ff2ac2c.scn"]
+source_file="res://Scenes/Objects/Arms/right_arm.fbx"
+dest_files=["res://.godot/imported/right_arm.fbx-903946a5641ef5aaf7f9b81522f45725.scn"]
 
 [params]
 

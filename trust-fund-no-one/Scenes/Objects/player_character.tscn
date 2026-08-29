@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://diqmqb74kp5t" path="res://Scripts/NodeScripts/player_controller.gd" id="1_3ejmg"]
 [ext_resource type="Texture2D" uid="uid://e51fhf5noi5g" path="res://Textures/pixelartDot.png" id="2_i3yby"]
-[ext_resource type="PackedScene" uid="uid://begt3670m2s86" path="res://Scenes/Objects/Arms/armtest.fbx" id="2_lphv5"]
+[ext_resource type="PackedScene" uid="uid://begt3670m2s86" path="res://Scenes/Objects/Arms/right_arm.fbx" id="2_lphv5"]
 [ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://Materials and Shaders/ScreenEffects_Ultimate.tres" id="2_y5w3y"]
 [ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://Textures/noise_texture.tres" id="3_3wq4h"]
+[ext_resource type="PackedScene" uid="uid://rtrqbpe2skpg" path="res://Scenes/Objects/Arms/left_arm.fbx" id="3_k06c8"]
 [ext_resource type="Texture2D" uid="uid://dlkx6u51rb5cn" path="res://Textures/Gradient.tres" id="3_lphv5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s48xy"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1077r"]
 transparency = 1
@@ -94,12 +99,16 @@ collide_with_areas = true
 
 [node name="Left Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=1866637286]
 transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, -0.78822774, -0.4494828, -0.68184173)
+material = SubResource("StandardMaterial3D_s48xy")
+
+[node name="left_arm" parent="Head/Camera3D/Left Hand" unique_id=1105317960 instance=ExtResource("3_k06c8")]
+transform = Transform3D(80.18338, -43.39467, 491.61707, -66.62592, 492.55222, 54.343884, -489.01077, -74.22387, 73.20657, 0.38139868, -0.35104156, -0.15195584)
 
 [node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=404128739]
 transform = Transform3D(0.13028428, 0, 0.116099685, 0, 0.17382765, 0, -0.11691911, 0, 0.12937121, 0.788, -0.449, -0.682)
 material = SubResource("StandardMaterial3D_1077r")
 
-[node name="armtest" parent="Head/Camera3D/Right Hand" unique_id=635671225 instance=ExtResource("2_lphv5")]
+[node name="right_arm" parent="Head/Camera3D/Right Hand" unique_id=635671225 instance=ExtResource("2_lphv5")]
 transform = Transform3D(23.827621, -174.70798, 464.61407, 8.885723, 468.49017, 173.26262, -499.35284, 1.5258789e-05, 25.253098, 0.5171566, -0.011641026, -0.5714884)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=573658338]
