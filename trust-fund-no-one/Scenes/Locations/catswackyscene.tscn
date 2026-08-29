@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bh1wjp55juy7t"]
 
 [ext_resource type="Texture2D" uid="uid://d4cps7mix0rlu" path="res://Textures/Screenshot 2026-08-25 170607.png" id="1_inqa8"]
+[ext_resource type="Texture2D" uid="uid://bcegobjehod6g" path="res://Textures/carpet.jpg" id="1_viotk"]
 [ext_resource type="Texture2D" uid="uid://bsvj450eefa3g" path="res://Textures/Screenshot 2026-08-25 170601.png" id="2_viotk"]
 [ext_resource type="Texture2D" uid="uid://yfw4wffbv20s" path="res://Textures/Screenshot 2026-08-25 171306.png" id="3_c41gl"]
 [ext_resource type="Material" uid="uid://b7weoik8m3qbh" path="res://Materials and Shaders/tst.tres" id="4_qpgl6"]
@@ -16,13 +17,28 @@
 [ext_resource type="PackedScene" uid="uid://yj4baxphh5o1" path="res://Scenes/Objects/player_character.tscn" id="17_v2oqg"]
 [ext_resource type="PackedScene" uid="uid://b0wh5tmvl2gag" path="res://Temp Models n stuff/stationery_pencil_pen_and_eraser_lowpoly.glb" id="17_x1hjw"]
 [ext_resource type="PackedScene" uid="uid://b63s8ka8621l1" path="res://Temp Models n stuff/clipboard.glb" id="18_es3f1"]
+[ext_resource type="Texture2D" uid="uid://dex6vek6uvhb5" path="res://Textures/ceil.jpg" id="18_mu6p6"]
 [ext_resource type="PackedScene" uid="uid://cjqknrm44s7ks" path="res://Temp Models n stuff/folder.glb" id="19_caomp"]
+[ext_resource type="Texture2D" uid="uid://c4w53ys6day2q" path="res://Textures/Screenshot 2026-08-29 202013.png" id="20_viotk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
+albedo_texture = ExtResource("20_viotk")
+albedo_texture_force_srgb = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b1lj4"]
+material = SubResource("StandardMaterial3D_qpgl6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4bhe"]
 albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_viotk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6mcn"]
 albedo_texture = ExtResource("1_inqa8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrivr"]
+albedo_texture = ExtResource("7_spskp")
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prhs4"]
 albedo_texture = ExtResource("1_inqa8")
@@ -62,15 +78,14 @@ emission_enabled = true
 emission = Color(0.8879926, 0.88799256, 0.8879925, 1)
 emission_energy_multiplier = 0.55
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wi6ju"]
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_hu8ge"]
+material = SubResource("StandardMaterial3D_wi6ju")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0plpp"]
 albedo_texture = ExtResource("11_r0naj")
 texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4i5wj"]
-albedo_color = Color(0.41981313, 0.41981313, 0.4198131, 0.32941177)
-albedo_texture = ExtResource("12_2ixiw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3c0s"]
 albedo_texture = ExtResource("13_1rbel")
@@ -80,10 +95,44 @@ texture_filter = 0
 albedo_texture = ExtResource("14_q4wrn")
 texture_filter = 0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4i5wj"]
+albedo_color = Color(0.41981313, 0.41981313, 0.4198131, 0.32941177)
+albedo_texture = ExtResource("12_2ixiw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njqwk"]
+albedo_color = Color(0.4509804, 1, 1, 1)
+albedo_texture = ExtResource("1_viotk")
+albedo_texture_force_srgb = true
+emission_enabled = true
+emission = Color(0.1148968, 0.11489681, 0.1148968, 1)
+emission_energy_multiplier = 0.34
+uv1_scale = Vector3(39.67, 39.67, 39.67)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_13qdw"]
+material = SubResource("StandardMaterial3D_njqwk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c41gl"]
+albedo_texture = ExtResource("18_mu6p6")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(10.52, 10.52, 10.52)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_xrivr"]
+material = SubResource("StandardMaterial3D_c41gl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inqa8"]
+albedo_texture = ExtResource("6_smm74")
+
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=550862622]
+transform = Transform3D(4.034842, -0.0425911, -0.046730705, -0.084483445, -0.037360296, -2.4306588, 0.17475048, 0.9653276, -0.09613348, 12.322947, 12.603268, -9.6901245)
+mesh = SubResource("PlaneMesh_b1lj4")
+skeleton = NodePath("../STALLS/STALL1")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=702968764]
-transform = Transform3D(9.473888, 0, 0, 0, 1, 0, 0, 0, -36.835938, -170.30547, 0, -315.09198)
+transform = Transform3D(9.473888, 0, 0, 0, 1, 0, 0, 0, -36.835938, -164.09888, -33.66002, -315.09198)
 size = Vector3(909.9895, 1, 681.07385)
 material = SubResource("StandardMaterial3D_a4bhe")
 
@@ -95,6 +144,11 @@ material = SubResource("StandardMaterial3D_d6mcn")
 [node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=1634186171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7118835, 4.5781116, -3.7356415)
 size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="." unique_id=1923726419]
+transform = Transform3D(0.9561848, 0, 0, 0, 1, 0, 0, 0, 1, -1.7118835, 6.68129, -4.0205626)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+material = SubResource("StandardMaterial3D_xrivr")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="." unique_id=1692986169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.67112, 4.5781116, -3.7356415)
@@ -204,20 +258,19 @@ spot_range = 129.802
 spot_attenuation = 3.36
 spot_angle = 78.16
 
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=968451273]
+transform = Transform3D(1, 0, 0, 0, 0.026543321, 0.9996477, 0, -0.9996477, 0.026543321, 8.923939, 14.859041, 23.521942)
+light_color = Color(0.19215687, 0.85490197, 0.99215686, 1)
+light_energy = 3.563
+distance_fade_shadow = 221.1
+spot_range = 129.782
+spot_attenuation = 1.42
+spot_angle = 78.16
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=707564589]
 transform = Transform3D(1.4663324, -0.003034933, -0.014147605, -0.011533437, 0.0058922567, -1.7944868, 0.004560209, 0.9907908, 0.010628498, -1.8504896, 6.663964, -3.5343645)
 mesh = SubResource("PlaneMesh_hu8ge")
 surface_material_override/0 = SubResource("StandardMaterial3D_0plpp")
-
-[node name="WALL2" type="MeshInstance3D" parent="." unique_id=315646361]
-transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 4.5232797, 6.663964, -9.9792595)
-mesh = SubResource("PlaneMesh_hu8ge")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL" type="MeshInstance3D" parent="." unique_id=800256853]
-transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -21.66582, 6.663964, -9.9792595)
-mesh = SubResource("PlaneMesh_hu8ge")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1689590273]
 transform = Transform3D(1.5409317, -0.0030060343, -0.010582001, -0.0121201975, 0.0058361497, -1.3422245, 0.0047922083, 0.9813564, 0.0079498105, 10.805375, 7.194588, -3.4846187)
@@ -230,17 +283,17 @@ mesh = SubResource("PlaneMesh_hu8ge")
 surface_material_override/0 = SubResource("StandardMaterial3D_lotfu")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1096115093]
-transform = Transform3D(0.10553686, 0.97905976, 0.007240882, -0.012120197, 0.0058361497, -1.3422246, -1.5373209, 0.067166284, 0.011079157, -0.40761375, 4.2523994, -5.100192)
+transform = Transform3D(0.10553686, 0.97905976, 0.007240882, -0.012120197, 0.0058361497, -1.3422246, -1.5373209, 0.067166284, 0.011079157, -0.31216693, 4.2523994, -5.27705)
 mesh = SubResource("PlaneMesh_hu8ge")
 surface_material_override/0 = SubResource("StandardMaterial3D_lotfu")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1889829293]
-transform = Transform3D(0.10553686, 0.97905976, 0.007240882, -0.012120197, 0.0058361497, -1.3422246, -1.5373209, 0.067166284, 0.011079157, -0.40761375, 6.7586164, -5.100192)
+transform = Transform3D(0.10553686, 0.97905976, 0.007240882, -0.012120197, 0.0058361497, -1.3422246, -1.5373209, 0.067166284, 0.011079157, -0.31216693, 6.7586164, -5.27705)
 mesh = SubResource("PlaneMesh_hu8ge")
 surface_material_override/0 = SubResource("StandardMaterial3D_lotfu")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=139015135]
-transform = Transform3D(0.10553686, 0.97905976, 0.007240882, -0.012120197, 0.0058361497, -1.3422246, -1.5373209, 0.067166284, 0.011079157, -0.40761375, 9.258542, -5.100192)
+transform = Transform3D(0.10553686, 0.97905976, 0.007240882, -0.012120197, 0.0058361497, -1.3422246, -1.5373209, 0.067166284, 0.011079157, -0.31216693, 9.258542, -5.27705)
 mesh = SubResource("PlaneMesh_hu8ge")
 surface_material_override/0 = SubResource("StandardMaterial3D_lotfu")
 
@@ -262,4 +315,1046 @@ transform = Transform3D(-6.064676, 0, 1.4256961, 0, 6.230001, 0, -1.4256961, 0, 
 [node name="Player" parent="." unique_id=207456662 instance=ExtResource("17_v2oqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7026386, 7.7206807, 2.870718)
 
-[node name="Node3D" type="Node3D" parent="." unique_id=808463279]
+[node name="Walla" type="Node3D" parent="." unique_id=808463279]
+
+[node name="WALL2" type="MeshInstance3D" parent="Walla" unique_id=315646361]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 4.5232797, 6.663964, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL" type="MeshInstance3D" parent="Walla" unique_id=800256853]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -21.66582, 6.771131, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL3" type="MeshInstance3D" parent="Walla" unique_id=1456414064]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -47.457363, 7.2108655, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL4" type="MeshInstance3D" parent="Walla" unique_id=441339871]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -73.64647, 7.3180327, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL5" type="MeshInstance3D" parent="Walla" unique_id=1932235123]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 108.35468, 6.663964, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL6" type="MeshInstance3D" parent="Walla" unique_id=1201912617]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 82.16559, 6.771131, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL7" type="MeshInstance3D" parent="Walla" unique_id=2072176606]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 56.374043, 7.2108655, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL8" type="MeshInstance3D" parent="Walla" unique_id=1199040787]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 30.184937, 7.3180327, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL9" type="MeshInstance3D" parent="Walla" unique_id=518846625]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -201.14253, 7.470429, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL10" type="MeshInstance3D" parent="Walla" unique_id=1128182818]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -227.33163, 7.577596, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL11" type="MeshInstance3D" parent="Walla" unique_id=144470122]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -253.12318, 8.01733, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL12" type="MeshInstance3D" parent="Walla" unique_id=684176385]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -279.3123, 8.124498, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL13" type="MeshInstance3D" parent="Walla" unique_id=810959595]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -97.311134, 7.470429, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL14" type="MeshInstance3D" parent="Walla" unique_id=1962251511]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -123.50023, 7.577596, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL15" type="MeshInstance3D" parent="Walla" unique_id=1355849020]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -149.29178, 8.01733, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL16" type="MeshInstance3D" parent="Walla" unique_id=1497502839]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -175.48088, 8.124498, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL17" type="MeshInstance3D" parent="Walla" unique_id=1239246079]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 206.51064, 7.979058, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL18" type="MeshInstance3D" parent="Walla" unique_id=848317676]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 180.32153, 8.0862255, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL19" type="MeshInstance3D" parent="Walla" unique_id=913438306]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 154.52998, 8.525959, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL20" type="MeshInstance3D" parent="Walla" unique_id=1495731604]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 128.34088, 8.633127, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL21" type="MeshInstance3D" parent="Walla" unique_id=220387024]
+transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 310.34204, 7.979058, -9.9792595)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL25" type="MeshInstance3D" parent="Walla" unique_id=1378589607]
+transform = Transform3D(-5.7756887e-07, -0.96475387, 0, 13.213235, -4.217073e-08, 0, 0, 0, 23.985128, 310.34204, 7.979058, 13.155411)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL26" type="MeshInstance3D" parent="Walla/WALL25" unique_id=338998768]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9083681)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL27" type="MeshInstance3D" parent="Walla/WALL25" unique_id=1951885067]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.855504)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL28" type="MeshInstance3D" parent="Walla/WALL25" unique_id=1144642843]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7434115)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL29" type="MeshInstance3D" parent="Walla/WALL25" unique_id=690814105]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.65178)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL30" type="MeshInstance3D" parent="Walla/WALL25" unique_id=114993718]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.598916)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL31" type="MeshInstance3D" parent="Walla/WALL25" unique_id=113408805]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.566625)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL32" type="MeshInstance3D" parent="Walla/WALL25" unique_id=864159566]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.474993)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL33" type="MeshInstance3D" parent="Walla/WALL25" unique_id=1804369996]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.422129)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL22" type="MeshInstance3D" parent="Walla/WALL25" unique_id=235090288]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.008110702, 27.145874, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL23" type="MeshInstance3D" parent="Walla/WALL25" unique_id=338515869]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.041390598, 53.8797, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL24" type="MeshInstance3D" parent="Walla/WALL25" unique_id=335568716]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.04950136, 81.02559, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL26" type="MeshInstance3D" parent="Walla" unique_id=1926399443]
+transform = Transform3D(5.7756887e-07, 0.96475387, -2.0968466e-06, 13.213235, -4.217073e-08, 0, -5.049267e-14, -8.434146e-08, -23.985128, -279.06183, 7.979058, 379.53705)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL26" type="MeshInstance3D" parent="Walla/WALL26" unique_id=552723706]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9083681)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL27" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1837820691]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.855504)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL28" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1851316999]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7434115)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL29" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1627487282]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.65178)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL30" type="MeshInstance3D" parent="Walla/WALL26" unique_id=308968615]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.598916)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL31" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1183488427]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.566625)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL32" type="MeshInstance3D" parent="Walla/WALL26" unique_id=559267681]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.474993)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL33" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1920224728]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.422129)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL22" type="MeshInstance3D" parent="Walla/WALL26" unique_id=117662203]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.008110702, 27.145874, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL23" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1884233346]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.041390598, 53.8797, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL24" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1253499485]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.04950136, 81.02559, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL27" type="MeshInstance3D" parent="Walla" unique_id=1866740016]
+transform = Transform3D(3.099554e-14, 4.217073e-08, -23.985128, 16.22221, -4.217073e-08, 0, -7.0909533e-07, -0.96475387, -1.0484233e-06, 103.31258, 11.573334, 285.6328)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL26" type="MeshInstance3D" parent="Walla/WALL27" unique_id=986541019]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9083681)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL27" type="MeshInstance3D" parent="Walla/WALL27" unique_id=1715504811]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.855504)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL28" type="MeshInstance3D" parent="Walla/WALL27" unique_id=512897553]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7434115)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL29" type="MeshInstance3D" parent="Walla/WALL27" unique_id=1549924476]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.65178)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL30" type="MeshInstance3D" parent="Walla/WALL27" unique_id=14878233]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.598916)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL31" type="MeshInstance3D" parent="Walla/WALL27" unique_id=718086662]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.566625)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL32" type="MeshInstance3D" parent="Walla/WALL27" unique_id=1419283519]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.474993)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL33" type="MeshInstance3D" parent="Walla/WALL27" unique_id=516014490]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.422129)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL22" type="MeshInstance3D" parent="Walla/WALL27" unique_id=1346989175]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.008110702, 27.145874, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL23" type="MeshInstance3D" parent="Walla/WALL27" unique_id=256713037]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.041390598, 53.8797, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL24" type="MeshInstance3D" parent="Walla/WALL27" unique_id=38650441]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.04950136, 81.02559, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL28" type="MeshInstance3D" parent="Walla" unique_id=1690237216]
+transform = Transform3D(3.099554e-14, 4.217073e-08, -23.985128, 16.22221, -4.217073e-08, 0, -7.0909533e-07, -0.96475387, -1.0484233e-06, 484.88916, 11.573334, 285.6328)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL26" type="MeshInstance3D" parent="Walla/WALL28" unique_id=75532658]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9083681)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL27" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1826211858]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.855504)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL28" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1150944843]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7434115)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL29" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1657578126]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.65178)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL30" type="MeshInstance3D" parent="Walla/WALL28" unique_id=551581769]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.598916)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL31" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1627466023]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.566625)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL32" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1541297321]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.474993)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL33" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1695503314]
+transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.422129)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL22" type="MeshInstance3D" parent="Walla/WALL28" unique_id=467356112]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.008110702, 27.145874, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL23" type="MeshInstance3D" parent="Walla/WALL28" unique_id=55099504]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.041390598, 53.8797, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="WALL24" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1462066897]
+transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.04950136, 81.02559, -0.96454227)
+mesh = SubResource("PlaneMesh_hu8ge")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
+
+[node name="FLOOR" type="MeshInstance3D" parent="." unique_id=1756728531]
+transform = Transform3D(400, 0, 0, 0, 8905.677, 0, 0, 0, 473.805, 5.049614, 0.5904145, 20.195492)
+mesh = SubResource("PlaneMesh_13qdw")
+skeleton = NodePath("../CEILING")
+
+[node name="CEILING" type="MeshInstance3D" parent="." unique_id=1390279268]
+transform = Transform3D(800, 0, 0, 0, -2.1240063e-05, -25.852, 0, 485.916, -1.1300268e-06, 5.049614, 18.220295, 20.195492)
+mesh = SubResource("QuadMesh_xrivr")
+
+[node name="STALLS" type="Node3D" parent="." unique_id=237065106]
+
+[node name="STALL1" type="Node3D" parent="STALLS" unique_id=1139450298]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="STALLS/STALL1" unique_id=1645285863]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.310251, 4.752166, 20.103237)
+size = Vector3(0.46972656, 7.924103, 11.804077)
+material = SubResource("StandardMaterial3D_d6mcn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="STALLS/STALL1" unique_id=692562551]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.834667, 4.752166, 18.709705)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="STALLS/STALL1" unique_id=1942764351]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.305382, 4.865898, 12.329929)
+size = Vector3(15.439911, 8.233536, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="STALLS/STALL1" unique_id=759266461]
+transform = Transform3D(-4.1796167e-08, 0, 1, 0, 1, 0, -0.9561848, 0, -4.371139e-08, -11.775326, 6.855344, 18.74115)
+size = Vector3(2.680359, 7.924103, 3.6586761)
+material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="STALLS/STALL1" unique_id=558776208]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.964449, 4.752166, 6.402342)
+size = Vector3(2.680359, 7.924103, 3.870102)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="STALLS/STALL1" unique_id=1096258623]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.932173, 4.752166, 4.6856346)
+size = Vector3(0.46972656, 7.924103, 11.983032)
+material = SubResource("StandardMaterial3D_prhs4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="STALLS/STALL1" unique_id=915084314]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.643827, 3.4133105, 12.804714)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_qjjbk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="STALLS/STALL1" unique_id=405045908]
+transform = Transform3D(-0.13792208, 0.000121856145, 0.14929523, 1.7158689e-05, 0.99999994, -1.382627e-05, -0.040745463, 8.639923e-06, -0.50535953, -8.795876, 3.4804344, 10.2665615)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_0a2g1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="STALLS/STALL1" unique_id=1763434322]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.406668, 3.4358988, 18.64814)
+size = Vector3(2.607544, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="STALLS/STALL1" unique_id=418397738]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.763853, 3.4133105, 6.425478)
+size = Vector3(3.0767212, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="STALLS/STALL1" unique_id=1070766415]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.775671, 4.2715178, 15.281651)
+size = Vector3(2.2046204, 1.1275578, 2.9945679)
+material = SubResource("StandardMaterial3D_hu8ge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="STALLS/STALL1" unique_id=742230063]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -12.946388, 5.3381567, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="STALLS/STALL1" unique_id=975342808]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 3.5048835, 0, -1.21926, 0, -6.7553195e-08, -12.946388, 7.389986, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="STALLS/STALL1" unique_id=284883849]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 1.2049426, 0, -1.21926, 0, -6.7553195e-08, -11.952858, 3.9182482, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+material = SubResource("StandardMaterial3D_inqa8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="STALLS/STALL1" unique_id=377174491]
+transform = Transform3D(1, 0, 0, 0, 0.00828145, 0.9999657, 0, -0.9999657, 0.00828145, -10.280631, 9.286531, 11.796116)
+spot_range = 12.185594
+spot_angle = 52.031246
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS/STALL1" unique_id=451701534]
+transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
+mesh = SubResource("PlaneMesh_b1lj4")
+
+[node name="STALL2" type="Node3D" parent="STALLS" unique_id=1134913665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5966706, 0, 18.927132)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="STALLS/STALL2" unique_id=718989864]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.310251, 4.752166, 20.103237)
+size = Vector3(0.46972656, 7.924103, 11.804077)
+material = SubResource("StandardMaterial3D_d6mcn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="STALLS/STALL2" unique_id=1165697977]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.834667, 4.752166, 18.709705)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="STALLS/STALL2" unique_id=177432415]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.305382, 4.865898, 12.329929)
+size = Vector3(15.439911, 8.233536, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="STALLS/STALL2" unique_id=1038337898]
+transform = Transform3D(-4.1796167e-08, 0, 1, 0, 1, 0, -0.9561848, 0, -4.371139e-08, -11.775326, 6.855344, 18.74115)
+size = Vector3(2.680359, 7.924103, 3.6586761)
+material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="STALLS/STALL2" unique_id=1444532478]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.964449, 4.752166, 6.402342)
+size = Vector3(2.680359, 7.924103, 3.870102)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="STALLS/STALL2" unique_id=618610751]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.932173, 4.752166, 4.6856346)
+size = Vector3(0.46972656, 7.924103, 11.983032)
+material = SubResource("StandardMaterial3D_prhs4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="STALLS/STALL2" unique_id=429148862]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.643827, 3.4133105, 12.804714)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_qjjbk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="STALLS/STALL2" unique_id=1829104733]
+transform = Transform3D(-0.13792208, 0.000121856145, 0.14929523, 1.7158689e-05, 0.99999994, -1.382627e-05, -0.040745463, 8.639923e-06, -0.50535953, -8.795876, 3.4804344, 10.2665615)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_0a2g1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="STALLS/STALL2" unique_id=423838254]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.406668, 3.4358988, 18.64814)
+size = Vector3(2.607544, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="STALLS/STALL2" unique_id=1815851569]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.763853, 3.4133105, 6.425478)
+size = Vector3(3.0767212, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="STALLS/STALL2" unique_id=25382458]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.775671, 4.2715178, 15.281651)
+size = Vector3(2.2046204, 1.1275578, 2.9945679)
+material = SubResource("StandardMaterial3D_hu8ge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="STALLS/STALL2" unique_id=614606477]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -12.946388, 5.3381567, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="STALLS/STALL2" unique_id=1736507030]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 3.5048835, 0, -1.21926, 0, -6.7553195e-08, -12.946388, 7.389986, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="STALLS/STALL2" unique_id=157078977]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 1.2049426, 0, -1.21926, 0, -6.7553195e-08, -11.952858, 3.9182482, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+material = SubResource("StandardMaterial3D_inqa8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="STALLS/STALL2" unique_id=429423595]
+transform = Transform3D(1, 0, 0, 0, 0.00828145, 0.9999657, 0, -0.9999657, 0.00828145, -10.280631, 9.286531, 11.796116)
+spot_range = 12.185594
+spot_angle = 52.031246
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS/STALL2" unique_id=1957906164]
+transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
+mesh = SubResource("PlaneMesh_b1lj4")
+
+[node name="STALL3" type="Node3D" parent="STALLS" unique_id=317899276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1441274, 0, 36.920822)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="STALLS/STALL3" unique_id=1384630831]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.310251, 4.752166, 20.103237)
+size = Vector3(0.46972656, 7.924103, 11.804077)
+material = SubResource("StandardMaterial3D_d6mcn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="STALLS/STALL3" unique_id=1493899099]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.834667, 4.752166, 18.709705)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="STALLS/STALL3" unique_id=1729472830]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.305382, 4.865898, 12.329929)
+size = Vector3(15.439911, 8.233536, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="STALLS/STALL3" unique_id=1678937013]
+transform = Transform3D(-4.1796167e-08, 0, 1, 0, 1, 0, -0.9561848, 0, -4.371139e-08, -11.775326, 6.855344, 18.74115)
+size = Vector3(2.680359, 7.924103, 3.6586761)
+material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="STALLS/STALL3" unique_id=1573026415]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.964449, 4.752166, 6.402342)
+size = Vector3(2.680359, 7.924103, 3.870102)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="STALLS/STALL3" unique_id=879300093]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.932173, 4.752166, 4.6856346)
+size = Vector3(0.46972656, 7.924103, 11.983032)
+material = SubResource("StandardMaterial3D_prhs4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="STALLS/STALL3" unique_id=941603784]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.643827, 3.4133105, 12.804714)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_qjjbk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="STALLS/STALL3" unique_id=2016730733]
+transform = Transform3D(-0.13792208, 0.000121856145, 0.14929523, 1.7158689e-05, 0.99999994, -1.382627e-05, -0.040745463, 8.639923e-06, -0.50535953, -8.795876, 3.4804344, 10.2665615)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_0a2g1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="STALLS/STALL3" unique_id=437830486]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.406668, 3.4358988, 18.64814)
+size = Vector3(2.607544, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="STALLS/STALL3" unique_id=2141140181]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.763853, 3.4133105, 6.425478)
+size = Vector3(3.0767212, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="STALLS/STALL3" unique_id=977529651]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.775671, 4.2715178, 15.281651)
+size = Vector3(2.2046204, 1.1275578, 2.9945679)
+material = SubResource("StandardMaterial3D_hu8ge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="STALLS/STALL3" unique_id=374749295]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -12.946388, 5.3381567, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="STALLS/STALL3" unique_id=1707149125]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 3.5048835, 0, -1.21926, 0, -6.7553195e-08, -12.946388, 7.389986, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="STALLS/STALL3" unique_id=122749912]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 1.2049426, 0, -1.21926, 0, -6.7553195e-08, -11.952858, 3.9182482, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+material = SubResource("StandardMaterial3D_inqa8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="STALLS/STALL3" unique_id=759736159]
+transform = Transform3D(1, 0, 0, 0, 0.00828145, 0.9999657, 0, -0.9999657, 0.00828145, -10.280631, 9.286531, 11.796116)
+spot_range = 12.185594
+spot_angle = 52.031246
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS/STALL3" unique_id=1626188288]
+transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
+mesh = SubResource("PlaneMesh_b1lj4")
+
+[node name="STALL4" type="Node3D" parent="STALLS" unique_id=1503841006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4906106, 0, 55.456898)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="STALLS/STALL4" unique_id=711430334]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.310251, 4.752166, 20.103237)
+size = Vector3(0.46972656, 7.924103, 11.804077)
+material = SubResource("StandardMaterial3D_d6mcn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="STALLS/STALL4" unique_id=914562046]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.834667, 4.752166, 18.709705)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="STALLS/STALL4" unique_id=303914568]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.305382, 4.865898, 12.329929)
+size = Vector3(15.439911, 8.233536, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="STALLS/STALL4" unique_id=1977940030]
+transform = Transform3D(-4.1796167e-08, 0, 1, 0, 1, 0, -0.9561848, 0, -4.371139e-08, -11.775326, 6.855344, 18.74115)
+size = Vector3(2.680359, 7.924103, 3.6586761)
+material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="STALLS/STALL4" unique_id=1310887087]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.964449, 4.752166, 6.402342)
+size = Vector3(2.680359, 7.924103, 3.870102)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="STALLS/STALL4" unique_id=1058967149]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.932173, 4.752166, 4.6856346)
+size = Vector3(0.46972656, 7.924103, 11.983032)
+material = SubResource("StandardMaterial3D_prhs4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="STALLS/STALL4" unique_id=1066816006]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.643827, 3.4133105, 12.804714)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_qjjbk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="STALLS/STALL4" unique_id=1779030962]
+transform = Transform3D(-0.13792208, 0.000121856145, 0.14929523, 1.7158689e-05, 0.99999994, -1.382627e-05, -0.040745463, 8.639923e-06, -0.50535953, -8.795876, 3.4804344, 10.2665615)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_0a2g1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="STALLS/STALL4" unique_id=104606943]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.406668, 3.4358988, 18.64814)
+size = Vector3(2.607544, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="STALLS/STALL4" unique_id=117118594]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.763853, 3.4133105, 6.425478)
+size = Vector3(3.0767212, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="STALLS/STALL4" unique_id=534953084]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.775671, 4.2715178, 15.281651)
+size = Vector3(2.2046204, 1.1275578, 2.9945679)
+material = SubResource("StandardMaterial3D_hu8ge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="STALLS/STALL4" unique_id=1414301032]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -12.946388, 5.3381567, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="STALLS/STALL4" unique_id=1931609927]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 3.5048835, 0, -1.21926, 0, -6.7553195e-08, -12.946388, 7.389986, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="STALLS/STALL4" unique_id=1237891999]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 1.2049426, 0, -1.21926, 0, -6.7553195e-08, -11.952858, 3.9182482, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+material = SubResource("StandardMaterial3D_inqa8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="STALLS/STALL4" unique_id=1017188935]
+transform = Transform3D(1, 0, 0, 0, 0.00828145, 0.9999657, 0, -0.9999657, 0.00828145, -10.280631, 9.286531, 11.796116)
+spot_range = 12.185594
+spot_angle = 52.031246
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS/STALL4" unique_id=1096620651]
+transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
+mesh = SubResource("PlaneMesh_b1lj4")
+
+[node name="STALLS2" type="Node3D" parent="." unique_id=954640893]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.3892765, 0, 79.777374)
+
+[node name="STALL1" type="Node3D" parent="STALLS2" unique_id=303505061]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1467362984]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.310251, 4.752166, 20.103237)
+size = Vector3(0.46972656, 7.924103, 11.804077)
+material = SubResource("StandardMaterial3D_d6mcn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1775373931]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.834667, 4.752166, 18.709705)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1834959310]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.305382, 4.865898, 12.329929)
+size = Vector3(15.439911, 8.233536, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=86511112]
+transform = Transform3D(-4.1796167e-08, 0, 1, 0, 1, 0, -0.9561848, 0, -4.371139e-08, -11.775326, 6.855344, 18.74115)
+size = Vector3(2.680359, 7.924103, 3.6586761)
+material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1845676413]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.964449, 4.752166, 6.402342)
+size = Vector3(2.680359, 7.924103, 3.870102)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=334444924]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.932173, 4.752166, 4.6856346)
+size = Vector3(0.46972656, 7.924103, 11.983032)
+material = SubResource("StandardMaterial3D_prhs4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1705437934]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.643827, 3.4133105, 12.804714)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_qjjbk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=411894563]
+transform = Transform3D(-0.13792208, 0.000121856145, 0.14929523, 1.7158689e-05, 0.99999994, -1.382627e-05, -0.040745463, 8.639923e-06, -0.50535953, -8.795876, 3.4804344, 10.2665615)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_0a2g1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1985963401]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.406668, 3.4358988, 18.64814)
+size = Vector3(2.607544, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=480536943]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.763853, 3.4133105, 6.425478)
+size = Vector3(3.0767212, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1985443544]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.775671, 4.2715178, 15.281651)
+size = Vector3(2.2046204, 1.1275578, 2.9945679)
+material = SubResource("StandardMaterial3D_hu8ge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1902922095]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -12.946388, 5.3381567, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=1834470726]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 3.5048835, 0, -1.21926, 0, -6.7553195e-08, -12.946388, 7.389986, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="STALLS2/STALL1" unique_id=912562131]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 1.2049426, 0, -1.21926, 0, -6.7553195e-08, -11.952858, 3.9182482, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+material = SubResource("StandardMaterial3D_inqa8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="STALLS2/STALL1" unique_id=831556792]
+transform = Transform3D(1, 0, 0, 0, 0.00828145, 0.9999657, 0, -0.9999657, 0.00828145, -10.280631, 9.286531, 11.796116)
+spot_range = 12.185594
+spot_angle = 52.031246
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS2/STALL1" unique_id=2031406825]
+transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
+mesh = SubResource("PlaneMesh_b1lj4")
+
+[node name="STALL2" type="Node3D" parent="STALLS2" unique_id=327314284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5966706, 0, 18.927132)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=725292549]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.310251, 4.752166, 20.103237)
+size = Vector3(0.46972656, 7.924103, 11.804077)
+material = SubResource("StandardMaterial3D_d6mcn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=1820060181]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.834667, 4.752166, 18.709705)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=490030165]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.305382, 4.865898, 12.329929)
+size = Vector3(15.439911, 8.233536, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=99107406]
+transform = Transform3D(-4.1796167e-08, 0, 1, 0, 1, 0, -0.9561848, 0, -4.371139e-08, -11.775326, 6.855344, 18.74115)
+size = Vector3(2.680359, 7.924103, 3.6586761)
+material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=889206536]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.964449, 4.752166, 6.402342)
+size = Vector3(2.680359, 7.924103, 3.870102)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=887974740]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.932173, 4.752166, 4.6856346)
+size = Vector3(0.46972656, 7.924103, 11.983032)
+material = SubResource("StandardMaterial3D_prhs4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=1736940188]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.643827, 3.4133105, 12.804714)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_qjjbk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=1085723684]
+transform = Transform3D(-0.13792208, 0.000121856145, 0.14929523, 1.7158689e-05, 0.99999994, -1.382627e-05, -0.040745463, 8.639923e-06, -0.50535953, -8.795876, 3.4804344, 10.2665615)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_0a2g1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=1138946288]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.406668, 3.4358988, 18.64814)
+size = Vector3(2.607544, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=859228337]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.763853, 3.4133105, 6.425478)
+size = Vector3(3.0767212, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=1993421912]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.775671, 4.2715178, 15.281651)
+size = Vector3(2.2046204, 1.1275578, 2.9945679)
+material = SubResource("StandardMaterial3D_hu8ge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=484937905]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -12.946388, 5.3381567, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=1480018252]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 3.5048835, 0, -1.21926, 0, -6.7553195e-08, -12.946388, 7.389986, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="STALLS2/STALL2" unique_id=1338455872]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 1.2049426, 0, -1.21926, 0, -6.7553195e-08, -11.952858, 3.9182482, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+material = SubResource("StandardMaterial3D_inqa8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="STALLS2/STALL2" unique_id=416437434]
+transform = Transform3D(1, 0, 0, 0, 0.00828145, 0.9999657, 0, -0.9999657, 0.00828145, -10.280631, 9.286531, 11.796116)
+spot_range = 12.185594
+spot_angle = 52.031246
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS2/STALL2" unique_id=326386344]
+transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
+mesh = SubResource("PlaneMesh_b1lj4")
+
+[node name="STALL3" type="Node3D" parent="STALLS2" unique_id=1369626253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1441274, 0, 36.920822)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=2146589886]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.310251, 4.752166, 20.103237)
+size = Vector3(0.46972656, 7.924103, 11.804077)
+material = SubResource("StandardMaterial3D_d6mcn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=810745925]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.834667, 4.752166, 18.709705)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=454923754]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.305382, 4.865898, 12.329929)
+size = Vector3(15.439911, 8.233536, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=854675259]
+transform = Transform3D(-4.1796167e-08, 0, 1, 0, 1, 0, -0.9561848, 0, -4.371139e-08, -11.775326, 6.855344, 18.74115)
+size = Vector3(2.680359, 7.924103, 3.6586761)
+material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=963957839]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.964449, 4.752166, 6.402342)
+size = Vector3(2.680359, 7.924103, 3.870102)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=543740351]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.932173, 4.752166, 4.6856346)
+size = Vector3(0.46972656, 7.924103, 11.983032)
+material = SubResource("StandardMaterial3D_prhs4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=1400642235]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.643827, 3.4133105, 12.804714)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_qjjbk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=948149079]
+transform = Transform3D(-0.13792208, 0.000121856145, 0.14929523, 1.7158689e-05, 0.99999994, -1.382627e-05, -0.040745463, 8.639923e-06, -0.50535953, -8.795876, 3.4804344, 10.2665615)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_0a2g1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=218128247]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.406668, 3.4358988, 18.64814)
+size = Vector3(2.607544, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=636886504]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.763853, 3.4133105, 6.425478)
+size = Vector3(3.0767212, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=307897376]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.775671, 4.2715178, 15.281651)
+size = Vector3(2.2046204, 1.1275578, 2.9945679)
+material = SubResource("StandardMaterial3D_hu8ge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=928160668]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -12.946388, 5.3381567, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=1910868190]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 3.5048835, 0, -1.21926, 0, -6.7553195e-08, -12.946388, 7.389986, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="STALLS2/STALL3" unique_id=1081135262]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 1.2049426, 0, -1.21926, 0, -6.7553195e-08, -11.952858, 3.9182482, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+material = SubResource("StandardMaterial3D_inqa8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="STALLS2/STALL3" unique_id=160900152]
+transform = Transform3D(1, 0, 0, 0, 0.00828145, 0.9999657, 0, -0.9999657, 0.00828145, -10.280631, 9.286531, 11.796116)
+spot_range = 12.185594
+spot_angle = 52.031246
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS2/STALL3" unique_id=1157275408]
+transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
+mesh = SubResource("PlaneMesh_b1lj4")
+
+[node name="STALL4" type="Node3D" parent="STALLS2" unique_id=1370824939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4906106, 0, 55.456898)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=1761029600]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.310251, 4.752166, 20.103237)
+size = Vector3(0.46972656, 7.924103, 11.804077)
+material = SubResource("StandardMaterial3D_d6mcn")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=682909998]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.834667, 4.752166, 18.709705)
+size = Vector3(2.680359, 7.924103, 0.34371948)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=1542171435]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.305382, 4.865898, 12.329929)
+size = Vector3(15.439911, 8.233536, 0.34371948)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=319553310]
+transform = Transform3D(-4.1796167e-08, 0, 1, 0, 1, 0, -0.9561848, 0, -4.371139e-08, -11.775326, 6.855344, 18.74115)
+size = Vector3(2.680359, 7.924103, 3.6586761)
+material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=509875109]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.964449, 4.752166, 6.402342)
+size = Vector3(2.680359, 7.924103, 3.870102)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=927745016]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.932173, 4.752166, 4.6856346)
+size = Vector3(0.46972656, 7.924103, 11.983032)
+material = SubResource("StandardMaterial3D_prhs4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=2120943171]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.643827, 3.4133105, 12.804714)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_qjjbk")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=695625828]
+transform = Transform3D(-0.13792208, 0.000121856145, 0.14929523, 1.7158689e-05, 0.99999994, -1.382627e-05, -0.040745463, 8.639923e-06, -0.50535953, -8.795876, 3.4804344, 10.2665615)
+size = Vector3(9.492676, 0.5400162, 8.776367)
+material = SubResource("StandardMaterial3D_0a2g1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=55276740]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.406668, 3.4358988, 18.64814)
+size = Vector3(2.607544, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=786943152]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.763853, 3.4133105, 6.425478)
+size = Vector3(3.0767212, 0.5400162, 11.933594)
+material = ExtResource("4_qpgl6")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=321981405]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.775671, 4.2715178, 15.281651)
+size = Vector3(2.2046204, 1.1275578, 2.9945679)
+material = SubResource("StandardMaterial3D_hu8ge")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=1912027422]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -12.946388, 5.3381567, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=243007527]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 3.5048835, 0, -1.21926, 0, -6.7553195e-08, -12.946388, 7.389986, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="STALLS2/STALL4" unique_id=391236936]
+transform = Transform3D(-5.3295548e-08, 0, 1.545437, 0, 1.2049426, 0, -1.21926, 0, -6.7553195e-08, -11.952858, 3.9182482, 10.981853)
+size = Vector3(4.758911, 1.1275578, 2.1240082)
+material = SubResource("StandardMaterial3D_inqa8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="STALLS2/STALL4" unique_id=553049364]
+transform = Transform3D(1, 0, 0, 0, 0.00828145, 0.9999657, 0, -0.9999657, 0.00828145, -10.280631, 9.286531, 11.796116)
+spot_range = 12.185594
+spot_angle = 52.031246
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS2/STALL4" unique_id=1764153050]
+transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
+mesh = SubResource("PlaneMesh_b1lj4")
