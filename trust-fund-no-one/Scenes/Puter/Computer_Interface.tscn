@@ -21,14 +21,66 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0lgwn")
 
-[node name="Button" type="Button" parent="." unique_id=157550842]
+[node name="CallerButtonOne" type="Button" parent="." unique_id=157550842]
 layout_mode = 1
 offset_left = 80.0
-offset_top = 85.0
-offset_right = 733.0
-offset_bottom = 530.0
-text = "awesome test 
-yippee yahoo"
+offset_top = 49.0
+offset_right = 800.0
+offset_bottom = 193.0
+text = "
+"
 
-[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CallerButtonOne" unique_id=1474894087]
+layout_mode = 0
+offset_right = 719.0
+offset_bottom = 143.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 90
+text = "VOICEMAIL ONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CallerButtonTwo" type="Button" parent="." unique_id=694960674]
+layout_mode = 1
+offset_left = 80.0
+offset_top = 249.0
+offset_right = 800.0
+offset_bottom = 393.0
+text = "
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CallerButtonTwo" unique_id=1809707333]
+layout_mode = 0
+offset_right = 719.0
+offset_bottom = 143.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 90
+text = "VOICEMAIL TWO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CallerButtonThree" type="Button" parent="." unique_id=916604211]
+layout_mode = 1
+offset_left = 80.0
+offset_top = 449.0
+offset_right = 800.0
+offset_bottom = 593.0
+text = "
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CallerButtonThree" unique_id=892666482]
+layout_mode = 0
+offset_right = 719.0
+offset_bottom = 143.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 80
+text = "VOICEMAIL THREE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="CallerButtonOne" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="CallerButtonOne" to="." method="_on_caller_button_one_pressed"]
+[connection signal="mouse_entered" from="CallerButtonTwo" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="CallerButtonTwo" to="." method="_on_caller_button_two_pressed"]
+[connection signal="mouse_entered" from="CallerButtonThree" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="CallerButtonThree" to="." method="_on_caller_button_three_pressed"]

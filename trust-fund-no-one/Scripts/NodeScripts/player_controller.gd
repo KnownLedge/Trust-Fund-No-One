@@ -13,6 +13,12 @@ const LEFT_TURN = 12.5
 
 const RIGHT_TURN = -12.5
 
+@export var cursor_ui: TextureRect
+
+@export var grab_texture: Texture
+
+@export var computer_texture: Texture
+
 @export var left_hand: Node3D
 
 @export var right_hand: Node3D
@@ -99,6 +105,8 @@ func _physics_process(delta: float) -> void:
 	if (left_item == null && right_item == null && UI_ray.is_colliding()):
 		#print("trying to click")
 		var hitPoint = UI_ray.get_collision_point()
+		if(not ray.is_colliding()):
+			cursor_ui.texture = computer_texture
 		var uiX = inverse_lerp(pc_top_Left_node.global_position.x, pc_bottom_right_node.global_position.x, hitPoint.x)
 		var uiY = inverse_lerp(pc_top_Left_node.global_position.y, pc_bottom_right_node.global_position.y, hitPoint.y)
 		var simMousePos = Vector2(uiX * subViewport.size.x, uiY * subViewport.size.y)
@@ -108,6 +116,9 @@ func _physics_process(delta: float) -> void:
 		mouse_event.button_index = MOUSE_BUTTON_LEFT
 		mouse_event.button_mask - MOUSE_BUTTON_MASK_LEFT
 		subViewport.push_input(mouse_event)
+	else:
+		cursor_ui.texture = grab_texture
+	
 	
 	if(Input.is_action_just_pressed("LeftClick")):
 		if(left_item == null and ray.is_colliding() and right_item != ray.get_collider()):
@@ -134,7 +145,7 @@ func _physics_process(delta: float) -> void:
 			
 		#else:
 			#print("not picking thing up")
-	elif(Input.is_action_pressed("LeftClick")):#checking for held input
+	elif(Input.is_action_pressed("LeftClick") and not UI_ray.is_colliding()):#checking for held input
 		left_hand.position = lerp(left_hand.position, left_hold_pos, delta * HAND_EXTEND)
 	else: 
 		left_hand.position = lerp(left_hand.position, left_hover_pos, delta * HAND_RETURN)
@@ -174,7 +185,7 @@ func _physics_process(delta: float) -> void:
 			
 		#else:
 			#print("not picking thing up")
-	elif(Input.is_action_pressed("RightClick")):#checking for held input
+	elif(Input.is_action_pressed("RightClick") and not UI_ray.is_colliding()):#checking for held input
 		right_hand.position = lerp(right_hand.position, right_hold_pos, delta * HAND_EXTEND)
 	else: 
 		right_hand.position = lerp(right_hand.position, right_hover_pos, delta * HAND_RETURN)
