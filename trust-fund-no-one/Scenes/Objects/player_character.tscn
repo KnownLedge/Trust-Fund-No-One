@@ -2,6 +2,50 @@
 
 [ext_resource type="Script" uid="uid://diqmqb74kp5t" path="res://Scripts/NodeScripts/player_controller.gd" id="1_3ejmg"]
 [ext_resource type="Texture2D" uid="uid://e51fhf5noi5g" path="res://Textures/pixelartDot.png" id="2_i3yby"]
+[ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://Materials and Shaders/ScreenEffects_Ultimate.tres" id="2_y5w3y"]
+[ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://Textures/noise_texture.tres" id="3_3wq4h"]
+[ext_resource type="Texture2D" uid="uid://dlkx6u51rb5cn" path="res://Textures/Gradient.tres" id="3_lphv5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k06c8"]
+shader = ExtResource("2_y5w3y")
+shader_parameter/Pixelation_Scale = 1.0
+shader_parameter/Panini = 0.0
+shader_parameter/Chromatic_Peripheral = 0.749999983236
+shader_parameter/Chromatic_Aberrations = 8.500000424684199
+shader_parameter/Chromatic_Darkening = 0.77999998256544
+shader_parameter/Blur_Amount = -0.29999994486556014
+shader_parameter/Blur_Centered = 0.20000000298024
+shader_parameter/Bloom_Starts = 0.85000001080333
+shader_parameter/Bloom_Halation = 0.51999998837696
+shader_parameter/Bloom_Booster = 1.60999996401328
+shader_parameter/Shadows_Split = 0.20000000298023
+shader_parameter/Shadow_Color_Temp = -24.19999961554904
+shader_parameter/Shadow_Green_Tint = 0.5000007525106014
+shader_parameter/Shadow_Brightness = 0.86999999731776
+shader_parameter/Shadow_Contrast = 0.91999999620016
+shader_parameter/Shadows_Saturation = 0.70000001043084
+shader_parameter/Highlights_Split = 0.6800000220537
+shader_parameter/Mid_Color_Temp = -19.09999953955292
+shader_parameter/Mid_Green_Tint = -50.0
+shader_parameter/Mid_Brightness = 1.1499999910592
+shader_parameter/Mid_Contrast = 0.75999999977648
+shader_parameter/Mid_Saturation = 0.90000001341108
+shader_parameter/High_Color_Temp = -3.699999310074439
+shader_parameter/High_Green_Tint = -3.199999302623837
+shader_parameter/High_Brightness = 0.8499999977648
+shader_parameter/High_Contrast = 0.91999999620016
+shader_parameter/High_Saturation = 1.0
+shader_parameter/Main_Color_Temp = 8000.0
+shader_parameter/Main_Green_Tint = 50.000002235180006
+shader_parameter/Main_Brightness = 0.70000001043084
+shader_parameter/Main_Contrast = 0.90000001341108
+shader_parameter/Main_Saturation = 1.60000002384192
+shader_parameter/Posterization = 0.76999998278896
+shader_parameter/Vignette = 2.0
+shader_parameter/Noise = ExtResource("3_3wq4h")
+shader_parameter/Film_Grain = 1.999999955296
+shader_parameter/Color_Filter_Gradient = ExtResource("3_lphv5")
+shader_parameter/Filter_Strenght = 0.18999999575312
 
 [node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "left_hand", "right_hand", "ray", "UI_ray", "left_ray", "right_ray")]
 script = ExtResource("1_3ejmg")
@@ -45,6 +89,18 @@ transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, -0
 
 [node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=404128739]
 transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, 0.788, -0.449, -0.682)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=573658338]
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D/CanvasLayer" unique_id=1842406408]
+material = SubResource("ShaderMaterial_k06c8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1114242113]
 anchors_preset = 8
