@@ -354,7 +354,7 @@ transform = Transform3D(0.4471346, 0, -0.038010664, 0, 0.44874734, 0, 0.03801066
 size = Vector3(4.758911, 2.8566256, 3.2548752)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1203510661]
-transform = Transform3D(0.44726646, 0, -0.03642622, 0, 0.44874734, 0, 0.03642622, 0, 0.44726646, 3.650248, 5.325258, -5.018068)
+transform = Transform3D(0.4123339, 0, -0.03665792, 0, 0.3910063, 0, 0.033581246, 0, 0.45011142, 3.650248, 5.325258, -5.018068)
 size = Vector3(4.48497, 2.6309044, 0.04223442)
 material = SubResource("StandardMaterial3D_b560c")
 
@@ -1582,7 +1582,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 8.1712415e-13, 0, 1, 0.039367616, -0.1
 shape = SubResource("BoxShape3D_nm061")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=84238959]
-transform = Transform3D(0.4579354, 0, -0.026118198, 0, 0.436378, 0, 0.04121623, 0, 0.29018772, 3.6286025, 5.2915316, -4.992899)
+transform = Transform3D(0.40927675, 0, -0.02673567, 0, 0.36679202, 0, 0.036836736, 0, 0.29704818, 3.6286025, 5.321496, -4.992899)
 mesh = SubResource("PlaneMesh_oh0nk")
 skeleton = NodePath("../CallManager")
 surface_material_override/0 = SubResource("StandardMaterial3D_nm061")

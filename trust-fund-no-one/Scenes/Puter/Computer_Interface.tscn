@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bg3e8esngweea"]
 
 [ext_resource type="Script" uid="uid://c0xd2xft27krf" path="res://Scripts/UI/computer_interface.gd" id="1_g3qah"]
-[ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://Textures/noise_texture.tres" id="2_0lgwn"]
+[ext_resource type="Texture2D" uid="uid://bdhmjcpg5noe8" path="res://Textures/compbg.png" id="2_g3qah"]
 
 [node name="ComputerInterface" type="Control" unique_id=1245486518]
 layout_mode = 3
@@ -19,21 +19,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_0lgwn")
+texture = ExtResource("2_g3qah")
+expand_mode = 1
 
 [node name="CallerButtonOne" type="Button" parent="." unique_id=157550842]
 layout_mode = 1
-offset_left = 80.0
-offset_top = 49.0
-offset_right = 800.0
-offset_bottom = 193.0
+offset_left = 88.0
+offset_top = 92.000015
+offset_right = 808.0
+offset_bottom = 236.00002
+scale = Vector2(0.68, 0.68)
 text = "
 "
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CallerButtonOne" unique_id=1474894087]
 layout_mode = 0
+offset_top = 5.8823547
 offset_right = 719.0
-offset_bottom = 143.0
+offset_bottom = 148.88235
+scale = Vector2(0.68, 0.68)
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 90
 text = "VOICEMAIL ONE"
@@ -42,10 +46,11 @@ vertical_alignment = 1
 
 [node name="CallerButtonTwo" type="Button" parent="." unique_id=694960674]
 layout_mode = 1
-offset_left = 80.0
-offset_top = 249.0
-offset_right = 800.0
-offset_bottom = 393.0
+offset_left = 88.00001
+offset_top = 253.0
+offset_right = 808.0
+offset_bottom = 397.0
+scale = Vector2(0.68, 0.68)
 text = "
 "
 
@@ -53,6 +58,7 @@ text = "
 layout_mode = 0
 offset_right = 719.0
 offset_bottom = 143.0
+scale = Vector2(0.68, 0.68)
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 90
 text = "VOICEMAIL TWO"
@@ -61,10 +67,11 @@ vertical_alignment = 1
 
 [node name="CallerButtonThree" type="Button" parent="." unique_id=916604211]
 layout_mode = 1
-offset_left = 80.0
-offset_top = 449.0
-offset_right = 800.0
-offset_bottom = 593.0
+offset_left = 88.0
+offset_top = 414.0
+offset_right = 808.0
+offset_bottom = 558.0
+scale = Vector2(0.68, 0.68)
 text = "
 "
 
