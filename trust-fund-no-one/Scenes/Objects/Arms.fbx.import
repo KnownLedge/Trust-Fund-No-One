@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cq2suft5a53pb"
-path="res://.godot/imported/Test_Scene_Export.gltf-8de36fbfa11e877c9656a8cd4ceb1113.scn"
+uid="uid://dv74ebuirbbe0"
+path="res://.godot/imported/Arms.fbx-c6b008b38f2e213e9b80962a2b0d5b19.scn"
 
 [deps]
 
-source_file="res://ExportedScenes/Test_Scene_Export.gltf"
-dest_files=["res://.godot/imported/Test_Scene_Export.gltf-8de36fbfa11e877c9656a8cd4ceb1113.scn"]
+source_file="res://Scenes/Objects/Arms.fbx"
+dest_files=["res://.godot/imported/Arms.fbx-c6b008b38f2e213e9b80962a2b0d5b19.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -38,5 +38,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=2
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

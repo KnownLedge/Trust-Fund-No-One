@@ -1,9 +1,51 @@
-[gd_scene format=3 uid="uid://yj4baxphh5o1"]
+[gd_scene load_steps=6 format=3 uid="uid://yj4baxphh5o1"]
 
 [ext_resource type="Script" uid="uid://diqmqb74kp5t" path="res://Scripts/NodeScripts/player_controller.gd" id="1_3ejmg"]
 [ext_resource type="Texture2D" uid="uid://e51fhf5noi5g" path="res://Textures/pixelartDot.png" id="2_i3yby"]
+[ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://Materials and Shaders/ScreenEffects_Ultimate.tres" id="2_y5w3y"]
+[ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://Textures/noise_texture.tres" id="3_3wq4h"]
 
-[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "left_hand", "right_hand", "ray", "UI_ray", "left_ray", "right_ray")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lphv5"]
+shader = ExtResource("2_y5w3y")
+shader_parameter/Pixelation_Scale = 1.0
+shader_parameter/Panini = 0.0
+shader_parameter/Chromatic_Peripheral = 0.9
+shader_parameter/Chromatic_Aberrations = 1.70000032335604
+shader_parameter/Chromatic_Darkening = 0.9
+shader_parameter/Blur_Amount = 0.4000000655652798
+shader_parameter/Blur_Centered = 0.0
+shader_parameter/Bloom_Starts = 0.9
+shader_parameter/Bloom_Halation = 0.0
+shader_parameter/Bloom_Booster = 0.16999999620016
+shader_parameter/Shadows_Split = 0.3
+shader_parameter/Shadow_Color_Temp = 15.20000097155824
+shader_parameter/Shadow_Green_Tint = 0.0
+shader_parameter/Shadow_Brightness = 1.0
+shader_parameter/Shadow_Contrast = 1.0
+shader_parameter/Shadows_Saturation = 1.0
+shader_parameter/Highlights_Split = 0.7
+shader_parameter/Mid_Color_Temp = 0.0
+shader_parameter/Mid_Green_Tint = 0.0
+shader_parameter/Mid_Brightness = 1.0
+shader_parameter/Mid_Contrast = 1.0
+shader_parameter/Mid_Saturation = 1.0
+shader_parameter/High_Color_Temp = -14.4999994710074
+shader_parameter/High_Green_Tint = 30.300001196566356
+shader_parameter/High_Brightness = 1.0
+shader_parameter/High_Contrast = 1.01999999396496
+shader_parameter/High_Saturation = 1.20000001788144
+shader_parameter/Main_Color_Temp = 4500.0
+shader_parameter/Main_Green_Tint = 0.0
+shader_parameter/Main_Brightness = 1.0
+shader_parameter/Main_Contrast = 1.0
+shader_parameter/Main_Saturation = 1.0
+shader_parameter/Posterization = 0.25999999418848
+shader_parameter/Vignette = 2.0
+shader_parameter/Noise = ExtResource("3_3wq4h")
+shader_parameter/Film_Grain = 0.85999998077728
+shader_parameter/Filter_Strenght = 0.0
+
+[node name="Player" type="Node3D" node_paths=PackedStringArray("head", "camera", "left_hand", "right_hand", "ray", "UI_ray", "left_ray", "right_ray")]
 script = ExtResource("1_3ejmg")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
@@ -16,37 +58,48 @@ right_ray = NodePath("Head/Camera3D/RightCast3D")
 default_left_hold = Vector3(-0.14, -0.04, -2.3)
 default_right_hold = Vector3(0.14, -0.04, -2.3)
 
-[node name="Head" type="Node3D" parent="." unique_id=95127230]
+[node name="Head" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1244759920]
+[node name="Camera3D" type="Camera3D" parent="Head"]
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=599415049]
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -3)
 collision_mask = 16
 collide_with_areas = true
 
-[node name="UIRayCast" type="RayCast3D" parent="Head/Camera3D" unique_id=423701198]
+[node name="UIRayCast" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -15)
 collision_mask = 32
 collide_with_areas = true
 
-[node name="LeftCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=802782192]
+[node name="LeftCast3D" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -3)
 collision_mask = 239
 collide_with_areas = true
 
-[node name="RightCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1473955017]
+[node name="RightCast3D" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -3)
 collision_mask = 239
 collide_with_areas = true
 
-[node name="Left Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=1866637286]
+[node name="Left Hand" type="CSGBox3D" parent="Head/Camera3D"]
 transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, -0.78822774, -0.4494828, -0.68184173)
 
-[node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=404128739]
+[node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D"]
 transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, 0.788, -0.449, -0.682)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1114242113]
+[node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D"]
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_lphv5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
