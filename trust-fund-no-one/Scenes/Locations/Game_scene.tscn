@@ -20,6 +20,19 @@
 [ext_resource type="PackedScene" uid="uid://yj4baxphh5o1" path="res://Scenes/Objects/player_character.tscn" id="18_3qlal"]
 [ext_resource type="Texture2D" uid="uid://dhx0vvcp6ehj1" path="res://Textures/Screenshot 2026-08-25 174720.png" id="19_acol8"]
 [ext_resource type="Texture2D" uid="uid://dex6vek6uvhb5" path="res://Textures/ceil.jpg" id="20_51gxi"]
+[ext_resource type="Script" uid="uid://cqt52lb6eqgr1" path="res://Scripts/NodeScripts/call_manager.gd" id="21_de3ce"]
+[ext_resource type="Script" uid="uid://dpx7lexdvim2m" path="res://Scripts/ResourceScripts/call_set_script.gd" id="22_naykk"]
+[ext_resource type="Resource" uid="uid://cefl6t6mhdiix" path="res://Resources/CallGroups/Call Group 2.tres" id="23_62j1h"]
+[ext_resource type="Resource" uid="uid://c1p7misq72888" path="res://Resources/CallGroups/Call Group 4.tres" id="24_4nfij"]
+[ext_resource type="Resource" uid="uid://bvg1is3nv7tk6" path="res://Resources/CallGroups/Call Group 5.tres" id="25_oh0nk"]
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="26_eokiq"]
+[ext_resource type="Resource" uid="uid://dvqjm31fhrnc2" path="res://Resources/PhoneCalls/Set 4/Smart Client 1.tres" id="27_p4pvm"]
+[ext_resource type="Resource" uid="uid://cgw7h83cta73r" path="res://Resources/PhoneCalls/Set 4/Smart Client 2.tres" id="28_nm061"]
+[ext_resource type="Resource" uid="uid://dxm1b1te57rdm" path="res://Resources/PhoneCalls/Set 4/Smart Client 3.tres" id="29_3qlal"]
+[ext_resource type="Script" uid="uid://bvvggirfooi1l" path="res://Scripts/NodeScripts/TranslationPrinter.gd" id="30_naykk"]
+[ext_resource type="PackedScene" uid="uid://g3rdvfosjp4u" path="res://Scenes/Objects/client_envelope.tscn" id="31_4nfij"]
+[ext_resource type="Script" uid="uid://cf2w8nkbp64xa" path="res://Scripts/NodeScripts/MailBoxScript.gd" id="32_oh0nk"]
+[ext_resource type="PackedScene" uid="uid://bg3e8esngweea" path="res://Scenes/Puter/Computer_Interface.tscn" id="33_oh0nk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -124,6 +137,31 @@ material = SubResource("StandardMaterial3D_c41gl")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inqa8"]
 albedo_texture = ExtResource("9_f1nbv")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eokiq"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4pvm"]
+albedo_color = Color(1, 0.29803923, 0.30980393, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nm061"]
+size = Vector3(1.0787354, 0.7036133, 3.1390991)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oh0nk"]
+size = Vector2(4.5, 3)
+orientation = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eokiq"]
+viewport_path = NodePath("MeshInstance3D4/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nm061"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_eokiq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qlal"]
+size = Vector3(4.604, 2.86, 0.01)
+
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=550862622]
@@ -182,8 +220,8 @@ material = ExtResource("7_18bes")
 transform = Transform3D(2.7046602, 0, 0, 0, 1, 0, 0, 0, 2.1228857, 2.4334393, 3.5273557, -1.6980593)
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="." unique_id=1204853699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.374086, 3.5273557, 2.062827)
-size = Vector3(1.0898209, 0.014171875, 1.9385681)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.980604, 3.5273557, 2.062827)
+size = Vector3(2.1611214, 0.014171875, 1.9385681)
 material = SubResource("StandardMaterial3D_qkhwe")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=1421927797]
@@ -312,8 +350,11 @@ transform = Transform3D(1.3439052, 0.2796424, -1.4130179, -0.035796948, 1.938405
 [node name="Sketchfab_Scene4" parent="." unique_id=659028751 instance=ExtResource("17_nm061")]
 transform = Transform3D(-6.064676, 0, 1.4256961, 0, 6.230001, 0, -1.4256961, 0, -6.064676, 10.470922, 3.9316287, -0.53595877)
 
-[node name="Player" parent="." unique_id=207456662 instance=ExtResource("18_3qlal")]
+[node name="Player" parent="." unique_id=207456662 node_paths=PackedStringArray("pc_top_Left_node", "pc_bottom_right_node", "subViewport") instance=ExtResource("18_3qlal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7026386, 7.7206807, 2.870718)
+pc_top_Left_node = NodePath("../MeshInstance3D4/TopLeft")
+pc_bottom_right_node = NodePath("../MeshInstance3D4/BottomRight")
+subViewport = NodePath("../MeshInstance3D4/SubViewport")
 
 [node name="Walla" type="Node3D" parent="." unique_id=808463279]
 
@@ -1358,3 +1399,82 @@ spot_angle = 52.031246
 [node name="MeshInstance3D" type="MeshInstance3D" parent="STALLS2/STALL4" unique_id=1764153050]
 transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
 mesh = SubResource("PlaneMesh_b1lj4")
+
+[node name="CallManager" type="CSGBox3D" parent="." unique_id=968644861 node_paths=PackedStringArray("audio_player", "printer_obj", "client_envelope")]
+transform = Transform3D(2.690143, 0, -0.27986044, 0, 1, 0, 0.21966234, 0, 2.1114907, 5.584789, 4.0492268, -5.0284576)
+script = ExtResource("21_de3ce")
+audio_player = NodePath("AudioStreamPlayer3D")
+printer_obj = NodePath("../Printer")
+call_sets = Array[ExtResource("22_naykk")]([ExtResource("23_62j1h"), ExtResource("24_4nfij"), ExtResource("25_oh0nk")])
+call_resources = Array[ExtResource("26_eokiq")]([ExtResource("27_p4pvm"), ExtResource("28_nm061"), ExtResource("29_3qlal")])
+client_envelope = NodePath("../Client Envelope")
+eject_pos = Vector3(1.7015734, 0.25792444, -1.2588937)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CallManager" unique_id=840091707]
+
+[node name="Printer" type="CSGBox3D" parent="." unique_id=942537103 node_paths=PackedStringArray("call_manager", "paper_obj")]
+transform = Transform3D(1.8953279, 0, 0.11872974, 0, 1, 0, -0.06605552, 0, 2.098752, 1.8918447, 4.150402, -4.8783746)
+size = Vector3(1, 0.6040039, 1)
+script = ExtResource("30_naykk")
+call_manager = NodePath("../CallManager")
+paper_obj = NodePath("../TranslationPaper2")
+paper_spawn_pos = Vector3(1.8918447, 4.150402, -4.8783746)
+paper_print_pos = Vector3(1.8918447, 4.150402, -3.022833)
+paper_eject_force = Vector3(-400, -250, 0)
+
+[node name="TranslationPaper2" parent="." unique_id=1369670520 instance=ExtResource("8_abnna")]
+transform = Transform3D(0.11872967, -1.0230736, -1.5954901, -2.3594843e-08, 0.8418016, -0.5397871, 2.098752, 0.03565592, 0.05560555, 2.7365355, 21.742529, -1.0381098)
+
+[node name="Client Envelope" parent="." unique_id=1782779634 instance=ExtResource("31_4nfij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8278656, 20.391895, -6.239491)
+
+[node name="MailBox" type="CSGBox3D" parent="." unique_id=1875662680 node_paths=PackedStringArray("call_manager")]
+transform = Transform3D(-9.097788e-08, 0, -0.99999994, 0, 1, 0, 2.0813313, 0, -4.3711385e-08, 12.402387, 3.8250484, 2.0234892)
+use_collision = true
+size = Vector3(1, 0.5582123, 1)
+material = SubResource("StandardMaterial3D_eokiq")
+script = ExtResource("32_oh0nk")
+start_pos = Vector3(10.980604, 3.5273557, 2.062827)
+end_pos = Vector3(12.402387, 3.8250484, 2.0234892)
+call_manager = NodePath("../CallManager")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="MailBox" unique_id=1327970034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.88254976)
+size = Vector3(1, 0.9775238, 1)
+material = SubResource("StandardMaterial3D_p4pvm")
+
+[node name="Area3D" type="Area3D" parent="MailBox" unique_id=1462797666]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MailBox/Area3D" unique_id=1742621437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 8.1712415e-13, 0, 1, 0.039367616, -0.14819336, 1.0695534)
+shape = SubResource("BoxShape3D_nm061")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=84238959]
+transform = Transform3D(1.0204749, 0, -0.05820246, 0, 0.97243583, 0, 0.09184729, 0, 0.6466617, 6.1093135, 6.9381495, -3.6778386)
+mesh = SubResource("PlaneMesh_oh0nk")
+skeleton = NodePath("../CallManager")
+surface_material_override/0 = SubResource("StandardMaterial3D_nm061")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D4" unique_id=1820480366]
+size = Vector2i(1920, 1080)
+
+[node name="ComputerInterface" parent="MeshInstance3D4/SubViewport" unique_id=1245486518 node_paths=PackedStringArray("call_manager") instance=ExtResource("33_oh0nk")]
+call_manager = NodePath("../../../CallManager")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=911962876]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=1715217325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22532225, 0)
+shape = SubResource("BoxShape3D_3qlal")
+
+[node name="TopLeft" type="Node3D" parent="MeshInstance3D4" unique_id=539477777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3048015, 1.6558218, 0)
+
+[node name="BottomRight" type="Node3D" parent="MeshInstance3D4" unique_id=1381344149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2805643, -1.1995864, 0)
+
+[connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
