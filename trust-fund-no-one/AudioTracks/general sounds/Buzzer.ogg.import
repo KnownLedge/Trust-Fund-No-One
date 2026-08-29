@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ciptlt7yowhcj"
+path="res://.godot/imported/Buzzer.ogg-65709b8297351c357cf3c0c08a9fd988.oggvorbisstr"
+
+[deps]
+
+source_file="res://AudioTracks/general sounds/Buzzer.ogg"
+dest_files=["res://.godot/imported/Buzzer.ogg-65709b8297351c357cf3c0c08a9fd988.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

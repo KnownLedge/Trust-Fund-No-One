@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://diqmqb74kp5t" path="res://Scripts/NodeScripts/player_controller.gd" id="1_3ejmg"]
 [ext_resource type="Texture2D" uid="uid://e51fhf5noi5g" path="res://Textures/pixelartDot.png" id="2_i3yby"]
+[ext_resource type="PackedScene" uid="uid://begt3670m2s86" path="res://Scenes/Objects/Arms/armtest.fbx" id="2_lphv5"]
 [ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://Materials and Shaders/ScreenEffects_Ultimate.tres" id="2_y5w3y"]
 [ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://Textures/noise_texture.tres" id="3_3wq4h"]
 [ext_resource type="Texture2D" uid="uid://dlkx6u51rb5cn" path="res://Textures/Gradient.tres" id="3_lphv5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1077r"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k06c8"]
 shader = ExtResource("2_y5w3y")
@@ -89,6 +94,10 @@ transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, -0
 
 [node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=404128739]
 transform = Transform3D(0.17505449, 0, 0, 0, 0.17382765, 0, 0, 0, 0.17382765, 0.788, -0.449, -0.682)
+material = SubResource("StandardMaterial3D_1077r")
+
+[node name="armtest" parent="Head/Camera3D/Right Hand" unique_id=635671225 instance=ExtResource("2_lphv5")]
+transform = Transform3D(23.827593, -174.70798, 464.61423, 8.885723, 468.49017, 173.26262, -499.35287, 8.325462e-06, 25.253101, -1.6792018, 0.80051494, 1.2551439)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=573658338]
 
