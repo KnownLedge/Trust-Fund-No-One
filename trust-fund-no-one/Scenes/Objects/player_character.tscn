@@ -52,10 +52,13 @@ shader_parameter/Film_Grain = 1.999999955296
 shader_parameter/Color_Filter_Gradient = ExtResource("3_lphv5")
 shader_parameter/Filter_Strenght = 0.18999999575312
 
-[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "left_hand", "right_hand", "ray", "UI_ray", "left_ray", "right_ray")]
+[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "cursor_ui", "left_hand", "right_hand", "ray", "UI_ray", "left_ray", "right_ray")]
 script = ExtResource("1_3ejmg")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
+cursor_ui = NodePath("TextureRect")
+grab_texture = ExtResource("2_i3yby")
+computer_texture = ExtResource("2_i3yby")
 left_hand = NodePath("Head/Camera3D/Left Hand")
 right_hand = NodePath("Head/Camera3D/Right Hand")
 ray = NodePath("Head/Camera3D/RayCast3D")
