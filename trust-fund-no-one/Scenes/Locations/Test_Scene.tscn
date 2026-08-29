@@ -1,10 +1,13 @@
-[gd_scene load_steps=41 format=3 uid="uid://oih2ai0btj1v"]
+[gd_scene load_steps=38 format=3 uid="uid://oih2ai0btj1v"]
 
 [ext_resource type="Texture2D" uid="uid://d4cps7mix0rlu" path="res://Textures/Screenshot 2026-08-25 170607.png" id="1_fngqm"]
 [ext_resource type="PackedScene" uid="uid://vmqxnv0c720m" path="res://Scenes/Objects/translation_paper.tscn" id="1_n4juv"]
 [ext_resource type="Texture2D" uid="uid://bsvj450eefa3g" path="res://Textures/Screenshot 2026-08-25 170601.png" id="2_d6mcn"]
+[ext_resource type="Shader" uid="uid://b5ptog53u0l54" path="res://Materials and Shaders/ScreenEffects_Ultimate.tres" id="2_n4juv"]
 [ext_resource type="Material" uid="uid://b7weoik8m3qbh" path="res://Materials and Shaders/tst.tres" id="3_oobvh"]
 [ext_resource type="Texture2D" uid="uid://yfw4wffbv20s" path="res://Textures/Screenshot 2026-08-25 171306.png" id="3_prhs4"]
+[ext_resource type="Texture2D" uid="uid://dlkx6u51rb5cn" path="res://Textures/Gradient.tres" id="4_i164g"]
+[ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://Textures/noise_texture.tres" id="5_fngqm"]
 [ext_resource type="Texture2D" uid="uid://cyhokadd7q87v" path="res://Textures/Screenshot 2026-08-25 171051.png" id="5_oobvh"]
 [ext_resource type="Texture2D" uid="uid://dl1fqv48cfgwx" path="res://Textures/Screenshot 2026-08-25 173446.png" id="7_rchic"]
 [ext_resource type="Texture2D" uid="uid://dijvxkpob8riw" path="res://Textures/Screenshot 2026-08-25 171805.png" id="11_0a2g1"]
@@ -14,21 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://djc2aqjjr3nip" path="res://Textures/Screenshot 2026-08-25 172656.png" id="14_3nsqf"]
 [ext_resource type="PackedScene" uid="uid://gi5tk2ddbohy" path="res://Temp Models n stuff/CoffeeMug.FBX" id="14_k3c0s"]
 [ext_resource type="PackedScene" uid="uid://b0wh5tmvl2gag" path="res://Temp Models n stuff/stationery_pencil_pen_and_eraser_lowpoly.glb" id="16_3nsqf"]
-[ext_resource type="PackedScene" uid="uid://yj4baxphh5o1" path="res://Scenes/Objects/player_character.tscn" id="17_22ho2"]
-[ext_resource type="Texture2D" uid="uid://2juta1771jcf" path="res://Textures/Screenshot 2026-08-29 190902.png" id="18_4i5wj"]
 [ext_resource type="PackedScene" uid="uid://b63s8ka8621l1" path="res://Temp Models n stuff/clipboard.glb" id="18_lotfu"]
 [ext_resource type="PackedScene" uid="uid://cjqknrm44s7ks" path="res://Temp Models n stuff/folder.glb" id="19_4i5wj"]
-[ext_resource type="PackedScene" uid="uid://dv74ebuirbbe0" path="res://Scenes/Objects/Arms.fbx" id="19_851gt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4bhe"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6mcn"]
 albedo_texture = ExtResource("1_fngqm")
-emission = Color(0.11119685, 0.11119684, 0.11119684, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifypq"]
-albedo_texture = ExtResource("7_rchic")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prhs4"]
 albedo_texture = ExtResource("1_fngqm")
@@ -68,11 +64,48 @@ emission_enabled = true
 emission = Color(0.8879926, 0.88799256, 0.8879925, 1)
 emission_energy_multiplier = 0.55
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_851gt"]
-albedo_texture = ExtResource("2_d6mcn")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1enjj"]
+shader = ExtResource("2_n4juv")
+shader_parameter/Pixelation_Scale = 1.0
+shader_parameter/Panini = 0.0
+shader_parameter/Chromatic_Peripheral = 0.749999983236
+shader_parameter/Chromatic_Aberrations = 9.800000444055762
+shader_parameter/Chromatic_Darkening = 0.62999998591824
+shader_parameter/Blur_Amount = 5.960480020661407e-08
+shader_parameter/Blur_Centered = 0.0
+shader_parameter/Bloom_Starts = 0.80000001192093
+shader_parameter/Bloom_Halation = 0.0
+shader_parameter/Bloom_Booster = 0.0
+shader_parameter/Shadows_Split = 0.20000000298023
+shader_parameter/Shadow_Color_Temp = -50.0
+shader_parameter/Shadow_Green_Tint = -50.0
+shader_parameter/Shadow_Brightness = 0.7699999995529601
+shader_parameter/Shadow_Contrast = 0.86999999731776
+shader_parameter/Shadows_Saturation = 0.80000001192096
+shader_parameter/Highlights_Split = 0.62000002339482
+shader_parameter/Mid_Color_Temp = -14.799999475477762
+shader_parameter/Mid_Green_Tint = -50.0
+shader_parameter/Mid_Brightness = 1.1499999910592
+shader_parameter/Mid_Contrast = 0.75999999977648
+shader_parameter/Mid_Saturation = 0.70000001043084
+shader_parameter/High_Color_Temp = -18.79999953508256
+shader_parameter/High_Green_Tint = 0.0
+shader_parameter/High_Brightness = 0.8499999977648
+shader_parameter/High_Contrast = 0.9199999962001599
+shader_parameter/High_Saturation = 1.0
+shader_parameter/Main_Color_Temp = 8000.0
+shader_parameter/Main_Green_Tint = 50.000002235180006
+shader_parameter/Main_Brightness = 0.90000001341108
+shader_parameter/Main_Contrast = 0.90000001341108
+shader_parameter/Main_Saturation = 1.20000001788144
+shader_parameter/Posterization = 0.76999998278896
+shader_parameter/Vignette = 1.999999955296
+shader_parameter/Noise = ExtResource("5_fngqm")
+shader_parameter/Film_Grain = 1.999999955296
+shader_parameter/Color_Filter_Gradient = ExtResource("4_i164g")
+shader_parameter/Filter_Strenght = 0.18999999575312
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hu8ge"]
-material = SubResource("StandardMaterial3D_851gt")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0plpp"]
 albedo_texture = ExtResource("11_0a2g1")
@@ -90,14 +123,6 @@ texture_filter = 0
 albedo_texture = ExtResource("14_3nsqf")
 texture_filter = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp13a"]
-albedo_texture = ExtResource("18_4i5wj")
-albedo_texture_force_srgb = true
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ifypq"]
-material = SubResource("StandardMaterial3D_dp13a")
-
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -113,16 +138,6 @@ material = SubResource("StandardMaterial3D_d6mcn")
 [node name="CSGBox3D12" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7118835, 4.5781116, -3.7356415)
 size = Vector3(2.680359, 7.924103, 0.34371948)
-
-[node name="CSGBox3D23" type="CSGBox3D" parent="."]
-transform = Transform3D(0.78100026, 0, 0, 0, 0.5842885, 0, 0, 0, 1, -1.7118835, 8.418797, -3.9373412)
-size = Vector3(2.680359, 7.924103, 0.34371948)
-material = SubResource("StandardMaterial3D_ifypq")
-
-[node name="CSGBox3D24" type="CSGBox3D" parent="."]
-transform = Transform3D(1.1642584, 0, 0, 0, 0.5842885, 0, 0, 0, 1, 10.6783905, 7.836097, -3.7848296)
-size = Vector3(2.680359, 11.433243, 0.34371948)
-material = SubResource("StandardMaterial3D_ifypq")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.67112, 4.5781116, -3.7356415)
@@ -224,13 +239,23 @@ material = SubResource("StandardMaterial3D_b560c")
 transform = Transform3D(1, 0, 0, 0, 0.960001, -0.27999657, 0, 0.27999657, 0.960001, 0, 0, 0)
 light_color = Color(0.49485523, 0.5470965, 0.82147515, 1)
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.9995207, -0.009711549, -0.029393392, 0.023234602, 0.86279124, 0.5050262, 0.020455776, -0.505467, 0.86260337, 4.2367816, 7.977945, 2.6612525)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_1enjj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.02654332, 0.9996477, 0, -0.9996476, 0.026543321, 3.33681, 7.3876624, -2.3987322)
-light_color = Color(0.7699155, 0.99999994, 0.99090093, 1)
-light_energy = 1.206
-light_size = 0.052
 distance_fade_shadow = 221.1
-spot_range = 76.808
+spot_range = 61.97
 spot_attenuation = 2.69
 spot_angle = 78.16
 
@@ -239,169 +264,9 @@ transform = Transform3D(1.4663324, -0.003034933, -0.014147605, -0.011533437, 0.0
 mesh = SubResource("PlaneMesh_hu8ge")
 surface_material_override/0 = SubResource("StandardMaterial3D_0plpp")
 
-[node name="WALLS" type="Node3D" parent="."]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 4.5232797, 6.663964, -9.9792595)
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS"]
-transform = Transform3D(1, -2.910383e-11, -7.239578e-10, 3.7252903e-09, 1, 7.450581e-09, 6.493792e-10, 0, 0.99999994, 0, 0, 0)
 mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS/WALL1"]
-transform = Transform3D(0.9999999, -7.2759576e-11, -1.1896191e-09, 3.7252903e-09, 0.9999999, 7.450581e-09, 6.530172e-10, 0, 0.99999976, -1.868219, 0.07837868, 0.016281009)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS/WALL1/WALL1"]
-transform = Transform3D(0.99999994, -2.910383e-11, -2.4920155e-10, 3.7252903e-09, 1, 1.4901161e-08, 6.6029315e-10, -5.820766e-11, 0.9999999, 3.827918, -0.16059494, -0.03335917)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, -2.4556357e-10, 3.7252903e-09, 0.9999999, 0, -2.6739144e-10, 0, 0.9999997, 1.9903333, -0.083501816, -0.01734519)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS/WALL1/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, 2.2009772e-10, 1.1175871e-08, 1, 2.9802322e-08, 6.730261e-10, 8.731149e-11, 0.9999996, -7.7844152, 0.32658386, 0.06783891)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALLS2" type="Node3D" parent="."]
-transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -123.36435, 6.663964, -9.9792595)
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS2"]
-transform = Transform3D(1, -2.910383e-11, -7.239578e-10, 3.7252903e-09, 1, 7.450581e-09, 6.493792e-10, 0, 0.99999994, 0, 0, 0)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS2/WALL1"]
-transform = Transform3D(0.9999999, -7.2759576e-11, -1.1896191e-09, 3.7252903e-09, 0.9999999, 7.450581e-09, 6.530172e-10, 0, 0.99999976, -1.868219, 0.07837868, 0.016281009)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS2/WALL1/WALL1"]
-transform = Transform3D(0.99999994, -2.910383e-11, -2.4920155e-10, 3.7252903e-09, 1, 1.4901161e-08, 6.6029315e-10, -5.820766e-11, 0.9999999, 3.827918, -0.16059494, -0.03335917)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS2/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, -2.4556357e-10, 3.7252903e-09, 0.9999999, 0, -2.6739144e-10, 0, 0.9999997, 1.9903333, -0.083501816, -0.01734519)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS2/WALL1/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, 2.2009772e-10, 1.1175871e-08, 1, 2.9802322e-08, 6.730261e-10, 8.731149e-11, 0.9999996, -7.7844152, 0.32658386, 0.06783891)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALLS3" type="Node3D" parent="."]
-transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 132.38373, 6.663964, -9.9792595)
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS3"]
-transform = Transform3D(1, -2.910383e-11, -7.239578e-10, 3.7252903e-09, 1, 7.450581e-09, 6.493792e-10, 0, 0.99999994, 0, 0, 0)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS3/WALL1"]
-transform = Transform3D(0.9999999, -7.2759576e-11, -1.1896191e-09, 3.7252903e-09, 0.9999999, 7.450581e-09, 6.530172e-10, 0, 0.99999976, -1.868219, 0.07837868, 0.016281009)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS3/WALL1/WALL1"]
-transform = Transform3D(0.99999994, -2.910383e-11, -2.4920155e-10, 3.7252903e-09, 1, 1.4901161e-08, 6.6029315e-10, -5.820766e-11, 0.9999999, 3.827918, -0.16059494, -0.03335917)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS3/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, -2.4556357e-10, 3.7252903e-09, 0.9999999, 0, -2.6739144e-10, 0, 0.9999997, 1.9903333, -0.083501816, -0.01734519)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS3/WALL1/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, 2.2009772e-10, 1.1175871e-08, 1, 2.9802322e-08, 6.730261e-10, 8.731149e-11, 0.9999996, -7.7844152, 0.32658386, 0.06783891)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALLS4" type="Node3D" parent="."]
-transform = Transform3D(1.4953831, -0.9585303, -0.08632271, -0.11035904, 0.00609405, -11.952791, 13.12788, 0.109236345, -0.090647765, 100.763275, 6.663964, 38.157795)
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS4"]
-transform = Transform3D(1, -2.910383e-11, -7.239578e-10, 3.7252903e-09, 1, 7.450581e-09, 6.493792e-10, 0, 0.99999994, 0, 0, 0)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS4/WALL1"]
-transform = Transform3D(0.9999999, -7.2759576e-11, -1.1896191e-09, 3.7252903e-09, 0.9999999, 7.450581e-09, 6.530172e-10, 0, 0.99999976, -1.868219, 0.07837868, 0.016281009)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS4/WALL1/WALL1"]
-transform = Transform3D(0.99999994, -2.910383e-11, -2.4920155e-10, 3.7252903e-09, 1, 1.4901161e-08, 6.6029315e-10, -5.820766e-11, 0.9999999, 3.827918, -0.16059494, -0.03335917)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS4/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, -2.4556357e-10, 3.7252903e-09, 0.9999999, 0, -2.6739144e-10, 0, 0.9999997, 1.9903333, -0.083501816, -0.01734519)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS4/WALL1/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, 2.2009772e-10, 1.1175871e-08, 1, 2.9802322e-08, 6.730261e-10, 8.731149e-11, 0.9999996, -7.7844152, 0.32658386, 0.06783891)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALLS5" type="Node3D" parent="."]
-transform = Transform3D(-1.0822896, 0.9614884, 0.083432816, -0.11035904, 0.0060940497, -11.952791, -13.168373, -0.07907441, 0.09331449, -118.282166, 6.663964, 38.157795)
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS5"]
-transform = Transform3D(1, -2.910383e-11, -7.239578e-10, 3.7252903e-09, 1, 7.450581e-09, 6.493792e-10, 0, 0.99999994, 0, 0, 0)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS5/WALL1"]
-transform = Transform3D(0.9999999, -7.2759576e-11, -1.1896191e-09, 3.7252903e-09, 0.9999999, 7.450581e-09, 6.530172e-10, 0, 0.99999976, -1.868219, 0.07837868, 0.016281009)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS5/WALL1/WALL1"]
-transform = Transform3D(0.99999994, -2.910383e-11, -2.4920155e-10, 3.7252903e-09, 1, 1.4901161e-08, 6.6029315e-10, -5.820766e-11, 0.9999999, 3.827918, -0.16059494, -0.03335917)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS5/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, -2.4556357e-10, 3.7252903e-09, 0.9999999, 0, -2.6739144e-10, 0, 0.9999997, 1.9903333, -0.083501816, -0.01734519)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
-
-[node name="WALL1" type="MeshInstance3D" parent="WALLS5/WALL1/WALL1/WALL1/WALL1"]
-transform = Transform3D(0.9999999, -4.3655746e-11, 2.2009772e-10, 1.1175871e-08, 1, 2.9802322e-08, 6.730261e-10, 8.731149e-11, 0.9999996, -7.7844152, 0.32658386, 0.06783891)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
@@ -443,718 +308,3 @@ transform = Transform3D(1.3439052, 0.2796424, -1.4130179, -0.035796948, 1.938405
 
 [node name="Sketchfab_Scene4" parent="." instance=ExtResource("19_4i5wj")]
 transform = Transform3D(-6.064676, 0, 1.4256961, 0, 6.230001, 0, -1.4256961, 0, -6.064676, 10.470922, 3.9316287, -0.53595877)
-
-[node name="Player" parent="." instance=ExtResource("17_22ho2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3470693, 6.7236977, 2.6918292)
-
-[node name="Duplicate stalls" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.246338, 3.2392564, -3.8881836)
-
-[node name="STALL1" type="Node3D" parent="Duplicate stalls"]
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(1, 0, 0, 0, 0.026543321, 0.9996477, 0, -0.9996477, 0.026543321, -18.224543, 4.148406, 15.960689)
-distance_fade_shadow = 221.1
-spot_range = 61.97
-spot_attenuation = 2.69
-spot_angle = 78.16
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.795319, 1.3442335, 21.998915)
-size = Vector3(0.46972656, 7.924103, 11.804077)
-material = SubResource("StandardMaterial3D_d6mcn")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.789211, 1.3442335, 8.917115)
-size = Vector3(2.680359, 7.924103, 0.34371948)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.803604, 1.3442335, 7.0233765)
-size = Vector3(0.46972656, 7.924103, 11.983032)
-material = SubResource("StandardMaterial3D_prhs4")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.239388, 0.0053782463, 15.154033)
-size = Vector3(9.492676, 0.5400162, 8.776367)
-material = SubResource("StandardMaterial3D_qjjbk")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.11765, 0.0053782463, 20.576698)
-size = Vector3(2.607544, 0.5400162, 11.933594)
-material = ExtResource("3_oobvh")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.853462, 0.8635855, 13.727999)
-size = Vector3(4.758911, 1.1275578, 4.4871826)
-material = SubResource("StandardMaterial3D_j2e8j")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.798225, 1.930224, 13.712872)
-size = Vector3(4.758911, 1.1275578, 2.1240082)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -22.252872, 3.751618, 13.563526)
-size = Vector3(4.758911, 2.8566256, 3.2548752)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(-1.1696175, 0.59753954, 0.017699338, -0.011536143, 0.005893638, -1.7944868, -0.8843905, -0.7903304, -7.7366263e-10, -18.287804, 3.4300857, 20.940899)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../../../CSGBox3D3")
-surface_material_override/0 = SubResource("StandardMaterial3D_0plpp")
-
-[node name="STALL1" type="Node3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04718399, 0, 17.929617)
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(1, 0, 0, 0, 0.026543321, 0.9996477, 0, -0.9996477, 0.026543321, -18.224543, 4.148406, 15.960689)
-distance_fade_shadow = 221.1
-spot_range = 61.97
-spot_attenuation = 2.69
-spot_angle = 78.16
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.795319, 1.3442335, 21.998915)
-size = Vector3(0.46972656, 7.924103, 11.804077)
-material = SubResource("StandardMaterial3D_d6mcn")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.789211, 1.3442335, 8.917115)
-size = Vector3(2.680359, 7.924103, 0.34371948)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.803604, 1.3442335, 7.0233765)
-size = Vector3(0.46972656, 7.924103, 11.983032)
-material = SubResource("StandardMaterial3D_prhs4")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.239388, 0.0053782463, 15.154033)
-size = Vector3(9.492676, 0.5400162, 8.776367)
-material = SubResource("StandardMaterial3D_qjjbk")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.11765, 0.0053782463, 20.576698)
-size = Vector3(2.607544, 0.5400162, 11.933594)
-material = ExtResource("3_oobvh")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.853462, 0.8635855, 13.727999)
-size = Vector3(4.758911, 1.1275578, 4.4871826)
-material = SubResource("StandardMaterial3D_j2e8j")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.798225, 1.930224, 13.712872)
-size = Vector3(4.758911, 1.1275578, 2.1240082)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -22.252872, 3.751618, 13.563526)
-size = Vector3(4.758911, 2.8566256, 3.2548752)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Duplicate stalls/STALL1/STALL1"]
-transform = Transform3D(-1.1696175, 0.59753954, 0.017699338, -0.011536143, 0.005893638, -1.7944868, -0.8843905, -0.7903304, -7.7366263e-10, -18.287804, 3.4300857, 20.940899)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../../../CSGBox3D3")
-surface_material_override/0 = SubResource("StandardMaterial3D_0plpp")
-
-[node name="STALL2" type="Node3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2892065, 0, 35.85814)
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(1, 0, 0, 0, 0.026543321, 0.9996477, 0, -0.9996477, 0.026543321, -18.224543, 4.148406, 15.960689)
-distance_fade_shadow = 221.1
-spot_range = 61.97
-spot_attenuation = 2.69
-spot_angle = 78.16
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.795319, 1.3442335, 21.998915)
-size = Vector3(0.46972656, 7.924103, 11.804077)
-material = SubResource("StandardMaterial3D_d6mcn")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.789211, 1.3442335, 8.917115)
-size = Vector3(2.680359, 7.924103, 0.34371948)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.803604, 1.3442335, 7.0233765)
-size = Vector3(0.46972656, 7.924103, 11.983032)
-material = SubResource("StandardMaterial3D_prhs4")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.239388, 0.0053782463, 15.154033)
-size = Vector3(9.492676, 0.5400162, 8.776367)
-material = SubResource("StandardMaterial3D_qjjbk")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.11765, 0.0053782463, 20.576698)
-size = Vector3(2.607544, 0.5400162, 11.933594)
-material = ExtResource("3_oobvh")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.853462, 0.8635855, 13.727999)
-size = Vector3(4.758911, 1.1275578, 4.4871826)
-material = SubResource("StandardMaterial3D_j2e8j")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.798225, 1.930224, 13.712872)
-size = Vector3(4.758911, 1.1275578, 2.1240082)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -22.252872, 3.751618, 13.563526)
-size = Vector3(4.758911, 2.8566256, 3.2548752)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Duplicate stalls/STALL1/STALL2"]
-transform = Transform3D(-1.1696175, 0.59753954, 0.017699338, -0.011536143, 0.005893638, -1.7944868, -0.8843905, -0.7903304, -7.7366263e-10, -18.287804, 3.4300857, 20.940899)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../../../CSGBox3D3")
-surface_material_override/0 = SubResource("StandardMaterial3D_0plpp")
-
-[node name="STALL3" type="Node3D" parent="Duplicate stalls/STALL1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.310959, 0, 0)
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(1, 0, 0, 0, 0.026543321, 0.9996477, 0, -0.9996477, 0.026543321, -18.224543, 4.148406, 15.960689)
-distance_fade_shadow = 221.1
-spot_range = 61.97
-spot_attenuation = 2.69
-spot_angle = 78.16
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.795319, 1.3442335, 21.998915)
-size = Vector3(0.46972656, 7.924103, 11.804077)
-material = SubResource("StandardMaterial3D_d6mcn")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.789211, 1.3442335, 8.917115)
-size = Vector3(2.680359, 7.924103, 0.34371948)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.803604, 1.3442335, 7.0233765)
-size = Vector3(0.46972656, 7.924103, 11.983032)
-material = SubResource("StandardMaterial3D_prhs4")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.239388, 0.0053782463, 15.154033)
-size = Vector3(9.492676, 0.5400162, 8.776367)
-material = SubResource("StandardMaterial3D_qjjbk")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.11765, 0.0053782463, 20.576698)
-size = Vector3(2.607544, 0.5400162, 11.933594)
-material = ExtResource("3_oobvh")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.853462, 0.8635855, 13.727999)
-size = Vector3(4.758911, 1.1275578, 4.4871826)
-material = SubResource("StandardMaterial3D_j2e8j")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.798225, 1.930224, 13.712872)
-size = Vector3(4.758911, 1.1275578, 2.1240082)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -22.252872, 3.751618, 13.563526)
-size = Vector3(4.758911, 2.8566256, 3.2548752)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(-1.1696175, 0.59753954, 0.017699338, -0.011536143, 0.005893638, -1.7944868, -0.8843905, -0.7903304, -7.7366263e-10, -18.287804, 3.4300857, 20.940899)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../../../CSGBox3D3")
-surface_material_override/0 = SubResource("StandardMaterial3D_0plpp")
-
-[node name="STALL1" type="Node3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04718399, 0, 17.929617)
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(1, 0, 0, 0, 0.026543321, 0.9996477, 0, -0.9996477, 0.026543321, -18.224543, 4.148406, 15.960689)
-distance_fade_shadow = 221.1
-spot_range = 61.97
-spot_attenuation = 2.69
-spot_angle = 78.16
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.795319, 1.3442335, 21.998915)
-size = Vector3(0.46972656, 7.924103, 11.804077)
-material = SubResource("StandardMaterial3D_d6mcn")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.789211, 1.3442335, 8.917115)
-size = Vector3(2.680359, 7.924103, 0.34371948)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.803604, 1.3442335, 7.0233765)
-size = Vector3(0.46972656, 7.924103, 11.983032)
-material = SubResource("StandardMaterial3D_prhs4")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.239388, 0.0053782463, 15.154033)
-size = Vector3(9.492676, 0.5400162, 8.776367)
-material = SubResource("StandardMaterial3D_qjjbk")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.11765, 0.0053782463, 20.576698)
-size = Vector3(2.607544, 0.5400162, 11.933594)
-material = ExtResource("3_oobvh")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.853462, 0.8635855, 13.727999)
-size = Vector3(4.758911, 1.1275578, 4.4871826)
-material = SubResource("StandardMaterial3D_j2e8j")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.798225, 1.930224, 13.712872)
-size = Vector3(4.758911, 1.1275578, 2.1240082)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -22.252872, 3.751618, 13.563526)
-size = Vector3(4.758911, 2.8566256, 3.2548752)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Duplicate stalls/STALL1/STALL3/STALL1"]
-transform = Transform3D(-1.1696175, 0.59753954, 0.017699338, -0.011536143, 0.005893638, -1.7944868, -0.8843905, -0.7903304, -7.7366263e-10, -18.287804, 3.4300857, 20.940899)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../../../CSGBox3D3")
-surface_material_override/0 = SubResource("StandardMaterial3D_0plpp")
-
-[node name="STALL2" type="Node3D" parent="Duplicate stalls/STALL1/STALL3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2892065, 0, 35.85814)
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(1, 0, 0, 0, 0.026543321, 0.9996477, 0, -0.9996477, 0.026543321, -18.224543, 4.148406, 15.960689)
-distance_fade_shadow = 221.1
-spot_range = 61.97
-spot_attenuation = 2.69
-spot_angle = 78.16
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.795319, 1.3442335, 21.998915)
-size = Vector3(0.46972656, 7.924103, 11.804077)
-material = SubResource("StandardMaterial3D_d6mcn")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.789211, 1.3442335, 8.917115)
-size = Vector3(2.680359, 7.924103, 0.34371948)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.803604, 1.3442335, 7.0233765)
-size = Vector3(0.46972656, 7.924103, 11.983032)
-material = SubResource("StandardMaterial3D_prhs4")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.239388, 0.0053782463, 15.154033)
-size = Vector3(9.492676, 0.5400162, 8.776367)
-material = SubResource("StandardMaterial3D_qjjbk")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.11765, 0.0053782463, 20.576698)
-size = Vector3(2.607544, 0.5400162, 11.933594)
-material = ExtResource("3_oobvh")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.853462, 0.8635855, 13.727999)
-size = Vector3(4.758911, 1.1275578, 4.4871826)
-material = SubResource("StandardMaterial3D_j2e8j")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.798225, 1.930224, 13.712872)
-size = Vector3(4.758911, 1.1275578, 2.1240082)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -22.252872, 3.751618, 13.563526)
-size = Vector3(4.758911, 2.8566256, 3.2548752)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Duplicate stalls/STALL1/STALL3/STALL2"]
-transform = Transform3D(-1.1696175, 0.59753954, 0.017699338, -0.011536143, 0.005893638, -1.7944868, -0.8843905, -0.7903304, -7.7366263e-10, -18.287804, 3.4300857, 20.940899)
-mesh = SubResource("PlaneMesh_hu8ge")
-skeleton = NodePath("../../../CSGBox3D3")
-surface_material_override/0 = SubResource("StandardMaterial3D_0plpp")
-
-[node name="CEILINGS" type="Node3D" parent="."]
-
-[node name="CEILING" type="Node3D" parent="CEILINGS"]
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING2" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING2"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING3" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING3"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING4" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING4"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING5" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING5"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING6" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING6"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING7" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING7"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING8" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING8"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING9" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILING9"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILINGS" type="Node3D" parent="CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.72179, 0, 0)
-
-[node name="CEILING" type="Node3D" parent="CEILINGS/CEILINGS"]
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING2" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING2"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING3" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING3"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING4" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING4"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING5" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING5"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING6" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING6"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING7" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING7"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING8" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING8"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING9" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILING9"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILINGS" type="Node3D" parent="CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.13782, 0, 0)
-
-[node name="CEILING" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING2" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING2"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING3" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING3"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING4" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING4"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING5" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING5"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING6" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING6"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING7" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING7"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING8" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING8"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING9" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILING9"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILINGS" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.888168, 0, 49.740646)
-
-[node name="CEILING" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING2" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING2"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING3" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING3"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING4" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING4"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING5" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING5"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING6" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING6"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING7" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING7"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING8" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING8"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING9" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS/CEILING9"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILINGS2" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.838776, 0, 49.740646)
-
-[node name="CEILING" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING2" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING2"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING3" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING3"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING4" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING4"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING5" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING5"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING6" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING6"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING7" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING7"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING8" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING8"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING9" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS2/CEILING9"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILINGS3" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -180.85025, 0, 49.740646)
-
-[node name="CEILING" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING2" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING2"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING3" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 0)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING3"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING4" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING4"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING5" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING5"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING6" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 16.866154)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING6"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING7" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING7"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING8" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.63547, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING8"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="CEILING9" type="Node3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.86498, 0, 33.65902)
-
-[node name="Ceilpt1" type="MeshInstance3D" parent="CEILINGS/CEILINGS/CEILINGS/CEILINGS3/CEILING9"]
-transform = Transform3D(14.576697, 0, 0, 0, -1.0000004, 7.550584e-07, 0, -8.7422805e-08, -8.636861, 4.6152267, 18.648476, -2.223403)
-mesh = SubResource("PlaneMesh_ifypq")
-
-[node name="Arms" parent="." instance=ExtResource("19_851gt")]
-transform = Transform3D(1.3720888, 0, 12.892193, 11.937437, 4.8964024, -1.2704761, -4.8689046, 12.004854, 0.5181872, 2.3531833, 4.417563, -0.35939598)
