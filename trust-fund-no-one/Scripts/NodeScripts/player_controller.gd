@@ -13,6 +13,8 @@ const LEFT_TURN = 12.5
 
 const RIGHT_TURN = -12.5
 
+const STRAFE_SPEED = 0.2
+
 @export var cursor_ui: TextureRect
 
 @export var grab_texture: Texture
@@ -34,6 +36,14 @@ const RIGHT_TURN = -12.5
 @export var default_left_hold: Vector3
 
 @export var default_right_hold: Vector3
+
+@export var left_limit:float = 3
+
+@export var right_limit:float = 3
+
+var strafe_pos = 0
+
+var default_pos: Vector3
 
 var left_item: Node3D
 
@@ -60,6 +70,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	left_hover_pos = left_hand.position
 	right_hover_pos = right_hand.position
+	default_pos = position
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -90,8 +101,8 @@ func _process(delta: float) -> void:
 func drop_item(hand, hand_item:Node3D, hover_pos, hand_ray:RayCast3D):
 	if(hand_item != null):
 		hand_item.reparent(get_parent())
-		#if(hand_item is RigidBody3D):
-		hand_item.freeze = false
+		if(hand_item is RigidBody3D):
+			hand_item.freeze = false
 		if(hand_ray.is_colliding()):
 			hand_item.global_position = hand_ray.get_collision_point()
 		hand_item.translate(Vector3(0,0.3,0))
@@ -195,3 +206,11 @@ func _physics_process(delta: float) -> void:
 	if(right_ray.is_colliding() and right_ray.get_collider() != right_item):
 		right_hand.global_position = right_ray.get_collision_point()
 		right_hand.position = lerp(right_hand.position, right_hover_pos, delta * HAND_RETURN)
+	
+	#Strafing
+	if(Input.is_action_pressed("StrafeLeft")):
+		strafe_pos = clampf(strafe_pos - STRAFE_SPEED,-right_limit, left_limit)
+		position = default_pos + Vector3(strafe_pos,0,0)
+	if(Input.is_action_pressed("StrafeRight")):
+		strafe_pos = clampf(strafe_pos + STRAFE_SPEED,-right_limit, left_limit)
+		position = default_pos + Vector3(strafe_pos,0,0)

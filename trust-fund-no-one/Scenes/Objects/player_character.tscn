@@ -72,13 +72,15 @@ left_ray = NodePath("Head/Camera3D/LeftCast3D")
 right_ray = NodePath("Head/Camera3D/RightCast3D")
 default_left_hold = Vector3(-0.14, -0.04, -2.3)
 default_right_hold = Vector3(0.14, -0.04, -2.3)
+left_limit = 1.8
+right_limit = 1.8
 
 [node name="Head" type="Node3D" parent="." unique_id=95127230]
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1244759920]
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=599415049]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -6)
 collision_mask = 16
 collide_with_areas = true
 
@@ -88,12 +90,12 @@ collision_mask = 32
 collide_with_areas = true
 
 [node name="LeftCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=802782192]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -6)
 collision_mask = 239
 collide_with_areas = true
 
 [node name="RightCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1473955017]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -6)
 collision_mask = 239
 collide_with_areas = true
 
