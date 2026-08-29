@@ -31,6 +31,8 @@ var call_failed = false
 var envelopes_received = 0
 
 func _ready() -> void:
+	if(game_progress.current_call_set != 0):
+		starting_call_set = game_progress.current_call_set
 	apply_call_set(call_sets[starting_call_set - 1])
 	receive_call_group()
 
@@ -63,8 +65,10 @@ func receive_answer(answer_id: int, answer_result: bool):
 		print("CALL DONE")
 		if(call_failed):
 			print("BOO YOU SUCK")
+			end_day(false)
 		else:
 			print("god gamer")
+			end_day(true)
 
 
 func receive_call_group():
@@ -76,6 +80,21 @@ func start_call(CallInfo: CallerResource):
 	audio_player.stream = CallInfo.audio_track
 	audio_player.play()
 	printer_obj.start_translation(CallInfo.call_translation)
+
+func take_call(call_id):
+	start_call(call_resources[call_id])
+
+func end_day(iswinner:bool):
+	game_progress.current_call_set += 1
+	#Print reward here, then delay with a screen fade out
+	if(game_progress.current_call_set - 1 > call_sets.size()):
+		print("OH NO WE'RE OUT OF CALLS, LOAD TITLE SCREEN")
+		game_progress.current_call_set = 0
+		print("SHOULD REALLY DELAY HERE")
+		get_tree().change_scene_to_file("res://Scenes/M_Menu/main_menu.tscn")
+	print("SHOULD REALLY DELAY HERE")
+	get_tree().change_scene_to_file("res://Scenes/Locations/TestPhoneCallRoom.tscn")
+	#Change this to game scene
 
 func _process(delta: float) -> void:
 	

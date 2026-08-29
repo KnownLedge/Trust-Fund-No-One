@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://xeooppawhgem" path="res://Scenes/Objects/green_stamp.tscn" id="9_8rcqf"]
 [ext_resource type="PackedScene" uid="uid://n6ad6myn7i2c" path="res://Scenes/Objects/red_stamp.tscn" id="9_tp2d6"]
 [ext_resource type="Script" uid="uid://cf2w8nkbp64xa" path="res://Scripts/NodeScripts/MailBoxScript.gd" id="11_7rdaf"]
+[ext_resource type="PackedScene" uid="uid://bg3e8esngweea" path="res://Scenes/Puter/Computer_Interface.tscn" id="17_1qg3p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b560c"]
 albedo_color = Color(0.07123137, 0.07123139, 0.07123137, 1)
@@ -38,6 +39,22 @@ albedo_color = Color(1, 0.29803923, 0.30980393, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_itf3o"]
 size = Vector3(1, 0.7036133, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3bjr3"]
+size = Vector2(4.5, 3)
+orientation = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mbynv"]
+viewport_path = NodePath("MeshInstance3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbrh2"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_mbynv")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iu3ei"]
+size = Vector3(4.604, 2.86, 0.01)
 
 [node name="Node3D" type="Node3D" unique_id=669103898]
 
@@ -91,8 +108,11 @@ paper_spawn_pos = Vector3(3.0547693, 1.3066576, -2.492978)
 paper_print_pos = Vector3(1.966, 0.585, -2.493)
 paper_eject_force = Vector3(-400, -250, 0)
 
-[node name="Player" parent="." unique_id=207456662 instance=ExtResource("7_5avas")]
+[node name="Player" parent="." unique_id=207456662 node_paths=PackedStringArray("pc_top_Left_node", "pc_bottom_right_node", "subViewport") instance=ExtResource("7_5avas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0433145, 1.0855389, -1.9028977)
+pc_top_Left_node = NodePath("../MeshInstance3D/TopLeft")
+pc_bottom_right_node = NodePath("../MeshInstance3D/BottomRight")
+subViewport = NodePath("../MeshInstance3D/SubViewport")
 
 [node name="PageHolder" type="CSGBox3D" parent="." unique_id=360629707]
 transform = Transform3D(-3.7855173e-08, -0.5, -0.8660254, -2.1855694e-08, 0.8660254, -0.5, 1, 0, -4.371139e-08, 1.9661989, 0.4728812, -2.492978)
@@ -151,5 +171,31 @@ collision_mask = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MailBox/Area3D" unique_id=101660530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14819336, 0)
 shape = SubResource("BoxShape3D_itf3o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1535910043]
+transform = Transform3D(0.291628, 0, 0.0066740015, 0, 0.3775894, 0, -0.0019463692, 0, 0.9999777, 1.0377195, 1.0646496, -4.0015745)
+mesh = SubResource("PlaneMesh_3bjr3")
+skeleton = NodePath("../CallManager")
+surface_material_override/0 = SubResource("StandardMaterial3D_mbrh2")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D" unique_id=282950263]
+size = Vector2i(1920, 1080)
+
+[node name="ComputerInterface" parent="MeshInstance3D/SubViewport" unique_id=1245486518 node_paths=PackedStringArray("call_manager") instance=ExtResource("17_1qg3p")]
+call_manager = NodePath("../../../CallManager")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=385106021]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=529707642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22532225, 0)
+shape = SubResource("BoxShape3D_iu3ei")
+
+[node name="TopLeft" type="Node3D" parent="MeshInstance3D" unique_id=625252764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3048015, 1.6558218, 0)
+
+[node name="BottomRight" type="Node3D" parent="MeshInstance3D" unique_id=1615564434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2805643, -1.1995864, 0)
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
