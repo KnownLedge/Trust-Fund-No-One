@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://vos4ms1f2g86"]
+
+[ext_resource type="PackedScene" uid="uid://bjjqi12wdkb33" path="res://Temp Models n stuff/Cardboard Boxes.fbx" id="1_vgbav"]
+[ext_resource type="Texture2D" uid="uid://no10rsomcofx" path="res://Textures/Screenshot 2026-08-30 022113.png" id="2_b7ovk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmau1"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vepb"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wwod"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4v6i"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7f7w"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4w8gu"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5fxk"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbmtn"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqrp0"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db650"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8piq6"]
+albedo_texture = ExtResource("2_b7ovk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si00r"]
+
+[node name="Cardboard Boxes" unique_id=814202729 instance=ExtResource("1_vgbav")]
+
+[node name="Box 1" parent="." index="0" unique_id=449436516]
+surface_material_override/0 = SubResource("StandardMaterial3D_tmau1")
+
+[node name="Box 3" parent="." index="1" unique_id=346924191]
+surface_material_override/0 = SubResource("StandardMaterial3D_3vepb")
+
+[node name="Box 6" parent="." index="2" unique_id=2040585298]
+surface_material_override/0 = SubResource("StandardMaterial3D_5wwod")
+
+[node name="Box 5" parent="." index="3" unique_id=172633874]
+surface_material_override/0 = SubResource("StandardMaterial3D_r4v6i")
+
+[node name="Box 4" parent="." index="4" unique_id=1005707239]
+surface_material_override/0 = SubResource("StandardMaterial3D_a7f7w")
+
+[node name="Box 1_001" parent="." index="5" unique_id=2031260545]
+surface_material_override/0 = SubResource("StandardMaterial3D_4w8gu")
+
+[node name="Box 1_002" parent="." index="6" unique_id=1980669987]
+surface_material_override/0 = SubResource("StandardMaterial3D_v5fxk")
+
+[node name="Box 3_001" parent="." index="7" unique_id=213798145]
+surface_material_override/0 = SubResource("StandardMaterial3D_tbmtn")
+
+[node name="Box 5_001" parent="." index="8" unique_id=1995802093]
+surface_material_override/0 = SubResource("StandardMaterial3D_lqrp0")
+
+[node name="Box 2_001" parent="." index="9" unique_id=1691959246]
+surface_material_override/0 = SubResource("StandardMaterial3D_db650")
+
+[node name="Box 6_001" parent="." index="10" unique_id=640721037]
+material_override = SubResource("StandardMaterial3D_8piq6")
+surface_material_override/0 = SubResource("StandardMaterial3D_si00r")

@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://ca8c81wsyu7ye" path="res://Textures/puffpol.png" id="49_4njvl"]
 [ext_resource type="Texture2D" uid="uid://cug2xrnh3uja0" path="res://Textures/sispol.png" id="50_xqjw3"]
 [ext_resource type="Texture2D" uid="uid://4jqdb62qjtb3" path="res://Textures/virpol.png" id="51_j1bu2"]
+[ext_resource type="PackedScene" uid="uid://vos4ms1f2g86" path="res://Models n Stuff/cardboard_boxes.tscn" id="52_duuyb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -1830,6 +1831,9 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cardboard Crashes2" unique_id=1357827801]
 shape = SubResource("BoxShape3D_xrivr")
 
+[node name="Polaroid References" type="Node3D" parent="." unique_id=1554663217]
+transform = Transform3D(-2.7677657e-08, 1, -2.1163236e-08, 0, -4.371139e-08, -0.4841584, -0.633191, -4.371139e-08, 9.250744e-16, -0.43444657, 5.3226976, -2.6043103)
+
 [node name="Cal" type="MeshInstance3D" parent="." unique_id=204237100]
 transform = Transform3D(-2.7677657e-08, 1, -2.1163236e-08, 0, -4.371139e-08, -0.4841584, -0.633191, -4.371139e-08, 9.250744e-16, -0.43444657, 5.3226976, -2.6043103)
 mesh = SubResource("PlaneMesh_3662s")
@@ -1864,9 +1868,12 @@ transform = Transform3D(0.124751866, -0.0056868587, 0.01582219, 0.012710003, 0.0
 material_override = SubResource("StandardMaterial3D_j1bu2")
 mesh = SubResource("PlaneMesh_l1erw")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=1464671564]
+[node name="Virality" type="MeshInstance3D" parent="." unique_id=1464671564]
 transform = Transform3D(0.2696345, 0.15059474, -0.026198894, -0.026977114, 0.094210505, -0.28695482, -0.028843064, 1.319693, 0.023474833, -0.08747053, 6.526309, -4.984943)
 material_override = SubResource("StandardMaterial3D_duuyb")
 mesh = SubResource("PlaneMesh_7vjj5")
+
+[node name="Cardboard Boxes" parent="." unique_id=814202729 instance=ExtResource("52_duuyb")]
+transform = Transform3D(0.7168528, 0, 0, 0, 0.64422905, 0, 0, 0, 0.5809084, 1.3388646, 3.0490751, 9.44154)
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
