@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg4sq3hmxbvnf"
+path="res://.godot/imported/Tutorial_VO.mp3-ab6269f9b7482f37497cb53be445fde1.mp3str"
+
+[deps]
+
+source_file="res://AudioTracks/general sounds/Tutorial_VO.mp3"
+dest_files=["res://.godot/imported/Tutorial_VO.mp3-ab6269f9b7482f37497cb53be445fde1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

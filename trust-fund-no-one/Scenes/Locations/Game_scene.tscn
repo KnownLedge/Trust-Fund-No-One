@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://py8nw11jagga" path="res://Models n Stuff/Stitches/foxBodyMaterial_Base_color.png" id="38_51gxi"]
 [ext_resource type="ArrayMesh" uid="uid://cfam77g2yefbs" path="res://Models n Stuff/Stitches/stitches.fbx" id="39_p17cv"]
 [ext_resource type="Texture2D" uid="uid://cna0xme1tl8gj" path="res://Textures/birdthatilove.png" id="40_p17cv"]
+[ext_resource type="Texture2D" uid="uid://bwsm136a3qdpx" path="res://Temp Models n stuff/boxes.png" id="41_cp4j0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -246,6 +247,16 @@ texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_25bs2"]
 material = SubResource("StandardMaterial3D_vtrmx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3662s"]
+transparency = 1
+albedo_color = Color(0.5764706, 0.69411767, 1, 1)
+albedo_texture = ExtResource("41_cp4j0")
+albedo_texture_force_srgb = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vtrmx"]
+material = SubResource("StandardMaterial3D_3662s")
 
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
@@ -1685,5 +1696,9 @@ mesh = ExtResource("39_p17cv")
 [node name="Birdthatilove" type="MeshInstance3D" parent="." unique_id=1023662084]
 transform = Transform3D(-1.8008823e-08, 1.0000001, -2.6922041e-08, 0, -4.3711392e-08, -0.6159045, -0.41199386, -4.3711392e-08, 1.1767998e-15, -0.43586063, 5.228666, -3.9974864)
 mesh = SubResource("PlaneMesh_25bs2")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=1227481288]
+transform = Transform3D(3.5270848, -0.23642921, 1.033465e-08, 0, -1.5451977e-07, -3.535, 0.23642921, 3.5270848, -1.5417378e-07, 2.204133, 5.1107383, -6.8571453)
+mesh = SubResource("PlaneMesh_vtrmx")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
