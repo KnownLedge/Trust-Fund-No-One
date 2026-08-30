@@ -60,6 +60,7 @@
 [ext_resource type="PackedScene" uid="uid://cccjrtnumhj1g" path="res://Scenes/Objects/instruction_paper5.tscn" id="56_c6ekp"]
 [ext_resource type="PackedScene" uid="uid://b1rt6vf6dmc0l" path="res://Scenes/Objects/CERTIFICATE_WIN.tscn" id="57_s7rvt"]
 [ext_resource type="PackedScene" uid="uid://dyr01qfp1im0h" path="res://Scenes/Objects/CERT_FAIL.tscn" id="58_jbqfe"]
+[ext_resource type="Texture2D" uid="uid://cdut8j0mgdvl4" path="res://Textures/stampshere.png" id="61_c6ekp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -338,6 +339,11 @@ albedo_texture = ExtResource("51_j1bu2")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7vjj5"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7rvt"]
+albedo_texture = ExtResource("61_c6ekp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dx0uh"]
+
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=550862622]
@@ -506,6 +512,16 @@ distance_fade_shadow = 221.1
 spot_range = 129.802
 spot_attenuation = 3.58
 spot_angle = 78.16
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=2144197702]
+transform = Transform3D(0.85745955, -0.013657901, -0.51437014, 0.5145514, 0.022759821, 0.85715747, 2.317014e-10, -0.9996477, 0.026543321, 5.216807, 6.0029917, -2.416246)
+light_color = Color(1, 0.9647059, 0.92156863, 1)
+light_energy = 1.173
+light_specular = 0.708
+distance_fade_shadow = 221.1
+spot_range = 13.43
+spot_attenuation = 8.39
+spot_angle = 36.08
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=968451273]
 transform = Transform3D(0.74788976, 0, 0, 0, 0.019851478, 0.74762625, 0, -0.74762625, 0.019851478, 4.891658, 8.846011, 7.2129316)
@@ -1920,5 +1936,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6224337, 17.613901, 23.677
 
 [node name="LoserPaper" parent="." unique_id=1748144134 instance=ExtResource("58_jbqfe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6497889, 17.613901, 21.424059)
+
+[node name="StampsHere" type="MeshInstance3D" parent="." unique_id=282673498]
+transform = Transform3D(3.754801e-10, -0.9998272, 0.0105416775, -2.0194483e-08, -0.01859007, -0.5669617, 0.4620757, -4.4198346e-16, -2.4786964e-08, 6.256681, 4.635303, -2.4281025)
+material_override = SubResource("StandardMaterial3D_s7rvt")
+mesh = SubResource("PlaneMesh_dx0uh")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
