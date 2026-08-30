@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://davpdlv452epu"
+path="res://.godot/imported/Printing2.mp3-73527075315dc79162210ae61cfa41b2.mp3str"
+
+[deps]
+
+source_file="res://AudioTracks/general sounds/Printing2.mp3"
+dest_files=["res://.godot/imported/Printing2.mp3-73527075315dc79162210ae61cfa41b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

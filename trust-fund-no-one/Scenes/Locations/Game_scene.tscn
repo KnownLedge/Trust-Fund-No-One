@@ -36,6 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://cq2fw1sif6q17" path="res://Textures/grab.png" id="34_eokiq"]
 [ext_resource type="Texture2D" uid="uid://byug2rapoc5k2" path="res://Textures/QE.png" id="35_p4pvm"]
 [ext_resource type="Texture2D" uid="uid://c6evact53njdk" path="res://Textures/strafe.png" id="36_nm061"]
+[ext_resource type="Texture2D" uid="uid://c2orte2ncqirc" path="res://Textures/staincoffee.png" id="37_3qlal"]
+[ext_resource type="Texture2D" uid="uid://py8nw11jagga" path="res://Models n Stuff/Stitches/foxBodyMaterial_Base_color.png" id="38_51gxi"]
+[ext_resource type="ArrayMesh" uid="uid://cfam77g2yefbs" path="res://Models n Stuff/Stitches/stitches.fbx" id="39_p17cv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -224,6 +227,16 @@ albedo_texture = ExtResource("36_nm061")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wi6ju"]
 material = SubResource("StandardMaterial3D_7f2x3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25bs2"]
+transparency = 1
+albedo_texture = ExtResource("37_3qlal")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7f2x3"]
+material = SubResource("StandardMaterial3D_25bs2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp4j0"]
+albedo_texture = ExtResource("38_51gxi")
 
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
@@ -469,6 +482,7 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CoffeeMug" parent="CoffeeRigidbody" unique_id=782937238 instance=ExtResource("14_oh0nk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036326885, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoffeeRigidbody" unique_id=1700341130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025041759, 0.08320546, 0)
@@ -1649,5 +1663,14 @@ mesh = SubResource("PlaneMesh_njqwk")
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=1602208217]
 transform = Transform3D(0.17062274, 1.1671996, 0.10611749, 0.026130136, 0.23534471, -0.5528764, -0.34652576, 0.59245354, 0.01056001, -0.13966914, 4.349674, -4.4413643)
 mesh = SubResource("PlaneMesh_wi6ju")
+
+[node name="STAIN" type="MeshInstance3D" parent="." unique_id=2115628308]
+transform = Transform3D(-0.41613102, 0, 0.38199392, 0, 0.665, 0, -0.2749921, 0, -0.57805115, 0.15102339, 3.7636604, -3.1293836)
+mesh = SubResource("PlaneMesh_7f2x3")
+
+[node name="Stitches" type="MeshInstance3D" parent="." unique_id=696880357]
+transform = Transform3D(-0.92996687, 0, 3.3378716, 0, 3.465, 0, -3.3378716, 0, -0.92996687, -0.0022966862, 3.7505543, -2.5643942)
+material_override = SubResource("StandardMaterial3D_cp4j0")
+mesh = ExtResource("39_p17cv")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
