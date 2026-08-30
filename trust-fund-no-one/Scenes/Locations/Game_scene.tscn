@@ -69,6 +69,7 @@
 [ext_resource type="PackedScene" uid="uid://b1rt6vf6dmc0l" path="res://Scenes/Objects/CERTIFICATE_WIN.tscn" id="57_s7rvt"]
 [ext_resource type="PackedScene" uid="uid://dyr01qfp1im0h" path="res://Scenes/Objects/CERT_FAIL.tscn" id="58_jbqfe"]
 [ext_resource type="Texture2D" uid="uid://cdut8j0mgdvl4" path="res://Textures/stampshere.png" id="61_c6ekp"]
+[ext_resource type="Texture2D" uid="uid://c2xijl44jvdq3" path="res://Temp Models n stuff/scroll.png" id="70_ak8tb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -366,6 +367,13 @@ albedo_texture = ExtResource("51_j1bu2")
 albedo_texture = ExtResource("61_c6ekp")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dx0uh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccbbc"]
+transparency = 1
+albedo_texture = ExtResource("70_ak8tb")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_db1dr"]
+material = SubResource("StandardMaterial3D_ccbbc")
 
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
@@ -2013,5 +2021,9 @@ transform = Transform3D(-0.039811432, 0, -0.8358029, 0, 0.8367506, 0, 0.8358029,
 
 [node name="RedStamp" parent="." unique_id=1409961165 instance=ExtResource("41_c6ekp")]
 transform = Transform3D(-0.039811432, 0, -0.8358029, 0, 0.8367506, 0, 0.8358029, 0, -0.039811432, 0.36337546, 3.6190426, -2.6305075)
+
+[node name="ScrollNote" type="MeshInstance3D" parent="." unique_id=1571651820]
+transform = Transform3D(0.16999371, -0.0037356438, -0.01107746, -0.01145965, 0.006305365, -0.15778258, 0.007456704, 0.09485328, 0.01005232, 2.7647, 4.5970163, -5.0721893)
+mesh = SubResource("PlaneMesh_db1dr")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
