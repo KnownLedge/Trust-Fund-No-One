@@ -28,18 +28,18 @@ offset_left = 88.0
 offset_top = 92.000015
 offset_right = 808.0
 offset_bottom = 236.00002
-scale = Vector2(0.68, 0.68)
+scale = Vector2(1.3, 1.3)
 text = "
 "
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CallerButtonOne" unique_id=1474894087]
 layout_mode = 0
 offset_top = 5.8823547
-offset_right = 719.0
-offset_bottom = 148.88235
+offset_right = 1052.941
+offset_bottom = 201.64355
 scale = Vector2(0.68, 0.68)
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 90
+theme_override_font_sizes/normal_font_size = 132
 text = "VOICEMAIL ONE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -47,20 +47,20 @@ vertical_alignment = 1
 [node name="CallerButtonTwo" type="Button" parent="." unique_id=694960674]
 layout_mode = 1
 offset_left = 88.00001
-offset_top = 253.0
+offset_top = 353.0
 offset_right = 808.0
-offset_bottom = 397.0
-scale = Vector2(0.68, 0.68)
+offset_bottom = 497.0
+scale = Vector2(1.3, 1.3)
 text = "
 "
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CallerButtonTwo" unique_id=1809707333]
 layout_mode = 0
-offset_right = 719.0
-offset_bottom = 143.0
+offset_right = 1051.4705
+offset_bottom = 207.3529
 scale = Vector2(0.68, 0.68)
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 90
+theme_override_font_sizes/normal_font_size = 129
 text = "VOICEMAIL TWO"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -68,10 +68,10 @@ vertical_alignment = 1
 [node name="CallerButtonThree" type="Button" parent="." unique_id=916604211]
 layout_mode = 1
 offset_left = 88.0
-offset_top = 414.0
+offset_top = 614.0
 offset_right = 808.0
-offset_bottom = 558.0
-scale = Vector2(0.68, 0.68)
+offset_bottom = 758.0
+scale = Vector2(1.3, 1.3)
 text = "
 "
 
