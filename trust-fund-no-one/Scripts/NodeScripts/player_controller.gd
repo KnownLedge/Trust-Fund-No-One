@@ -41,6 +41,12 @@ const STRAFE_SPEED = 0.2
 
 @export var right_limit:float = 3
 
+@export var zoom_out_limit = 75
+
+@export var zoom_in_limit = 20
+
+@export var zoom_increment = 10;
+
 var strafe_pos = 0
 
 var default_pos: Vector3
@@ -96,6 +102,14 @@ func _process(delta: float) -> void:
 	left_ray.target_position = left_hand.position
 	
 	right_ray.target_position = right_hand.position
+	
+	if(Input.is_action_just_released("MouseScrollUp")):
+		camera.fov = clampf(camera.fov - zoom_increment, zoom_in_limit, zoom_out_limit)
+		print("zooming")
+	
+	if(Input.is_action_just_released("MouseScrollDown")):
+		camera.fov = clampf(camera.fov + zoom_increment, zoom_in_limit, zoom_out_limit)
+		print("zoming")
 
 
 func drop_item(hand, hand_item:Node3D, hover_pos, hand_ray:RayCast3D):
