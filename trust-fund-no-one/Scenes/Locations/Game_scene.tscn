@@ -41,6 +41,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cfam77g2yefbs" path="res://Models n Stuff/Stitches/stitches.fbx" id="39_p17cv"]
 [ext_resource type="Texture2D" uid="uid://cna0xme1tl8gj" path="res://Textures/birdthatilove.png" id="40_p17cv"]
 [ext_resource type="Texture2D" uid="uid://bwsm136a3qdpx" path="res://Temp Models n stuff/boxes.png" id="41_cp4j0"]
+[ext_resource type="Texture2D" uid="uid://no10rsomcofx" path="res://Textures/Screenshot 2026-08-30 022113.png" id="42_koitu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -240,6 +241,8 @@ material = SubResource("StandardMaterial3D_25bs2")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp4j0"]
 albedo_texture = ExtResource("38_51gxi")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_b1lj4"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtrmx"]
 transparency = 1
 albedo_texture = ExtResource("40_p17cv")
@@ -257,6 +260,14 @@ texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vtrmx"]
 material = SubResource("StandardMaterial3D_3662s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_koitu"]
+albedo_texture = ExtResource("42_koitu")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xrivr"]
+material = SubResource("StandardMaterial3D_koitu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
 
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
@@ -304,10 +315,6 @@ material = SubResource("StandardMaterial3D_prhs4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D5/StaticBody3D" unique_id=771595110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09399414, -1.039856, -2.2506723)
 shape = SubResource("BoxShape3D_vfuxu")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=410840872]
-transform = Transform3D(0.44874734, 0, 0, 0, 0.44874734, 0, 0, 0, 0.44874734, 2.8975253, 3.6881392, -2.1148713)
-size = Vector3(0.46972656, 5.4980965, 0.8234863)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1660751072]
 transform = Transform3D(0.44874734, 0, 0, 0, 0.44874734, 0, 0, 0, 0.44874734, 2.7925973, 3.6316636, -5.087291)
@@ -512,7 +519,7 @@ shape = SubResource("CylinderShape3D_b560c")
 transform = Transform3D(3.7582588, 0, 0, 0, 3.7582588, 0, 0, 0, 3.7582588, 4.213484, 0.79419756, -4.71136)
 
 [node name="sketchboardrigidbody" type="RigidBody3D" parent="." unique_id=1798866728]
-transform = Transform3D(0.6030739, 0.12548879, -0.634088, -0.016063785, 0.86985445, 0.15686992, 0.6461866, -0.09549232, 0.5956822, 5.805633, 4.27651, -4.5255804)
+transform = Transform3D(0.60307395, 0.12548879, -0.634088, -0.016063785, 0.86985445, 0.15686992, 0.64618665, -0.09549231, 0.5956822, 5.805633, 4.27651, -4.5255804)
 collision_layer = 17
 collision_mask = 17
 
@@ -1688,10 +1695,19 @@ mesh = SubResource("PlaneMesh_wi6ju")
 transform = Transform3D(-0.41613102, 0, 0.38199392, 0, 0.665, 0, -0.2749921, 0, -0.57805115, 0.15102339, 3.7636604, -3.1293836)
 mesh = SubResource("PlaneMesh_7f2x3")
 
-[node name="Stitches" type="MeshInstance3D" parent="." unique_id=696880357]
+[node name="Stitch Rigid" type="RigidBody3D" parent="." unique_id=138427301]
 transform = Transform3D(-0.92996687, 0, 3.3378716, 0, 3.465, 0, -3.3378716, 0, -0.92996687, -0.0022966862, 3.7505543, -2.5643942)
+collision_layer = 17
+collision_mask = 17
+
+[node name="Stitches" type="MeshInstance3D" parent="Stitch Rigid" unique_id=696880357]
 material_override = SubResource("StandardMaterial3D_cp4j0")
 mesh = ExtResource("39_p17cv")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stitch Rigid" unique_id=888105450]
+transform = Transform3D(0.21, 0, 3.7252903e-09, 0, 0.21000001, 0, -3.7252903e-09, 0, 0.21, 0, 0.10900867, 0)
+shape = SubResource("SphereShape3D_b1lj4")
 
 [node name="Birdthatilove" type="MeshInstance3D" parent="." unique_id=1023662084]
 transform = Transform3D(-1.8008823e-08, 1.0000001, -2.6922041e-08, 0, -4.3711392e-08, -0.6159045, -0.41199386, -4.3711392e-08, 1.1767998e-15, -0.43586063, 5.228666, -3.9974864)
@@ -1700,5 +1716,50 @@ mesh = SubResource("PlaneMesh_25bs2")
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=1227481288]
 transform = Transform3D(3.5270848, -0.23642921, 1.033465e-08, 0, -1.5451977e-07, -3.535, 0.23642921, 3.5270848, -1.5417378e-07, 2.204133, 5.1107383, -6.8571453)
 mesh = SubResource("PlaneMesh_vtrmx")
+
+[node name="Cardboard Crashes" type="RigidBody3D" parent="." unique_id=1615305625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8899814, 3.1543708, -2.1775222)
+collision_layer = 17
+collision_mask = 17
+
+[node name="CardBox" type="MeshInstance3D" parent="Cardboard Crashes" unique_id=696636981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19088578, 0)
+mesh = SubResource("BoxMesh_xrivr")
+skeleton = NodePath("../..")
+
+[node name="CardBox4" type="MeshInstance3D" parent="Cardboard Crashes" unique_id=1833334693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77407134, -0.19088578, 6.570498)
+mesh = SubResource("BoxMesh_xrivr")
+skeleton = NodePath("../..")
+
+[node name="CardBox2" type="MeshInstance3D" parent="Cardboard Crashes" unique_id=1072413899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.042673, -0.18186307, 0)
+mesh = SubResource("BoxMesh_xrivr")
+skeleton = NodePath("../..")
+
+[node name="CardBox3" type="MeshInstance3D" parent="Cardboard Crashes" unique_id=1527278442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0737696, -0.18186307, 2.1201625)
+mesh = SubResource("BoxMesh_xrivr")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cardboard Crashes" unique_id=283793522]
+shape = SubResource("BoxShape3D_xrivr")
+
+[node name="Cardboard Crashes2" type="RigidBody3D" parent="." unique_id=1801551701]
+transform = Transform3D(0.527789, 0, 0, 0, 0.55824375, 0, 0, 0, 0.61321163, 0.8899814, 3.1543708, -0.9529203)
+collision_layer = 17
+collision_mask = 17
+
+[node name="CardBox" type="MeshInstance3D" parent="Cardboard Crashes2" unique_id=1960786583]
+mesh = SubResource("BoxMesh_xrivr")
+skeleton = NodePath("../..")
+
+[node name="CardBox2" type="MeshInstance3D" parent="Cardboard Crashes2" unique_id=876311857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.082344, 0, 8.577517)
+mesh = SubResource("BoxMesh_xrivr")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cardboard Crashes2" unique_id=1357827801]
+shape = SubResource("BoxShape3D_xrivr")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
