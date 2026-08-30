@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bnn45uwfynrl5" path="res://Textures/noise_texture.tres" id="3_3wq4h"]
 [ext_resource type="PackedScene" uid="uid://rtrqbpe2skpg" path="res://Scenes/Objects/Arms/left_arm.fbx" id="3_k06c8"]
 [ext_resource type="Texture2D" uid="uid://dlkx6u51rb5cn" path="res://Textures/Gradient.tres" id="3_lphv5"]
+[ext_resource type="AudioStream" uid="uid://2fgjr1jekxpx" path="res://AudioTracks/general sounds/Paper_Pickup.mp3" id="4_v3xyh"]
+[ext_resource type="AudioStream" uid="uid://x2toipfyuw7r" path="res://AudioTracks/general sounds/Office_Backing.mp3" id="9_ifdii"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s48xy"]
 transparency = 1
@@ -57,7 +59,7 @@ shader_parameter/Film_Grain = 1.999999955296
 shader_parameter/Color_Filter_Gradient = ExtResource("3_lphv5")
 shader_parameter/Filter_Strenght = 0.18999999575312
 
-[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "cursor_ui", "left_hand", "right_hand", "ray", "UI_ray", "left_ray", "right_ray")]
+[node name="Player" type="Node3D" unique_id=207456662 node_paths=PackedStringArray("head", "camera", "cursor_ui", "left_hand", "right_hand", "ray", "UI_ray", "left_ray", "right_ray", "left_sound", "right_sound")]
 script = ExtResource("1_3ejmg")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
@@ -70,6 +72,8 @@ ray = NodePath("Head/Camera3D/RayCast3D")
 UI_ray = NodePath("Head/Camera3D/UIRayCast")
 left_ray = NodePath("Head/Camera3D/LeftCast3D")
 right_ray = NodePath("Head/Camera3D/RightCast3D")
+left_sound = NodePath("Head/Camera3D/Left Hand/AudioStreamPlayer3D")
+right_sound = NodePath("Head/Camera3D/Right Hand/AudioStreamPlayer3D")
 default_left_hold = Vector3(-0.14, -0.04, -2.3)
 default_right_hold = Vector3(0.14, -0.04, -2.3)
 left_limit = 1.8
@@ -106,12 +110,18 @@ material = SubResource("StandardMaterial3D_s48xy")
 [node name="left_arm" parent="Head/Camera3D/Left Hand" unique_id=1105317960 instance=ExtResource("3_k06c8")]
 transform = Transform3D(80.18338, -43.39467, 491.61707, -66.62592, 492.55222, 54.343884, -489.01077, -74.22387, 73.20657, 0.38139868, -0.35104156, -0.15195584)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Head/Camera3D/Left Hand" unique_id=2005661191]
+stream = ExtResource("4_v3xyh")
+
 [node name="Right Hand" type="CSGBox3D" parent="Head/Camera3D" unique_id=404128739]
 transform = Transform3D(0.13028428, 0, 0.116099685, 0, 0.17382765, 0, -0.11691911, 0, 0.12937121, 0.788, -0.449, -0.682)
 material = SubResource("StandardMaterial3D_1077r")
 
 [node name="right_arm" parent="Head/Camera3D/Right Hand" unique_id=635671225 instance=ExtResource("2_lphv5")]
 transform = Transform3D(23.827621, -174.70798, 464.61407, 8.885723, 468.49017, 173.26262, -499.35284, 1.5258789e-05, 25.253098, 0.5171566, -0.011641026, -0.5714884)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Head/Camera3D/Right Hand" unique_id=1352165569]
+stream = ExtResource("4_v3xyh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=573658338]
 
@@ -124,6 +134,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="OfficeAmbeince" type="AudioStreamPlayer3D" parent="Head" unique_id=2055915310]
+stream = ExtResource("9_ifdii")
+autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1114242113]
 anchors_preset = 8

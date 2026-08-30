@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://tow0yasfjmel" path="res://Scripts/NodeScripts/StampScript.gd" id="1_efmt3"]
 [ext_resource type="Texture2D" uid="uid://bu7hx0mths72s" path="res://icon.svg" id="2_6d41e"]
 [ext_resource type="Script" uid="uid://cj5m4lchhu4dt" path="res://Scripts/NodeScripts/InkScript.gd" id="3_y7msv"]
+[ext_resource type="AudioStream" uid="uid://ctvi1bakfn66n" path="res://AudioTracks/general sounds/Stamp2.mp3" id="4_6d41e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itf3o"]
 albedo_color = Color(0, 0, 0, 1)
@@ -16,7 +17,7 @@ size = Vector3(2.6662445, 1.9694061, 1.9135551)
 [sub_resource type="BoxShape3D" id="BoxShape3D_itf3o"]
 size = Vector3(0.5593262, 0.16122437, 0.41503906)
 
-[node name="RedStamp" type="RigidBody3D" unique_id=248886494 node_paths=PackedStringArray("stamp_sprite", "stamp_hitbox")]
+[node name="RedStamp" type="RigidBody3D" unique_id=248886494 node_paths=PackedStringArray("stamp_sprite", "stamp_hitbox", "stamp_sound")]
 disable_mode = 2
 collision_layer = 17
 collision_mask = 17
@@ -25,6 +26,7 @@ max_contacts_reported = 5
 script = ExtResource("1_efmt3")
 stamp_sprite = NodePath("StampInk")
 stamp_hitbox = NodePath("Area3D/CollisionShape3D")
+stamp_sound = NodePath("Area3D/AudioStreamPlayer3D")
 stamp_value = 1
 metadata/hold_rotation = Vector3(25, 0, 0)
 
@@ -59,6 +61,9 @@ collision_mask = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=27226759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07800293, 0.2660675, -0.03466797)
 shape = SubResource("BoxShape3D_itf3o")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D" unique_id=1880208593]
+stream = ExtResource("4_6d41e")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

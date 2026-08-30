@@ -33,6 +33,10 @@ const STRAFE_SPEED = 0.2
 
 @export var right_ray: RayCast3D
 
+@export var left_sound: AudioStreamPlayer3D
+
+@export var right_sound: AudioStreamPlayer3D
+
 @export var default_left_hold: Vector3
 
 @export var default_right_hold: Vector3
@@ -159,6 +163,8 @@ func _physics_process(delta: float) -> void:
 			if(left_item is RigidBody3D):
 				left_item.freeze = true
 			
+			left_sound.play()
+			
 			left_item.reparent(left_hand)
 			
 			if(left_item.get_meta("hold_rotation")):
@@ -199,6 +205,8 @@ func _physics_process(delta: float) -> void:
 				right_item = ray.get_collider().get_parent_node()
 			if(right_item is RigidBody3D):
 				right_item.freeze = true
+			
+			right_sound.play()
 			
 			right_item.reparent(right_hand)
 			

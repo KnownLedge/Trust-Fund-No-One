@@ -10,6 +10,8 @@ extends Node
 
 @export var paper_eject_force: Vector3
 
+@export var print_noise: AudioStreamPlayer3D
+
 @export var char_limit = 450
 
 var text_to_print:String
@@ -28,6 +30,7 @@ func start_translation(printedText):
 	if(current_paper != null):
 		eject_paper()
 	print("translating")
+	print_noise.play()
 	if(printedText != null):
 		text_to_print = printedText
 	current_paper = paper_obj.duplicate()
@@ -75,6 +78,7 @@ func eject_paper():
 	current_paper = null
 	current_paper_text = null
 	cutoff_call_prog = 0
+	print_noise.stop()
 
 func get_page_progress():
 	return float(current_paper_text.text.length()) / float(text_to_print.length())

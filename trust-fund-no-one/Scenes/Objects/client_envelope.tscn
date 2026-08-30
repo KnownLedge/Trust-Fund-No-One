@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://g3rdvfosjp4u"]
 
 [ext_resource type="Script" uid="uid://dc562kf7vrhj7" path="res://Scripts/NodeScripts/client_envelope.gd" id="1_yl7kw"]
+[ext_resource type="AudioStream" uid="uid://dbniosw0pij4i" path="res://AudioTracks/general sounds/Printing1.mp3" id="2_bbnuk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itf3o"]
 albedo_color = Color(0.5389053, 0.46411687, 0.112951525, 1)
@@ -8,13 +9,14 @@ albedo_color = Color(0.5389053, 0.46411687, 0.112951525, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_b560c"]
 size = Vector3(1.0585938, 0.058044434, 0.6309204)
 
-[node name="Client Envelope" type="RigidBody3D" unique_id=1782779634]
+[node name="Client Envelope" type="RigidBody3D" unique_id=1782779634 node_paths=PackedStringArray("print_sound")]
 collision_layer = 17
 collision_mask = 17
 freeze = true
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_yl7kw")
+print_sound = NodePath("AudioStreamPlayer3D")
 metadata/hold_rotation = Vector3(25, 0, 0)
 metadata/stamp_value = 0
 metadata/envelope_id = 0
@@ -33,3 +35,6 @@ disabled = true
 [node name="Label3D" type="Label3D" parent="." unique_id=1053752900]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.09941304, 0)
 text = "CLIENT 1"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1314099860]
+stream = ExtResource("2_bbnuk")

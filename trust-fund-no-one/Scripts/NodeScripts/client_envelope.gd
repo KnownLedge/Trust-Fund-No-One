@@ -1,5 +1,7 @@
 extends RigidBody3D
 
+@export var print_sound: AudioStreamPlayer3D
+
 var call_manager: Node3D
 
 var unique_id = 0

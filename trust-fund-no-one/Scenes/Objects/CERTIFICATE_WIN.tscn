@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1myninl0ldlk" path="res://Scripts/NodeScripts/instruction_paper.gd" id="1_erwfq"]
 [ext_resource type="Texture2D" uid="uid://cfd2sooce76f2" path="res://Textures/Certificate/cert.png" id="2_wh44d"]
+[ext_resource type="AudioStream" uid="uid://c0fk5q42m435m" path="res://AudioTracks/general sounds/correct-answer-sound-effectmp3.mp3" id="3_wh44d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_itf3o"]
 size = Vector3(1.0415039, 0.19614029, 1.5135498)
@@ -38,3 +39,7 @@ material = SubResource("StandardMaterial3D_3bjr3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019378722, 0.016357422, 0.0050354004)
 visible = false
 mesh = SubResource("BoxMesh_b560c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=812040518]
+stream = ExtResource("3_wh44d")
+autoplay = true

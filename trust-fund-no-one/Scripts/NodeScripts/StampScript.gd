@@ -4,6 +4,8 @@ extends RigidBody3D
 
 @export var stamp_hitbox: Node3D
 
+@export var stamp_sound: AudioStreamPlayer3D
+
 @export var stamp_value: int
 
 @export var reset_height = 3
@@ -26,6 +28,8 @@ func _process(delta: float) -> void:
 	if(global_position.y < reset_height and freeze == false):
 		global_position = default_pos
 		global_rotation = default_rot
+		linear_velocity = Vector3.ZERO
+		angular_velocity = Vector3.ZERO
 
 func _on_body_entered(body: Node) -> void:
 
@@ -40,6 +44,7 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, lo
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if(cooldown_timer < 0 and body.get_meta("stamp_value") != null):
 		var new_stamp = stamp_sprite.duplicate()
+		stamp_sound.play()
 		for child in body.get_children():
 			if child.get_meta("is_stamp") != null:
 				print("THERE IS ANOTHER STAMP, HELP")

@@ -24,6 +24,14 @@ extends Node3D
 
 @export var fade_out: ColorRect
 
+@export var screen_ref: Node3D
+
+@export var LES_GET_SCRATCHING: AudioStream
+
+@export var day_text: RichTextLabel
+
+var number_words: Array[String] = ["ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN"]
+
 const EJECT_SPEED = 6
 
 var printing = false
@@ -45,9 +53,34 @@ var envelopes_received = 0
 func _ready() -> void:
 	if(game_progress.current_call_set != 0):
 		starting_call_set = game_progress.current_call_set
+		audio_player.volume_db = 0
+		audio_player.stream = LES_GET_SCRATCHING
+		audio_player.play()
+	else:
+		audio_player.stop()
+	
+	day_text.text = "DAY " + number_words[game_progress.current_call_set + 1]
+	
 	apply_call_set(call_sets[starting_call_set - 1])
 	receive_call_group()
+	show_day()
+	if(game_progress.current_call_set == 0):
+		screen_ref.process_mode = Node.PROCESS_MODE_DISABLED
+		screen_ref.visible = false
+		await get_tree().create_timer(5).timeout
+		audio_player.play()
+		await get_tree().create_timer(35).timeout
+		screen_ref.process_mode = Node.PROCESS_MODE_ALWAYS
+		screen_ref.visible = true
 
+func show_day():
+	while(day_text.global_position.x < 530):
+		day_text.global_position = lerp(day_text.global_position, Vector2(534, day_text.global_position.y), 0.05)
+		await get_tree().create_timer(0.01).timeout
+	
+	while(day_text.global_position.x < 1260):
+		day_text.global_position = lerp(day_text.global_position, Vector2(1280, day_text.global_position.y), 0.05)
+		await get_tree().create_timer(0.01).timeout
 
 func print_envelope():
 	var new_envelope =  client_envelope.duplicate()
@@ -55,6 +88,7 @@ func print_envelope():
 	new_envelope.get_node("Label3D").text = "Client " + str(printed_envelopes + 1)
 	new_envelope.set_meta("envelope_id", printed_envelopes + 1)
 	new_envelope.global_position = global_position
+	new_envelope.print_sound.play()
 	new_envelope.call_manager = self
 	new_envelope.unique_id = printed_envelopes + 1
 	while(new_envelope.position.distance_to(eject_pos) > 0.1):
@@ -62,6 +96,7 @@ func print_envelope():
 		await get_tree().create_timer(0.1).timeout
 	new_envelope.freeze = false
 	new_envelope.get_node("CollisionShape3D").disabled = false
+	new_envelope.print_sound.stop()
 	printed_envelopes += 1
 	
 
@@ -106,6 +141,7 @@ func receive_call_group():
 
 func start_call(CallInfo: CallerResource):
 	audio_player.stream = CallInfo.audio_track
+	audio_player.volume_db = 0
 	audio_player.play()
 	printer_obj.start_translation(CallInfo.call_translation)
 

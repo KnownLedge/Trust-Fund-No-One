@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1myninl0ldlk" path="res://Scripts/NodeScripts/instruction_paper.gd" id="1_iroyy"]
 [ext_resource type="Texture2D" uid="uid://b4xesrbrk7a12" path="res://Textures/Certificate/cert_fail.png" id="2_f8800"]
+[ext_resource type="AudioStream" uid="uid://ciptlt7yowhcj" path="res://AudioTracks/general sounds/Buzzer.ogg" id="3_f8800"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_itf3o"]
 size = Vector3(1.0415039, 0.19614029, 1.5135498)
@@ -38,3 +39,7 @@ material = SubResource("StandardMaterial3D_3bjr3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019378722, 0.016357422, 0.0050354004)
 visible = false
 mesh = SubResource("BoxMesh_b560c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=898635694]
+stream = ExtResource("3_f8800")
+autoplay = true
