@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://bg3e8esngweea" path="res://Scenes/Puter/Computer_Interface.tscn" id="33_oh0nk"]
 [ext_resource type="Texture2D" uid="uid://cq2fw1sif6q17" path="res://Textures/grab.png" id="34_eokiq"]
 [ext_resource type="Texture2D" uid="uid://byug2rapoc5k2" path="res://Textures/QE.png" id="35_p4pvm"]
+[ext_resource type="Texture2D" uid="uid://c6evact53njdk" path="res://Textures/strafe.png" id="36_nm061"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -217,6 +218,12 @@ albedo_texture = ExtResource("35_p4pvm")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_njqwk"]
 material = SubResource("StandardMaterial3D_3qlal")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7f2x3"]
+albedo_texture = ExtResource("36_nm061")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wi6ju"]
+material = SubResource("StandardMaterial3D_7f2x3")
 
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
@@ -450,7 +457,7 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="Sketchfab_Scene" parent="PhoneRigidbody" unique_id=1120284825 instance=ExtResource("13_4nfij")]
-transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 0.99999994, 0, -2.9802322e-08, 0, 0.99999994, 0, 0, 0)
+transform = Transform3D(0.9999999, 0, 5.9604645e-08, 0, 0.9999997, 0, -5.9604645e-08, 0, 0.9999999, -3.5251427, 0, -0.96229553)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhoneRigidbody" unique_id=698455838]
 transform = Transform3D(0.9999994, 0, 4.7683716e-07, 0, 0.99999964, 0, -4.7683716e-07, 0, 0.9999994, 0.53198624, 2.2929115, 2.184082)
@@ -1638,5 +1645,9 @@ mesh = SubResource("PlaneMesh_xrivr")
 [node name="CONTROL_NOTE4" type="MeshInstance3D" parent="." unique_id=1921051442]
 transform = Transform3D(0.23047774, -0.07750216, 0.05808114, 0.06941698, 0.027644124, -0.23857306, 0.06753731, 0.23607036, 0.04700529, 4.6128616, 4.532759, -4.8570943)
 mesh = SubResource("PlaneMesh_njqwk")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=1602208217]
+transform = Transform3D(0.17062274, 1.1671996, 0.10611749, 0.026130136, 0.23534471, -0.5528764, -0.34652576, 0.59245354, 0.01056001, -0.13966914, 4.349674, -4.4413643)
+mesh = SubResource("PlaneMesh_wi6ju")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
