@@ -6,6 +6,8 @@ extends RigidBody3D
 
 @export var stamp_value: int
 
+@export var reset_height = 3
+
 var default_pos: Vector3
 var default_rot: Vector3
 
@@ -21,7 +23,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	cooldown_timer -= delta
-	if(global_position.y < -1 and freeze == false):
+	if(global_position.y < reset_height and freeze == false):
 		global_position = default_pos
 		global_rotation = default_rot
 

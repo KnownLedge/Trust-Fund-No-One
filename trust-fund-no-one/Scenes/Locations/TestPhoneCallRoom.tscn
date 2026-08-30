@@ -164,7 +164,7 @@ mesh = SubResource("BoxMesh_b560c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06341549, 0, 0)
 shape = SubResource("BoxShape3D_b560c")
 
-[node name="RedStamp2" parent="." unique_id=248886494 instance=ExtResource("9_8rcqf")]
+[node name="GreenStamp" parent="." unique_id=248886494 instance=ExtResource("9_8rcqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2246075, -0.25028145, -3.600119)
 
 [node name="RedStamp" parent="." unique_id=1747538835 instance=ExtResource("9_tp2d6")]

@@ -39,7 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://c2orte2ncqirc" path="res://Textures/staincoffee.png" id="37_3qlal"]
 [ext_resource type="Texture2D" uid="uid://py8nw11jagga" path="res://Models n Stuff/Stitches/foxBodyMaterial_Base_color.png" id="38_51gxi"]
 [ext_resource type="ArrayMesh" uid="uid://cfam77g2yefbs" path="res://Models n Stuff/Stitches/stitches.fbx" id="39_p17cv"]
+[ext_resource type="PackedScene" uid="uid://xeooppawhgem" path="res://Scenes/Objects/green_stamp.tscn" id="40_2jxu6"]
 [ext_resource type="Texture2D" uid="uid://cna0xme1tl8gj" path="res://Textures/birdthatilove.png" id="40_p17cv"]
+[ext_resource type="PackedScene" uid="uid://n6ad6myn7i2c" path="res://Scenes/Objects/red_stamp.tscn" id="41_c6ekp"]
 [ext_resource type="Texture2D" uid="uid://bwsm136a3qdpx" path="res://Temp Models n stuff/boxes.png" id="41_cp4j0"]
 [ext_resource type="Texture2D" uid="uid://no10rsomcofx" path="res://Textures/Screenshot 2026-08-30 022113.png" id="42_koitu"]
 [ext_resource type="Texture2D" uid="uid://cy4hi70mwm0ms" path="res://Textures/Screenshot 2026-08-30 001511.png" id="43_hqnqq"]
@@ -52,6 +54,12 @@
 [ext_resource type="Texture2D" uid="uid://cug2xrnh3uja0" path="res://Textures/sispol.png" id="50_xqjw3"]
 [ext_resource type="Texture2D" uid="uid://4jqdb62qjtb3" path="res://Textures/virpol.png" id="51_j1bu2"]
 [ext_resource type="PackedScene" uid="uid://vos4ms1f2g86" path="res://Models n Stuff/cardboard_boxes.tscn" id="52_duuyb"]
+[ext_resource type="PackedScene" uid="uid://buvo57g2668it" path="res://Scenes/Objects/Instruction_Paper.tscn" id="53_nko4y"]
+[ext_resource type="PackedScene" uid="uid://ck7abpgukux12" path="res://Scenes/Objects/instruction_paper3.tscn" id="54_waujn"]
+[ext_resource type="PackedScene" uid="uid://c5q1ma1v6gxtg" path="res://Scenes/Objects/instruction_paper4.tscn" id="55_2jxu6"]
+[ext_resource type="PackedScene" uid="uid://cccjrtnumhj1g" path="res://Scenes/Objects/instruction_paper5.tscn" id="56_c6ekp"]
+[ext_resource type="PackedScene" uid="uid://b1rt6vf6dmc0l" path="res://Scenes/Objects/CERTIFICATE_WIN.tscn" id="57_s7rvt"]
+[ext_resource type="PackedScene" uid="uid://dyr01qfp1im0h" path="res://Scenes/Objects/CERT_FAIL.tscn" id="58_jbqfe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -96,7 +104,7 @@ albedo_texture = ExtResource("6_irwx2")
 texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b560c"]
-size = Vector3(9.678772, 0.7972412, 8.58252)
+size = Vector3(10.775642, 0.27474976, 8.58252)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkhwe"]
 albedo_color = Color(0.8921876, 0.85675514, 0.25807846, 1)
@@ -400,17 +408,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4735492, 0, 0.14025867)
 shape = SubResource("BoxShape3D_p4pvm")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1967924969]
-transform = Transform3D(0.013879418, -2.2855466e-10, 0.23097041, 7.709832e-06, 0.44874734, -6.2050813e-06, -0.063111454, 5.481989e-05, 0.050794818, 3.6679778, 3.6882734, -4.289757)
+transform = Transform3D(0.013879418, -2.2855466e-10, 0.23097041, 7.709832e-06, 0.44874734, -6.2050813e-06, -0.063111454, 5.481989e-05, 0.050794818, 3.6679778, 4.0564547, -4.289757)
 collision_layer = 17
 collision_mask = 17
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="RigidBody3D" unique_id=2018349552]
-transform = Transform3D(0.9999999, 5.820766e-11, 0, -1.364242e-10, 1, -9.094947e-13, -4.0978193e-08, -3.637979e-12, 0.99999964, 3.8146973e-06, 0.23448849, 4.7683716e-06)
+transform = Transform3D(0.9999999, 1.1641532e-10, 0, -1.364242e-10, 1, -1.8189894e-12, -4.0978193e-08, 0, 0.9999996, -10.971985, 0.23468685, 0.6593313)
 size = Vector3(9.492676, 0.0710392, 8.776367)
 material = SubResource("StandardMaterial3D_0a2g1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1149783212]
-transform = Transform3D(0.9999999, 2.3283064e-10, 0, 0, 1, -2.9558578e-10, -5.9604645e-08, 1.4551915e-11, 1, -0.046278, -0.101377964, -0.051020622)
+transform = Transform3D(0.9999999, 2.3283064e-10, 0, 0, 1, -3.0649971e-10, -5.9604645e-08, 1.4551915e-11, 0.9999996, -11.621399, 0.1946907, -0.05101776)
 shape = SubResource("BoxShape3D_b560c")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=721382645]
@@ -1658,7 +1666,7 @@ spot_angle = 52.031246
 transform = Transform3D(-0.1089147, 0.9641823, 0.042184386, -0.048282433, 0.026082907, -1.5202267, -2.6755989, -0.039719176, 0.025716014, -11.061336, 7.35332, 10.958205)
 mesh = SubResource("PlaneMesh_b1lj4")
 
-[node name="CallManager" type="CSGBox3D" parent="." unique_id=968644861 node_paths=PackedStringArray("audio_player", "printer_obj", "client_envelope")]
+[node name="CallManager" type="CSGBox3D" parent="." unique_id=968644861 node_paths=PackedStringArray("audio_player", "printer_obj", "instruction_papers", "client_envelope", "instruction_paper", "win_paper", "lose_paper", "fade_out")]
 transform = Transform3D(1.2071946, 0, -0.12558663, 0, 0.44874734, 0, 0.098572895, 0, 0.94752586, 3.2525635, 3.9951355, -5.5950146)
 size = Vector3(0.9194336, 1, 1)
 script = ExtResource("21_de3ce")
@@ -1666,10 +1674,22 @@ audio_player = NodePath("AudioStreamPlayer3D")
 printer_obj = NodePath("../Printer")
 call_sets = Array[ExtResource("22_naykk")]([ExtResource("23_62j1h"), ExtResource("24_4nfij"), ExtResource("25_oh0nk")])
 call_resources = Array[ExtResource("26_eokiq")]([ExtResource("27_p4pvm"), ExtResource("28_nm061"), ExtResource("29_3qlal")])
+instruction_papers = [NodePath("../instruct2"), NodePath("../Instruct3"), NodePath("../instruct4"), NodePath("../Instruct5")]
 client_envelope = NodePath("../Client Envelope")
-eject_pos = Vector3(5.584789, 4.0492268, -2.9432447)
+instruction_paper = NodePath("../instruct2")
+win_paper = NodePath("../WinnerPaper")
+lose_paper = NodePath("../LoserPaper")
+eject_pos = Vector3(3.2525635, 3.9951355, -4.546146)
+fade_out = NodePath("ColorRect")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CallManager" unique_id=840091707]
+
+[node name="ColorRect" type="ColorRect" parent="CallManager" unique_id=645683503]
+offset_right = 1150.0
+offset_bottom = 642.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="Printer" type="CSGBox3D" parent="." unique_id=942537103 node_paths=PackedStringArray("call_manager", "paper_obj")]
 transform = Transform3D(0.8505233, 0, 0.053279657, 0, 0.44874734, 0, -0.02964224, 0, 0.94180936, 1.7360245, 4.040538, -5.531636)
@@ -1766,9 +1786,16 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="Stitches" type="MeshInstance3D" parent="Stitch Rigid" unique_id=696880357]
+transform = Transform3D(-0.31391785, 0, -0.94945014, 0, 1, 0, 0.94945014, 0, -0.31391785, -0.07353872, 0, -0.08953302)
 material_override = SubResource("StandardMaterial3D_cp4j0")
 mesh = ExtResource("39_p17cv")
 skeleton = NodePath("../..")
+
+[node name="GreenStamp" parent="Stitch Rigid/Stitches" unique_id=248886494 instance=ExtResource("40_2jxu6")]
+transform = Transform3D(-7.450581e-09, 0, 0.24148646, 0, 0.24148647, 0, -0.24148646, 0, -7.450581e-09, 0.20211205, -0.03795433, 0.038330376)
+
+[node name="RedStamp" parent="Stitch Rigid/Stitches" unique_id=1409961165 instance=ExtResource("41_c6ekp")]
+transform = Transform3D(-7.450581e-09, 0, 0.24148646, 0, 0.24148647, 0, -0.24148646, 0, -7.450581e-09, 0.18174268, -0.03795433, -0.12273669)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stitch Rigid" unique_id=888105450]
 transform = Transform3D(0.21, 0, 3.7252903e-09, 0, 0.21000001, 0, -3.7252903e-09, 0, 0.21, 0, 0.10900867, 0)
@@ -1875,5 +1902,23 @@ mesh = SubResource("PlaneMesh_7vjj5")
 
 [node name="Cardboard Boxes" parent="." unique_id=814202729 instance=ExtResource("52_duuyb")]
 transform = Transform3D(0.7168528, 0, 0, 0, 0.64422905, 0, 0, 0, 0.5809084, 1.3388646, 3.0490751, 9.44154)
+
+[node name="instruct2" parent="." unique_id=995900071 instance=ExtResource("53_nko4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72996545, 17.613901, 19.587894)
+
+[node name="Instruct3" parent="." unique_id=776475068 instance=ExtResource("54_waujn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7774129, 17.613901, 21.44101)
+
+[node name="instruct4" parent="." unique_id=976906020 instance=ExtResource("55_2jxu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.784678, 17.613901, 23.4567)
+
+[node name="Instruct5" parent="." unique_id=826577029 instance=ExtResource("56_c6ekp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70038074, 17.613901, 25.303816)
+
+[node name="WinnerPaper" parent="." unique_id=57883429 instance=ExtResource("57_s7rvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6224337, 17.613901, 23.677025)
+
+[node name="LoserPaper" parent="." unique_id=1748144134 instance=ExtResource("58_jbqfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6497889, 17.613901, 21.424059)
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
