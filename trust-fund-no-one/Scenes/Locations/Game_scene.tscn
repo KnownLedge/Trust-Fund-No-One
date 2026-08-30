@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://cna0xme1tl8gj" path="res://Textures/birdthatilove.png" id="40_p17cv"]
 [ext_resource type="Texture2D" uid="uid://bwsm136a3qdpx" path="res://Temp Models n stuff/boxes.png" id="41_cp4j0"]
 [ext_resource type="Texture2D" uid="uid://no10rsomcofx" path="res://Textures/Screenshot 2026-08-30 022113.png" id="42_koitu"]
+[ext_resource type="Texture2D" uid="uid://cy4hi70mwm0ms" path="res://Textures/Screenshot 2026-08-30 001511.png" id="43_hqnqq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -171,6 +172,9 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_13qdw"]
 material = SubResource("StandardMaterial3D_njqwk")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_13qdw"]
+size = Vector3(1, 0.5002136, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c41gl"]
 albedo_texture = ExtResource("20_51gxi")
 albedo_texture_force_srgb = true
@@ -268,6 +272,14 @@ albedo_texture = ExtResource("42_koitu")
 material = SubResource("StandardMaterial3D_koitu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ae3m"]
+albedo_texture = ExtResource("43_hqnqq")
+albedo_texture_force_srgb = true
+texture_filter = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3662s"]
+material = SubResource("StandardMaterial3D_7ae3m")
 
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
@@ -968,6 +980,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 transform = Transform3D(179.49893, 0, 0, 0, 3996.3987, 0, 0, 0, 212.61873, 3.153065, 2.4430027, 5.720194)
 mesh = SubResource("PlaneMesh_13qdw")
 skeleton = NodePath("../CEILING")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FLOOR" unique_id=97223675]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000013, 0, 0, 0, 1.0000002, 0, -0.24989335, 0)
+shape = SubResource("BoxShape3D_13qdw")
 
 [node name="CEILING" type="MeshInstance3D" parent="." unique_id=1390279268]
 transform = Transform3D(358.99786, 0, 0, 0, -9.531422e-06, -11.601016, 0, 218.0535, -5.0709656e-07, 3.153065, 10.354364, 5.720194)
@@ -1717,6 +1733,10 @@ mesh = SubResource("PlaneMesh_25bs2")
 transform = Transform3D(3.5270848, -0.23642921, 1.033465e-08, 0, -1.5451977e-07, -3.535, 0.23642921, 3.5270848, -1.5417378e-07, 2.204133, 5.1107383, -6.8571453)
 mesh = SubResource("PlaneMesh_vtrmx")
 
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=1020308463]
+transform = Transform3D(-1.4858018, -2.7313628, 3.7673242e-08, -1.4980609e-15, -2.168192e-07, -1.5651716, 0.98014027, -4.140493, 5.7109137e-08, 7.24531, 3.7493834, 6.315276)
+mesh = SubResource("PlaneMesh_vtrmx")
+
 [node name="Cardboard Crashes" type="RigidBody3D" parent="." unique_id=1615305625]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8899814, 3.1543708, -2.1775222)
 collision_layer = 17
@@ -1728,7 +1748,7 @@ mesh = SubResource("BoxMesh_xrivr")
 skeleton = NodePath("../..")
 
 [node name="CardBox4" type="MeshInstance3D" parent="Cardboard Crashes" unique_id=1833334693]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77407134, -0.19088578, 6.570498)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25194955, 0.12669563, 6.570498)
 mesh = SubResource("BoxMesh_xrivr")
 skeleton = NodePath("../..")
 
@@ -1755,11 +1775,15 @@ mesh = SubResource("BoxMesh_xrivr")
 skeleton = NodePath("../..")
 
 [node name="CardBox2" type="MeshInstance3D" parent="Cardboard Crashes2" unique_id=876311857]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.082344, 0, 8.577517)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.082342, 0.753901, 8.577517)
 mesh = SubResource("BoxMesh_xrivr")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cardboard Crashes2" unique_id=1357827801]
 shape = SubResource("BoxShape3D_xrivr")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=204237100]
+transform = Transform3D(-2.7677657e-08, 1, -2.1163236e-08, 0, -4.371139e-08, -0.4841584, -0.633191, -4.371139e-08, 9.250744e-16, -0.43444657, 5.3226976, -2.6043103)
+mesh = SubResource("PlaneMesh_3662s")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
