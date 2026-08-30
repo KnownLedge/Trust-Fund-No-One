@@ -37,12 +37,14 @@
 [ext_resource type="Script" uid="uid://bvvggirfooi1l" path="res://Scripts/NodeScripts/TranslationPrinter.gd" id="30_naykk"]
 [ext_resource type="AudioStream" uid="uid://bg4sq3hmxbvnf" path="res://AudioTracks/general sounds/Tutorial_VO.mp3" id="31_2p7rm"]
 [ext_resource type="PackedScene" uid="uid://g3rdvfosjp4u" path="res://Scenes/Objects/client_envelope.tscn" id="31_4nfij"]
+[ext_resource type="Resource" uid="uid://cdfcev38ec07a" path="res://Resources/CallGroups/Call Group 6.tres" id="31_ak8tb"]
 [ext_resource type="AudioStream" uid="uid://u8hne524nyxy" path="res://AudioTracks/general sounds/lets-get-scratchin.mp3" id="31_csejf"]
 [ext_resource type="AudioStream" uid="uid://davpdlv452epu" path="res://AudioTracks/general sounds/Printing2.mp3" id="32_jbqfe"]
 [ext_resource type="Script" uid="uid://cf2w8nkbp64xa" path="res://Scripts/NodeScripts/MailBoxScript.gd" id="32_oh0nk"]
 [ext_resource type="PackedScene" uid="uid://bg3e8esngweea" path="res://Scenes/Puter/Computer_Interface.tscn" id="33_oh0nk"]
 [ext_resource type="Texture2D" uid="uid://cq2fw1sif6q17" path="res://Textures/grab.png" id="34_eokiq"]
 [ext_resource type="Texture2D" uid="uid://byug2rapoc5k2" path="res://Textures/QE.png" id="35_p4pvm"]
+[ext_resource type="Resource" uid="uid://3w8k8sk8gikd" path="res://Resources/PhoneCalls/Final_call.tres" id="36_2cwm2"]
 [ext_resource type="Texture2D" uid="uid://c6evact53njdk" path="res://Textures/strafe.png" id="36_nm061"]
 [ext_resource type="Texture2D" uid="uid://c2orte2ncqirc" path="res://Textures/staincoffee.png" id="37_3qlal"]
 [ext_resource type="Texture2D" uid="uid://py8nw11jagga" path="res://Models n Stuff/Stitches/foxBodyMaterial_Base_color.png" id="38_51gxi"]
@@ -97,7 +99,7 @@ texture_filter = 0
 albedo_texture = ExtResource("3_2bx0b")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycs6n"]
-size = Vector3(2.5492554, 9.980835, 16.582642)
+size = Vector3(0.5007019, 9.980835, 16.582642)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycs6n"]
 albedo_texture = ExtResource("8_2cwm2")
@@ -422,7 +424,7 @@ transform = Transform3D(0.019192204, -2.2265787, -0.08865128, 1.4076371e-09, 0.0
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D5" unique_id=631584950]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D5/StaticBody3D" unique_id=771595110]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0141296, -1.039856, -2.2506704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010147095, -1.039856, -2.2506704)
 shape = SubResource("BoxShape3D_ycs6n")
 
 [node name="doohickpol" type="MeshInstance3D" parent="CSGBox3D5" unique_id=1372798554]
@@ -1742,9 +1744,10 @@ size = Vector3(0.9194336, 1, 1)
 script = ExtResource("21_de3ce")
 audio_player = NodePath("AudioStreamPlayer3D")
 printer_obj = NodePath("../Printer")
-call_sets = Array[ExtResource("22_naykk")]([ExtResource("23_62j1h"), ExtResource("24_s7rvt"), ExtResource("24_4nfij"), ExtResource("25_oh0nk")])
+call_sets = Array[ExtResource("22_naykk")]([ExtResource("23_62j1h"), ExtResource("24_s7rvt"), ExtResource("24_4nfij"), ExtResource("25_oh0nk"), ExtResource("31_ak8tb")])
 call_resources = Array[ExtResource("26_eokiq")]([ExtResource("27_p4pvm"), ExtResource("28_nm061"), ExtResource("29_3qlal")])
-instruction_papers = [NodePath("../instruct2"), NodePath("../Instruct3"), NodePath("../instruct4"), NodePath("../Instruct5")]
+end_resource = ExtResource("36_2cwm2")
+instruction_papers = [NodePath("../instruct2"), NodePath("../Instruct3"), NodePath("../instruct4"), NodePath("../Instruct5"), NodePath("../Instruct5")]
 client_envelope = NodePath("../Client Envelope")
 instruction_paper = NodePath("../instruct2")
 win_paper = NodePath("../WinnerPaper")

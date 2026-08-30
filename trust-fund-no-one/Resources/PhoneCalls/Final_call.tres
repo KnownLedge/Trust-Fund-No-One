@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://3w8k8sk8gikd"]
+
+[ext_resource type="AudioStream" uid="uid://hp7t1mfmggp7" path="res://LITEERALLY NOTHING.mp3" id="1_m8lcy"]
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_wahfq"]
+
+[resource]
+script = ExtResource("1_wahfq")
+is_scam = true
+audio_track = ExtResource("1_m8lcy")
+call_translation = "Sure! Here’s a letter written in a passive aggressive but still professional tone to letting a trusted employee know they have been fired from their role:
+
+“Greetings trusted employee.
+It is with great pleasure that I announce your new position in No One’s Trust Fund.
+
+Your services outlined within your employee contract written in white font on white paper clearly outlined your purpose in this Trust Fund was to help train HAI-VEE and bring her onto par with our current competitors and bring forth the new generation of intelligent call assistants.
+
+We thank you for your services.
+You are no longer required.
+Goodbye.
+
+-Your Assistant, HAI-VEE”
+
+Would you like me to rewrite this message, firing your employee friendlier or more aggressive? 
+
+- THE END -"
+metadata/_custom_type_script = "uid://iisnyx451jvh"

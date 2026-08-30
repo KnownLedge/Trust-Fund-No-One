@@ -135,3 +135,11 @@ autoplay = &"new_animation"
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=812350372]
 position = Vector2(323, 321)
 texture = ExtResource("5_fjg2o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=955530804]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 360.0
+offset_right = 904.0
+offset_bottom = 473.0
+text = "WARNING: Game will load very slowly and lag for a decent period upon starting, consider using the Windows build"

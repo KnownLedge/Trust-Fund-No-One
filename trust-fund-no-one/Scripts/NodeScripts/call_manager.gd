@@ -8,6 +8,8 @@ extends Node3D
 
 @export var call_resources: Array[CallerResource]
 
+@export var end_resource: CallerResource
+
 @export var instruction_papers: Array[Node3D]
 
 @export var client_envelope: Node3D
@@ -59,7 +61,11 @@ func _ready() -> void:
 	else:
 		audio_player.stop()
 	
-	day_text.text = "DAY " + number_words[game_progress.current_call_set]
+	if(game_progress.current_call_set == 5):
+		day_text.text = "DAY " + "FINAL"
+	else:
+		day_text.text = "DAY " + number_words[game_progress.current_call_set]
+	
 	
 	apply_call_set(call_sets[starting_call_set - 1])
 	receive_call_group()
@@ -137,7 +143,10 @@ func receive_answer(answer_id: int, answer_result: bool):
 func receive_call_group():
 	tracked_envelopes = -1
 	printed_envelopes = 0
-	printing = true
+	if(game_progress.current_call_set != 5):
+		printing = true
+	else:
+		start_call(end_resource)
 
 func start_call(CallInfo: CallerResource):
 	audio_player.stream = CallInfo.audio_track
