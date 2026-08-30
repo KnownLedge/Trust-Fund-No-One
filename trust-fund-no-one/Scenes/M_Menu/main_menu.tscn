@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4vao7gh0ifpe"]
+[gd_scene format=3 uid="uid://c4vao7gh0ifpe"]
 
 [ext_resource type="Script" uid="uid://bdrto5da1oivj" path="res://Scenes/M_Menu/main_menu.gd" id="1_8203n"]
 [ext_resource type="Texture2D" uid="uid://m0vvvw8abc1t" path="res://Scenes/M_Menu/mmenu_bg.png" id="1_a45hi"]
@@ -13,6 +13,21 @@ shader_parameter/speed = 0.01
 
 [sub_resource type="SystemFont" id="SystemFont_fjg2o"]
 font_names = PackedStringArray("Dogica Pixel")
+
+[sub_resource type="Animation" id="Animation_pgn72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(323, 321)]
+}
 
 [sub_resource type="Animation" id="Animation_8203n"]
 resource_name = "new_animation"
@@ -31,28 +46,13 @@ tracks/0/keys = {
 "values": [Vector2(323, 321), Vector2(326, 290), Vector2(323, 321)]
 }
 
-[sub_resource type="Animation" id="Animation_pgn72"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(323, 321)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ap7lu"]
 _data = {
 &"RESET": SubResource("Animation_pgn72"),
 &"new_animation": SubResource("Animation_8203n")
 }
 
-[node name="Main_Menu" type="Control"]
+[node name="Main_Menu" type="Control" unique_id=31168196]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,7 +61,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8203n")
 
-[node name="MenuBG" type="TextureRect" parent="."]
+[node name="MenuBG" type="TextureRect" parent="." unique_id=376355207]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_a45hi")
 
-[node name="ScrollText" type="TextureRect" parent="."]
+[node name="ScrollText" type="TextureRect" parent="." unique_id=876541667]
 texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_c1sml")
@@ -90,7 +90,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_a45hi")
 
-[node name="Menu_Border" type="TextureRect" parent="."]
+[node name="Menu_Border" type="TextureRect" parent="." unique_id=2134948431]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,7 +104,7 @@ grow_vertical = 2
 texture = ExtResource("4_c1sml")
 expand_mode = 1
 
-[node name="Start_Button" type="Button" parent="."]
+[node name="Start_Button" type="Button" parent="." unique_id=322380757]
 layout_mode = 0
 offset_left = 606.0
 offset_top = 197.0
@@ -114,7 +114,8 @@ theme_override_fonts/font = SubResource("SystemFont_fjg2o")
 theme_override_font_sizes/font_size = 32
 text = "START"
 
-[node name="Opt_Button" type="Button" parent="."]
+[node name="Opt_Button" type="Button" parent="." unique_id=1069060871]
+visible = false
 layout_mode = 0
 offset_left = 597.0
 offset_top = 329.0
@@ -124,15 +125,13 @@ theme_override_fonts/font = SubResource("SystemFont_fjg2o")
 theme_override_font_sizes/font_size = 32
 text = "OPTIONS"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=1137199855]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=1806996205]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_ap7lu")
-}
-autoplay = "new_animation"
+libraries/ = SubResource("AnimationLibrary_ap7lu")
+autoplay = &"new_animation"
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=812350372]
 position = Vector2(323, 321)
 texture = ExtResource("5_fjg2o")

@@ -5,8 +5,10 @@
 [ext_resource type="Resource" uid="uid://df7sowk1d3wxt" path="res://Resources/PhoneCalls/Set 5/Sound Client 1.tres" id="2_flcsg"]
 [ext_resource type="Resource" uid="uid://coqckogmvj67a" path="res://Resources/PhoneCalls/Set 5/Sound Client 2.tres" id="3_0nhy3"]
 [ext_resource type="Resource" uid="uid://b4d8ev3ofidoq" path="res://Resources/PhoneCalls/Set 5/Sound Client 3.tres" id="4_1n31j"]
+[ext_resource type="Texture2D" uid="uid://drnwqotfuxrmp" path="res://Textures/Caller info pics/Caller Information 5 big-1.png" id="5_0nhy3"]
 
 [resource]
 script = ExtResource("2_aoq3o")
+info_page_texture = ExtResource("5_0nhy3")
 calls = Array[ExtResource("1_1r6gf")]([ExtResource("2_flcsg"), ExtResource("3_0nhy3"), ExtResource("4_1n31j")])
 metadata/_custom_type_script = "uid://dpx7lexdvim2m"

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ck7abpgukux12"]
+
+[ext_resource type="Script" uid="uid://d1myninl0ldlk" path="res://Scripts/NodeScripts/instruction_paper.gd" id="1_7c8pj"]
+[ext_resource type="Texture2D" uid="uid://dud10pgnts2ua" path="res://Textures/Caller info pics/Caller Information 3 big-1.png" id="2_skfn0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_itf3o"]
+size = Vector3(1.0415039, 0.19614029, 1.5135498)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjmcl"]
+albedo_texture = ExtResource("2_skfn0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bjr3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b560c"]
+size = Vector3(1.4645996, 0.021972656, 1.0892944)
+
+[node name="InstructionRigidbody" type="RigidBody3D" unique_id=1369670520]
+collision_layer = 17
+collision_mask = 17
+gravity_scale = 0.4
+freeze = true
+script = ExtResource("1_7c8pj")
+metadata/hold_rotation = Vector3(0, -90, -90)
+metadata/stamp_value = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1771292032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017089844, -0.054681778, -0.0049438477)
+shape = SubResource("BoxShape3D_itf3o")
+disabled = true
+
+[node name="InstructionPaper" type="CSGBox3D" parent="." unique_id=642048053]
+material_override = SubResource("StandardMaterial3D_vjmcl")
+flip_faces = true
+size = Vector3(1.5, 0.014, 1.05)
+material = SubResource("StandardMaterial3D_3bjr3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=587895821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019378722, 0.016357422, 0.0050354004)
+visible = false
+mesh = SubResource("BoxMesh_b560c")

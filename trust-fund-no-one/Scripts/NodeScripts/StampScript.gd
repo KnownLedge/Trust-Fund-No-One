@@ -6,14 +6,24 @@ extends RigidBody3D
 
 @export var stamp_value: int
 
-
+var default_pos: Vector3
+var default_rot: Vector3
 
 const COOLDOWN = 1
 
 var cooldown_timer = 0
 
+func _ready() -> void:
+	default_pos = global_position
+	default_rot = global_rotation
+
+
+
 func _process(delta: float) -> void:
 	cooldown_timer -= delta
+	if(global_position.y < -1 and freeze == false):
+		global_position = default_pos
+		global_rotation = default_rot
 
 func _on_body_entered(body: Node) -> void:
 

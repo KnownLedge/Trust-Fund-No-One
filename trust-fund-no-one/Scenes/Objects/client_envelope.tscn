@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://g3rdvfosjp4u"]
 
+[ext_resource type="Script" uid="uid://dc562kf7vrhj7" path="res://Scripts/NodeScripts/client_envelope.gd" id="1_yl7kw"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itf3o"]
 albedo_color = Color(0.5389053, 0.46411687, 0.112951525, 1)
 
@@ -12,6 +14,7 @@ collision_mask = 17
 freeze = true
 contact_monitor = true
 max_contacts_reported = 5
+script = ExtResource("1_yl7kw")
 metadata/hold_rotation = Vector3(25, 0, 0)
 metadata/stamp_value = 0
 metadata/envelope_id = 0
