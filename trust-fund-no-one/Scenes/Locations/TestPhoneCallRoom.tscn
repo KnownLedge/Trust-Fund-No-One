@@ -152,6 +152,7 @@ material = SubResource("StandardMaterial3D_6c2xg")
 
 [node name="Client Envelope" parent="." unique_id=1782779634 instance=ExtResource("8_6c2xg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8278656, -2.635202, -6.239491)
+reset_height = -1
 
 [node name="FloorMesh" type="StaticBody3D" parent="." unique_id=495443561]
 transform = Transform3D(14.347307, 0, 0, 0, 1, 0, 0, 0, 11.37093, -0.15047169, -0.75028145, -1.2734789)
@@ -166,9 +167,11 @@ shape = SubResource("BoxShape3D_b560c")
 
 [node name="GreenStamp" parent="." unique_id=248886494 instance=ExtResource("9_8rcqf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2246075, -0.25028145, -3.600119)
+reset_height = -1
 
 [node name="RedStamp" parent="." unique_id=1747538835 instance=ExtResource("9_tp2d6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8915887, -0.25028133, -3.6844687)
+reset_height = -1
 
 [node name="MailBox" type="CSGBox3D" parent="." unique_id=929812541 node_paths=PackedStringArray("call_manager")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31019092, -0.19999993, -3.9827528)
