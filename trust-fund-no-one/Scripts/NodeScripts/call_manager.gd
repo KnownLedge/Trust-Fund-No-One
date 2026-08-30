@@ -51,7 +51,7 @@ var call_failed = false
 var envelopes_received = 0
 
 func _ready() -> void:
-	if(game_progress.current_call_set != 0):
+	if(game_progress.current_call_set != 1):
 		starting_call_set = game_progress.current_call_set
 		audio_player.volume_db = 0
 		audio_player.stream = LES_GET_SCRATCHING
@@ -59,12 +59,12 @@ func _ready() -> void:
 	else:
 		audio_player.stop()
 	
-	day_text.text = "DAY " + number_words[game_progress.current_call_set + 1]
+	day_text.text = "DAY " + number_words[game_progress.current_call_set]
 	
 	apply_call_set(call_sets[starting_call_set - 1])
 	receive_call_group()
 	show_day()
-	if(game_progress.current_call_set == 0):
+	if(game_progress.current_call_set == 1):
 		screen_ref.process_mode = Node.PROCESS_MODE_DISABLED
 		screen_ref.visible = false
 		await get_tree().create_timer(5).timeout

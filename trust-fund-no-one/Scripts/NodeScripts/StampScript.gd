@@ -52,8 +52,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		body.add_child(new_stamp)
 		new_stamp.global_position = stamp_hitbox.global_position
 		new_stamp.translate(Vector3(0,-0.1,0))
-		#new_stamp.rotate_x(deg_to_rad(90))
-		new_stamp.scale = Vector3(0.25,0.25,0.25)
+		#new_stamp.rotate_y(deg_to_rad(deg_to_rad(90)))
+		new_stamp.scale = Vector3(0.075,-0.075,0.075)
 		body.set_meta("stamp_value", stamp_value)
 		
 		new_stamp.visible = true

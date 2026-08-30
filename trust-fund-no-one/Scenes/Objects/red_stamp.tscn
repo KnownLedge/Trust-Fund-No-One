@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://n6ad6myn7i2c"]
 
-[ext_resource type="Texture2D" uid="uid://bu7hx0mths72s" path="res://icon.svg" id="1_lp0mb"]
 [ext_resource type="Script" uid="uid://tow0yasfjmel" path="res://Scripts/NodeScripts/StampScript.gd" id="1_x3k5c"]
+[ext_resource type="Texture2D" uid="uid://64m0014hsxnq" path="res://Textures/redstamp2.png" id="2_2xm8s"]
 [ext_resource type="Script" uid="uid://cj5m4lchhu4dt" path="res://Scripts/NodeScripts/InkScript.gd" id="3_rrviq"]
 [ext_resource type="AudioStream" uid="uid://bb1dxqgrshlan" path="res://AudioTracks/general sounds/Stamp1.mp3" id="4_2xm8s"]
 
@@ -46,10 +46,9 @@ transform = Transform3D(0.19249451, 0, 0, 0, 0.19249451, 0, 0, 0, 0.19249451, -0
 shape = SubResource("BoxShape3D_b560c")
 
 [node name="StampInk" type="Sprite3D" parent="." unique_id=829817941]
-transform = Transform3D(0.22212559, 0, 0, 0, -9.709418e-09, -0.22212559, 0, 0.22212559, -9.709418e-09, 0, 0, 0)
+transform = Transform3D(0.046598867, 0, 0, 0, -2.036901e-09, -0.046598867, 0, 0.046598867, -2.036901e-09, 0, 0, 0)
 visible = false
-modulate = Color(1, 0, 0.047058824, 1)
-texture = ExtResource("1_lp0mb")
+texture = ExtResource("2_2xm8s")
 script = ExtResource("3_rrviq")
 metadata/is_stamp = true
 

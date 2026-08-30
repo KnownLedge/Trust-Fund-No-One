@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dktdahef6f1gm"
-path.s3tc="res://.godot/imported/Index slides (Flasid).jpg-7f407fa847bf416e740c1b99984e6c57.s3tc.ctex"
+uid="uid://64m0014hsxnq"
+path.s3tc="res://.godot/imported/redstamp2.png-e6c9cf5dae13ec3aa341132f75d52e28.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Index_Info/Index slides (Flasid).jpg"
-dest_files=["res://.godot/imported/Index slides (Flasid).jpg-7f407fa847bf416e740c1b99984e6c57.s3tc.ctex"]
+source_file="res://Textures/redstamp2.png"
+dest_files=["res://.godot/imported/redstamp2.png-e6c9cf5dae13ec3aa341132f75d52e28.s3tc.ctex"]
 
 [params]
 

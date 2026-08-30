@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bcykdtsvtdps7"
-path="res://.godot/imported/bogos-binted_9KWgAqA.mp3-ed34fe61e226f63044a070c0162a1eff.mp3str"
+path="res://.godot/imported/bogos-binted_9KWgAqA.mp3-0baa648f3486e422441b6325c49f3b9a.mp3str"
 
 [deps]
 
-source_file="res://Sounds/bogos-binted_9KWgAqA.mp3"
-dest_files=["res://.godot/imported/bogos-binted_9KWgAqA.mp3-ed34fe61e226f63044a070c0162a1eff.mp3str"]
+source_file="res://AudioTracks/bogos-binted_9KWgAqA.mp3"
+dest_files=["res://.godot/imported/bogos-binted_9KWgAqA.mp3-0baa648f3486e422441b6325c49f3b9a.mp3str"]
 
 [params]
 
