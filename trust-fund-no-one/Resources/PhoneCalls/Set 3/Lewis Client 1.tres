@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://jxvw6u61a37p"]
+
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_1puf0"]
+[ext_resource type="AudioStream" uid="uid://b025oiu2hcmte" path="res://AudioTracks/TAB3/Speech_T3C1.mp3" id="1_t6e8j"]
+
+[resource]
+script = ExtResource("1_1puf0")
+audio_track = ExtResource("1_t6e8j")
+call_translation = "Hay chair, 
+
+Is this the writing bear for the rust fund application goose goose?
+I’m not a men bear yet but I’d like to in choir about it as me and my life here are expecting and we’d really like to make a smart on our little one’s future! So could you help pint us in the write directing goose goose?
+Tanks!
+"
+metadata/_custom_type_script = "uid://iisnyx451jvh"

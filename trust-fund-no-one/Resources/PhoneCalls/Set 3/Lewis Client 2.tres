@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://d3b41ix3uh63n"]
+
+[ext_resource type="AudioStream" uid="uid://clfib7ojj7afp" path="res://AudioTracks/TAB3/Speech_T3C2.mp3" id="1_toqli"]
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_ycha2"]
+
+[resource]
+script = ExtResource("1_ycha2")
+is_scam = true
+audio_track = ExtResource("1_toqli")
+call_translation = "Wheel howdy
+
+Was wondering if eye even got myself the write number clause eye bean on the winger four a hole 20 gosh [CENSORED] minutes!
+Anyway, enough fiddle dangling! I’m calling you up clause a bungee off mime told me about a fancy shanty trust her funder and eye was wondering if eye could open on four…oh hang up a second.
+
+Goose? Goose? Wear you at you little raffle? Their you are!
+
+My parlor jeans about that, had to find my paint goose winner Dee goose tear the second. He’s the one eye water open the trust fund four. I’m already a custom, got tea number here
+Let’s sea
+1635569835
+That shooed {BEE} it, hope 2 hear back from you soon!"
+metadata/_custom_type_script = "uid://iisnyx451jvh"

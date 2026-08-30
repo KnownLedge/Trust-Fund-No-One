@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://wa18fo8sdp15"]
+
+[ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_eahj8"]
+[ext_resource type="AudioStream" uid="uid://b2jv556b7khtu" path="res://AudioTracks/TAB3/Speech_T3C3.mp3" id="1_uwnka"]
+
+[resource]
+script = ExtResource("1_eahj8")
+is_scam = true
+audio_track = ExtResource("1_uwnka")
+call_translation = "High!
+I pope you can hear me olay, sorry I’m justin a party write now. You no what us peppers are like! Any tomb…eye was wanting 2 try and set up a rust fund four my net few, as like a birth date gift know…Goose Goose?
+Oh! And I’m alright a custom 2, bean one 4 tree years! My accountant number is 1457021168
+Look for ward 2 earring back from you!
+"
+metadata/_custom_type_script = "uid://iisnyx451jvh"

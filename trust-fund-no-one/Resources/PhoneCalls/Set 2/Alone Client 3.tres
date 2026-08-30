@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://b788ymn30gfjg"]
 
-[ext_resource type="AudioStream" uid="uid://cdj7xw6427d1v" path="res://Sounds/Call Set 2/alone client 3.mp3" id="1_obdhv"]
+[ext_resource type="AudioStream" uid="uid://bxjlvkpgkgbvp" path="res://AudioTracks/TAB2/Speech_T2C3.mp3" id="1_obdhv"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_uhyiy"]
 
 [resource]

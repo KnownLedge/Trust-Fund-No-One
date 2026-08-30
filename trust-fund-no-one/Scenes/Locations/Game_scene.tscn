@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://dpx7lexdvim2m" path="res://Scripts/ResourceScripts/call_set_script.gd" id="22_naykk"]
 [ext_resource type="Resource" uid="uid://cefl6t6mhdiix" path="res://Resources/CallGroups/Call Group 2.tres" id="23_62j1h"]
 [ext_resource type="Resource" uid="uid://c1p7misq72888" path="res://Resources/CallGroups/Call Group 4.tres" id="24_4nfij"]
+[ext_resource type="Resource" uid="uid://cjldajnd5wgbu" path="res://Resources/CallGroups/Call Group 3.tres" id="24_s7rvt"]
 [ext_resource type="Resource" uid="uid://bvg1is3nv7tk6" path="res://Resources/CallGroups/Call Group 5.tres" id="25_oh0nk"]
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="26_eokiq"]
 [ext_resource type="Resource" uid="uid://dvqjm31fhrnc2" path="res://Resources/PhoneCalls/Set 4/Smart Client 1.tres" id="27_p4pvm"]
@@ -1688,7 +1689,7 @@ size = Vector3(0.9194336, 1, 1)
 script = ExtResource("21_de3ce")
 audio_player = NodePath("AudioStreamPlayer3D")
 printer_obj = NodePath("../Printer")
-call_sets = Array[ExtResource("22_naykk")]([ExtResource("23_62j1h"), ExtResource("24_4nfij"), ExtResource("25_oh0nk")])
+call_sets = Array[ExtResource("22_naykk")]([ExtResource("23_62j1h"), ExtResource("24_s7rvt"), ExtResource("24_4nfij"), ExtResource("25_oh0nk")])
 call_resources = Array[ExtResource("26_eokiq")]([ExtResource("27_p4pvm"), ExtResource("28_nm061"), ExtResource("29_3qlal")])
 instruction_papers = [NodePath("../instruct2"), NodePath("../Instruct3"), NodePath("../instruct4"), NodePath("../Instruct5")]
 client_envelope = NodePath("../Client Envelope")

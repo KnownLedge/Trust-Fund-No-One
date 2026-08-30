@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CallerResource" format=3 uid="uid://dvqjm31fhrnc2"]
 
 [ext_resource type="Script" uid="uid://iisnyx451jvh" path="res://CallResource.gd" id="1_4n4x3"]
-[ext_resource type="AudioStream" uid="uid://blfvvugdgefbo" path="res://Sounds/Call Set 4/smart client1.mp3" id="1_slhuc"]
+[ext_resource type="AudioStream" uid="uid://ctwt3236ihjj5" path="res://AudioTracks/TAB4/Speech_T4C1.mp3" id="1_slhuc"]
 
 [resource]
 script = ExtResource("1_4n4x3")
