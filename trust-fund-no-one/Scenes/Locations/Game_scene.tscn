@@ -33,6 +33,8 @@
 [ext_resource type="PackedScene" uid="uid://g3rdvfosjp4u" path="res://Scenes/Objects/client_envelope.tscn" id="31_4nfij"]
 [ext_resource type="Script" uid="uid://cf2w8nkbp64xa" path="res://Scripts/NodeScripts/MailBoxScript.gd" id="32_oh0nk"]
 [ext_resource type="PackedScene" uid="uid://bg3e8esngweea" path="res://Scenes/Puter/Computer_Interface.tscn" id="33_oh0nk"]
+[ext_resource type="Texture2D" uid="uid://cq2fw1sif6q17" path="res://Textures/grab.png" id="34_eokiq"]
+[ext_resource type="Texture2D" uid="uid://byug2rapoc5k2" path="res://Textures/QE.png" id="35_p4pvm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -202,6 +204,20 @@ size = Vector3(4.604, 2.86, 0.01)
 [sub_resource type="BoxShape3D" id="BoxShape3D_acol8"]
 size = Vector3(82.07839, 71.40968, 0.8742027)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+transparency = 1
+albedo_texture = ExtResource("34_eokiq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xrivr"]
+material = SubResource("StandardMaterial3D_13qdw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qlal"]
+transparency = 1
+albedo_texture = ExtResource("35_p4pvm")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_njqwk"]
+material = SubResource("StandardMaterial3D_3qlal")
+
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=550862622]
@@ -354,7 +370,7 @@ transform = Transform3D(0.4471346, 0, -0.038010664, 0, 0.44874734, 0, 0.03801066
 size = Vector3(4.758911, 2.8566256, 3.2548752)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1203510661]
-transform = Transform3D(0.4123339, 0, -0.03665792, 0, 0.3910063, 0, 0.033581246, 0, 0.45011142, 3.650248, 5.325258, -5.018068)
+transform = Transform3D(0.4123339, 0, -0.03665792, 0, 0.3910063, 0, 0.033581246, 0, 0.45011142, 3.650248, 5.325258, -5.040451)
 size = Vector3(4.48497, 2.6309044, 0.04223442)
 material = SubResource("StandardMaterial3D_b560c")
 
@@ -483,418 +499,418 @@ pc_top_Left_node = NodePath("../MeshInstance3D4/TopLeft")
 pc_bottom_right_node = NodePath("../MeshInstance3D4/BottomRight")
 subViewport = NodePath("../MeshInstance3D4/SubViewport")
 
-[node name="Walla" type="Node3D" parent="." unique_id=808463279]
+[node name="WALLS" type="Node3D" parent="." unique_id=808463279]
 transform = Transform3D(0.44874734, 0, 0, 0, 0.44874734, 0, 0, 0, 0.44874734, 0.8870643, 2.1780558, -3.3424785)
 
-[node name="WALL2" type="MeshInstance3D" parent="Walla" unique_id=315646361]
+[node name="WALL2" type="MeshInstance3D" parent="WALLS" unique_id=315646361]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 4.5232797, 6.663964, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL" type="MeshInstance3D" parent="Walla" unique_id=800256853]
+[node name="WALL" type="MeshInstance3D" parent="WALLS" unique_id=800256853]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -21.66582, 6.771131, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL3" type="MeshInstance3D" parent="Walla" unique_id=1456414064]
+[node name="WALL3" type="MeshInstance3D" parent="WALLS" unique_id=1456414064]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -47.457363, 7.2108655, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL4" type="MeshInstance3D" parent="Walla" unique_id=441339871]
+[node name="WALL4" type="MeshInstance3D" parent="WALLS" unique_id=441339871]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -73.64647, 7.3180327, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL5" type="MeshInstance3D" parent="Walla" unique_id=1932235123]
+[node name="WALL5" type="MeshInstance3D" parent="WALLS" unique_id=1932235123]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 108.35468, 6.663964, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL6" type="MeshInstance3D" parent="Walla" unique_id=1201912617]
+[node name="WALL6" type="MeshInstance3D" parent="WALLS" unique_id=1201912617]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 82.16559, 6.771131, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL7" type="MeshInstance3D" parent="Walla" unique_id=2072176606]
+[node name="WALL7" type="MeshInstance3D" parent="WALLS" unique_id=2072176606]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 56.374043, 7.2108655, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL8" type="MeshInstance3D" parent="Walla" unique_id=1199040787]
+[node name="WALL8" type="MeshInstance3D" parent="WALLS" unique_id=1199040787]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 30.184937, 7.3180327, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL9" type="MeshInstance3D" parent="Walla" unique_id=518846625]
+[node name="WALL9" type="MeshInstance3D" parent="WALLS" unique_id=518846625]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -201.14253, 7.470429, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL10" type="MeshInstance3D" parent="Walla" unique_id=1128182818]
+[node name="WALL10" type="MeshInstance3D" parent="WALLS" unique_id=1128182818]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -227.33163, 7.577596, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL11" type="MeshInstance3D" parent="Walla" unique_id=144470122]
+[node name="WALL11" type="MeshInstance3D" parent="WALLS" unique_id=144470122]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -253.12318, 8.01733, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL12" type="MeshInstance3D" parent="Walla" unique_id=684176385]
+[node name="WALL12" type="MeshInstance3D" parent="WALLS" unique_id=684176385]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -279.3123, 8.124498, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL13" type="MeshInstance3D" parent="Walla" unique_id=810959595]
+[node name="WALL13" type="MeshInstance3D" parent="WALLS" unique_id=810959595]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -97.311134, 7.470429, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL14" type="MeshInstance3D" parent="Walla" unique_id=1962251511]
+[node name="WALL14" type="MeshInstance3D" parent="WALLS" unique_id=1962251511]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -123.50023, 7.577596, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL15" type="MeshInstance3D" parent="Walla" unique_id=1355849020]
+[node name="WALL15" type="MeshInstance3D" parent="WALLS" unique_id=1355849020]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -149.29178, 8.01733, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL16" type="MeshInstance3D" parent="Walla" unique_id=1497502839]
+[node name="WALL16" type="MeshInstance3D" parent="WALLS" unique_id=1497502839]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, -175.48088, 8.124498, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL17" type="MeshInstance3D" parent="Walla" unique_id=1239246079]
+[node name="WALL17" type="MeshInstance3D" parent="WALLS" unique_id=1239246079]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 206.51064, 7.979058, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL18" type="MeshInstance3D" parent="Walla" unique_id=848317676]
+[node name="WALL18" type="MeshInstance3D" parent="WALLS" unique_id=848317676]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 180.32153, 8.0862255, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL19" type="MeshInstance3D" parent="Walla" unique_id=913438306]
+[node name="WALL19" type="MeshInstance3D" parent="WALLS" unique_id=913438306]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 154.52998, 8.525959, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL20" type="MeshInstance3D" parent="Walla" unique_id=1495731604]
+[node name="WALL20" type="MeshInstance3D" parent="WALLS" unique_id=1495731604]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 128.34088, 8.633127, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL21" type="MeshInstance3D" parent="Walla" unique_id=220387024]
+[node name="WALL21" type="MeshInstance3D" parent="WALLS" unique_id=220387024]
 transform = Transform3D(13.212762, -0.0029551124, -0.09423553, -0.103924975, 0.0057372865, -11.952866, 0.041090924, 0.9647323, 0.07079518, 310.34204, 7.979058, -9.9792595)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL25" type="MeshInstance3D" parent="Walla" unique_id=1378589607]
+[node name="WALL25" type="MeshInstance3D" parent="WALLS" unique_id=1378589607]
 transform = Transform3D(-5.7756887e-07, -0.96475387, 0, 13.213235, -4.217073e-08, 0, 0, 0, 23.985128, 310.34204, 7.979058, 13.155411)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL26" type="MeshInstance3D" parent="Walla/WALL25" unique_id=338998768]
+[node name="WALL26" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=338998768]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9083681)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL27" type="MeshInstance3D" parent="Walla/WALL25" unique_id=1951885067]
+[node name="WALL27" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=1951885067]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.855504)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL28" type="MeshInstance3D" parent="Walla/WALL25" unique_id=1144642843]
+[node name="WALL28" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=1144642843]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7434115)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL29" type="MeshInstance3D" parent="Walla/WALL25" unique_id=690814105]
+[node name="WALL29" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=690814105]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.65178)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL30" type="MeshInstance3D" parent="Walla/WALL25" unique_id=114993718]
+[node name="WALL30" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=114993718]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.598916)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL31" type="MeshInstance3D" parent="Walla/WALL25" unique_id=113408805]
+[node name="WALL31" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=113408805]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.566625)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL32" type="MeshInstance3D" parent="Walla/WALL25" unique_id=864159566]
+[node name="WALL32" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=864159566]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.474993)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL33" type="MeshInstance3D" parent="Walla/WALL25" unique_id=1804369996]
+[node name="WALL33" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=1804369996]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.422129)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL22" type="MeshInstance3D" parent="Walla/WALL25" unique_id=235090288]
+[node name="WALL22" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=235090288]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.008110702, 27.145874, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL23" type="MeshInstance3D" parent="Walla/WALL25" unique_id=338515869]
+[node name="WALL23" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=338515869]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.041390598, 53.8797, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL24" type="MeshInstance3D" parent="Walla/WALL25" unique_id=335568716]
+[node name="WALL24" type="MeshInstance3D" parent="WALLS/WALL25" unique_id=335568716]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.04950136, 81.02559, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL26" type="MeshInstance3D" parent="Walla" unique_id=1926399443]
+[node name="WALL26" type="MeshInstance3D" parent="WALLS" unique_id=1926399443]
 transform = Transform3D(5.7756887e-07, 0.96475387, -2.0968466e-06, 13.213235, -4.217073e-08, 0, -5.049267e-14, -8.434146e-08, -23.985128, -279.06183, 7.979058, 379.53705)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL26" type="MeshInstance3D" parent="Walla/WALL26" unique_id=552723706]
+[node name="WALL26" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=552723706]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9083681)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL27" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1837820691]
+[node name="WALL27" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=1837820691]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.855504)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL28" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1851316999]
+[node name="WALL28" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=1851316999]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7434115)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL29" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1627487282]
+[node name="WALL29" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=1627487282]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.65178)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL30" type="MeshInstance3D" parent="Walla/WALL26" unique_id=308968615]
+[node name="WALL30" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=308968615]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.598916)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL31" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1183488427]
+[node name="WALL31" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=1183488427]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.566625)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL32" type="MeshInstance3D" parent="Walla/WALL26" unique_id=559267681]
+[node name="WALL32" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=559267681]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.474993)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL33" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1920224728]
+[node name="WALL33" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=1920224728]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.422129)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL22" type="MeshInstance3D" parent="Walla/WALL26" unique_id=117662203]
+[node name="WALL22" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=117662203]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.008110702, 27.145874, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL23" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1884233346]
+[node name="WALL23" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=1884233346]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.041390598, 53.8797, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL24" type="MeshInstance3D" parent="Walla/WALL26" unique_id=1253499485]
+[node name="WALL24" type="MeshInstance3D" parent="WALLS/WALL26" unique_id=1253499485]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.04950136, 81.02559, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL27" type="MeshInstance3D" parent="Walla" unique_id=1866740016]
+[node name="WALL27" type="MeshInstance3D" parent="WALLS" unique_id=1866740016]
 transform = Transform3D(3.099554e-14, 4.217073e-08, -23.985128, 16.22221, -4.217073e-08, 0, -7.0909533e-07, -0.96475387, -1.0484233e-06, 103.31258, 11.573334, 285.6328)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL26" type="MeshInstance3D" parent="Walla/WALL27" unique_id=986541019]
+[node name="WALL26" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=986541019]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9083681)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL27" type="MeshInstance3D" parent="Walla/WALL27" unique_id=1715504811]
+[node name="WALL27" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=1715504811]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.855504)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL28" type="MeshInstance3D" parent="Walla/WALL27" unique_id=512897553]
+[node name="WALL28" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=512897553]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7434115)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL29" type="MeshInstance3D" parent="Walla/WALL27" unique_id=1549924476]
+[node name="WALL29" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=1549924476]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.65178)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL30" type="MeshInstance3D" parent="Walla/WALL27" unique_id=14878233]
+[node name="WALL30" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=14878233]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.598916)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL31" type="MeshInstance3D" parent="Walla/WALL27" unique_id=718086662]
+[node name="WALL31" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=718086662]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.566625)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL32" type="MeshInstance3D" parent="Walla/WALL27" unique_id=1419283519]
+[node name="WALL32" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=1419283519]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.474993)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL33" type="MeshInstance3D" parent="Walla/WALL27" unique_id=516014490]
+[node name="WALL33" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=516014490]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.422129)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL22" type="MeshInstance3D" parent="Walla/WALL27" unique_id=1346989175]
+[node name="WALL22" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=1346989175]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.008110702, 27.145874, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL23" type="MeshInstance3D" parent="Walla/WALL27" unique_id=256713037]
+[node name="WALL23" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=256713037]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.041390598, 53.8797, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL24" type="MeshInstance3D" parent="Walla/WALL27" unique_id=38650441]
+[node name="WALL24" type="MeshInstance3D" parent="WALLS/WALL27" unique_id=38650441]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.04950136, 81.02559, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL28" type="MeshInstance3D" parent="Walla" unique_id=1690237216]
+[node name="WALL28" type="MeshInstance3D" parent="WALLS" unique_id=1690237216]
 transform = Transform3D(3.099554e-14, 4.217073e-08, -23.985128, 16.22221, -4.217073e-08, 0, -7.0909533e-07, -0.96475387, -1.0484233e-06, 484.88916, 11.573334, 285.6328)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL26" type="MeshInstance3D" parent="Walla/WALL28" unique_id=75532658]
+[node name="WALL26" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=75532658]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9083681)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL27" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1826211858]
+[node name="WALL27" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=1826211858]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.855504)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL28" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1150944843]
+[node name="WALL28" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=1150944843]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7434115)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL29" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1657578126]
+[node name="WALL29" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=1657578126]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.65178)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL30" type="MeshInstance3D" parent="Walla/WALL28" unique_id=551581769]
+[node name="WALL30" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=551581769]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.598916)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL31" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1627466023]
+[node name="WALL31" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=1627466023]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.566625)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL32" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1541297321]
+[node name="WALL32" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=1541297321]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.474993)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL33" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1695503314]
+[node name="WALL33" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=1695503314]
 transform = Transform3D(1.0000001, -4.440892e-16, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.422129)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL22" type="MeshInstance3D" parent="Walla/WALL28" unique_id=467356112]
+[node name="WALL22" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=467356112]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.008110702, 27.145874, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL23" type="MeshInstance3D" parent="Walla/WALL28" unique_id=55099504]
+[node name="WALL23" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=55099504]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.041390598, 53.8797, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4i5wj")
 
-[node name="WALL24" type="MeshInstance3D" parent="Walla/WALL28" unique_id=1462066897]
+[node name="WALL24" type="MeshInstance3D" parent="WALLS/WALL28" unique_id=1462066897]
 transform = Transform3D(-0.007865262, 0.0004342076, -0.9046132, -13.695475, 0.0030630736, 0.09767886, 0.0017131835, 0.040222105, 0.002951628, 0.04950136, 81.02559, -0.96454227)
 mesh = SubResource("PlaneMesh_hu8ge")
 skeleton = NodePath("../../..")
@@ -1582,7 +1598,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 8.1712415e-13, 0, 1, 0.039367616, -0.1
 shape = SubResource("BoxShape3D_nm061")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=84238959]
-transform = Transform3D(0.40927675, 0, -0.02673567, 0, 0.36679202, 0, 0.036836736, 0, 0.29704818, 3.6286025, 5.321496, -4.992899)
+transform = Transform3D(0.40927675, 0, -0.02673567, 0, 0.36679202, 0, 0.036836736, 0, 0.29704818, 3.6286025, 5.321496, -5.0155754)
 mesh = SubResource("PlaneMesh_oh0nk")
 skeleton = NodePath("../CallManager")
 surface_material_override/0 = SubResource("StandardMaterial3D_nm061")
@@ -1614,5 +1630,13 @@ collision_mask = 17
 [node name="FloorCollision" type="CollisionShape3D" parent="StaticBody3D" unique_id=2137845466]
 transform = Transform3D(1, 1.0281914e-06, -9.301686e-08, -1.0281914e-06, 1, 7.105431e-15, 9.301686e-08, 8.85337e-14, 1, -22.556866, 19.498951, 5.855011)
 shape = SubResource("BoxShape3D_acol8")
+
+[node name="CONTROL_NOTE3" type="MeshInstance3D" parent="." unique_id=392808956]
+transform = Transform3D(0.190281, -0.048616696, -0.07436084, -0.06526502, 0.04276541, -0.19496548, 0.06027934, 0.1997686, 0.023640377, 2.6085992, 4.089668, -5.081469)
+mesh = SubResource("PlaneMesh_xrivr")
+
+[node name="CONTROL_NOTE4" type="MeshInstance3D" parent="." unique_id=1921051442]
+transform = Transform3D(0.23047774, -0.07750216, 0.05808114, 0.06941698, 0.027644124, -0.23857306, 0.06753731, 0.23607036, 0.04700529, 4.6128616, 4.532759, -4.8570943)
+mesh = SubResource("PlaneMesh_njqwk")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
