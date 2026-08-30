@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hp7t1mfmggp7"
+path="res://.godot/imported/LITEERALLY NOTHING.mp3-87aa1330c72fe34ea2f77eeb8bd691b6.mp3str"
+
+[deps]
+
+source_file="res://LITEERALLY NOTHING.mp3"
+dest_files=["res://.godot/imported/LITEERALLY NOTHING.mp3-87aa1330c72fe34ea2f77eeb8bd691b6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
