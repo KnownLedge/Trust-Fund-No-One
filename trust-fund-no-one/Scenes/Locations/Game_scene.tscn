@@ -43,6 +43,14 @@
 [ext_resource type="Texture2D" uid="uid://bwsm136a3qdpx" path="res://Temp Models n stuff/boxes.png" id="41_cp4j0"]
 [ext_resource type="Texture2D" uid="uid://no10rsomcofx" path="res://Textures/Screenshot 2026-08-30 022113.png" id="42_koitu"]
 [ext_resource type="Texture2D" uid="uid://cy4hi70mwm0ms" path="res://Textures/Screenshot 2026-08-30 001511.png" id="43_hqnqq"]
+[ext_resource type="Texture2D" uid="uid://ckj3sfmjarhsm" path="res://Textures/birdpol.png" id="44_0lbgq"]
+[ext_resource type="Texture2D" uid="uid://dkhnu83brhcen" path="res://Textures/corkboard.png" id="44_aoyxo"]
+[ext_resource type="Texture2D" uid="uid://bhees7dyqh7uc" path="res://Textures/doohikpol.png" id="46_gqxya"]
+[ext_resource type="Texture2D" uid="uid://r0nf1snvkaul" path="res://Textures/labpol.png" id="47_jf8hs"]
+[ext_resource type="Texture2D" uid="uid://gmp3yrjr0qyd" path="res://Textures/loopspol.png" id="48_atpbv"]
+[ext_resource type="Texture2D" uid="uid://ca8c81wsyu7ye" path="res://Textures/puffpol.png" id="49_4njvl"]
+[ext_resource type="Texture2D" uid="uid://cug2xrnh3uja0" path="res://Textures/sispol.png" id="50_xqjw3"]
+[ext_resource type="Texture2D" uid="uid://4jqdb62qjtb3" path="res://Textures/virpol.png" id="51_j1bu2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgl6"]
 albedo_texture = ExtResource("1_yalp7")
@@ -280,6 +288,46 @@ texture_filter = 1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3662s"]
 material = SubResource("StandardMaterial3D_7ae3m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqxya"]
+albedo_texture = ExtResource("44_0lbgq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mpdc"]
+transparency = 1
+albedo_texture = ExtResource("44_aoyxo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7ae3m"]
+material = SubResource("StandardMaterial3D_7mpdc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jf8hs"]
+albedo_texture = ExtResource("46_gqxya")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7mpdc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atpbv"]
+albedo_texture = ExtResource("47_jf8hs")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tg2s5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4njvl"]
+albedo_texture = ExtResource("48_atpbv")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vuo0i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqjw3"]
+albedo_texture = ExtResource("49_4njvl")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_coonu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1bu2"]
+albedo_texture = ExtResource("50_xqjw3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l1erw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duuyb"]
+albedo_texture = ExtResource("51_j1bu2")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7vjj5"]
 
 [node name="Node3D" type="Node3D" unique_id=1006598623]
 
@@ -1782,8 +1830,43 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cardboard Crashes2" unique_id=1357827801]
 shape = SubResource("BoxShape3D_xrivr")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=204237100]
+[node name="Cal" type="MeshInstance3D" parent="." unique_id=204237100]
 transform = Transform3D(-2.7677657e-08, 1, -2.1163236e-08, 0, -4.371139e-08, -0.4841584, -0.633191, -4.371139e-08, 9.250744e-16, -0.43444657, 5.3226976, -2.6043103)
 mesh = SubResource("PlaneMesh_3662s")
+
+[node name="birdpol" type="MeshInstance3D" parent="." unique_id=1879451085]
+transform = Transform3D(0.13556318, -0.0077175256, 0.011592916, 0.007712541, -2.4924653e-09, -0.20378052, 0.0010421718, 1.003877, 8.912184e-05, 5.2389646, 5.7425737, -4.746772)
+material_override = SubResource("StandardMaterial3D_gqxya")
+mesh = SubResource("PlaneMesh_7ae3m")
+
+[node name="doohickpol" type="MeshInstance3D" parent="." unique_id=694127253]
+transform = Transform3D(0.24355821, 0, 0, 0, 0.042534832, -0.2737905, 0, 1.0683109, 0.010900986, 0.35950506, 4.6599064, -4.9029875)
+material_override = SubResource("StandardMaterial3D_jf8hs")
+mesh = SubResource("PlaneMesh_7mpdc")
+
+[node name="labratpol" type="MeshInstance3D" parent="." unique_id=1754387661]
+transform = Transform3D(-0.010763152, 0.98766917, 0.059346445, 0.04213621, 0.15593702, -0.38097677, -0.29219326, -0.013894394, -0.057125427, -0.38168764, 4.369296, -2.2343245)
+material_override = SubResource("StandardMaterial3D_atpbv")
+mesh = SubResource("PlaneMesh_tg2s5")
+
+[node name="loopspol" type="MeshInstance3D" parent="." unique_id=118052513]
+transform = Transform3D(-1.2073819e-05, 0.9999164, -0.003963264, -0.000933648, -0.012930791, -0.30647254, -0.24713558, 0, 0.0011580093, -0.40957367, 4.3076825, -3.2755907)
+material_override = SubResource("StandardMaterial3D_4njvl")
+mesh = SubResource("PlaneMesh_vuo0i")
+
+[node name="puffpol" type="MeshInstance3D" parent="." unique_id=1966517628]
+transform = Transform3D(0.023188354, 1.1249214, 0.0005848661, -0.006948977, 0.0052116653, -0.27707812, -0.25347823, 0.10276584, 0.0076494603, 0.75938714, 5.4090075, -5.406036)
+material_override = SubResource("StandardMaterial3D_xqjw3")
+mesh = SubResource("PlaneMesh_coonu")
+
+[node name="sispol" type="MeshInstance3D" parent="." unique_id=276075212]
+transform = Transform3D(0.124751866, -0.0056868587, 0.01582219, 0.012710003, 0.055817958, -0.1552988, 0, 0.38407448, 0.022804013, 6.1026225, 4.9935493, -4.833158)
+material_override = SubResource("StandardMaterial3D_j1bu2")
+mesh = SubResource("PlaneMesh_l1erw")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=1464671564]
+transform = Transform3D(0.2696345, 0.15059474, -0.026198894, -0.026977114, 0.094210505, -0.28695482, -0.028843064, 1.319693, 0.023474833, -0.08747053, 6.526309, -4.984943)
+material_override = SubResource("StandardMaterial3D_duuyb")
+mesh = SubResource("PlaneMesh_7vjj5")
 
 [connection signal="body_entered" from="MailBox/Area3D" to="MailBox" method="_on_area_3d_body_entered"]
