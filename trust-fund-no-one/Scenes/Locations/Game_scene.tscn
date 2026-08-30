@@ -95,6 +95,9 @@ texture_filter = 0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prhs4"]
 albedo_texture = ExtResource("3_2bx0b")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycs6n"]
+size = Vector3(2.5492554, 9.980835, 16.582642)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycs6n"]
 albedo_texture = ExtResource("8_2cwm2")
 
@@ -411,8 +414,8 @@ transform = Transform3D(0.019192204, -2.2265787, -0.08865128, 1.4076371e-09, 0.0
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D5" unique_id=631584950]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D5/StaticBody3D" unique_id=771595110]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09399414, -1.039856, -2.2506723)
-shape = SubResource("BoxShape3D_vfuxu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0141296, -1.039856, -2.2506704)
+shape = SubResource("BoxShape3D_ycs6n")
 
 [node name="doohickpol" type="MeshInstance3D" parent="CSGBox3D5" unique_id=1372798554]
 transform = Transform3D(0.0067147356, -0.6558512, -0.01727457, 3.9889095e-10, 0.026113696, -0.4338864, 0.77962613, 0.005648741, 0.00014878158, -0.60182667, 3.1654177, 2.2433987)
